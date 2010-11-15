@@ -1,0 +1,60 @@
+\documentclass[12pt]{article}
+
+  \usepackage[polish]{babel}
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc} 
+  \usepackage{hyperref}
+  
+  \usepackage[numbers,sort&compress]{natbib}
+  \usepackage{hypernat}
+
+\begin{document}
+  \section{Wstęp}
+  Rezonans stochastyczny jest zjawiskiem obserwowanym w elementach progowych oraz wzbudnych (excitable). Matematyczne modele neuronów biologicznych wraz z rezonansem stochastycznym i układami z pamięcią stanowią trójkę młodych gałęzi matematyki i fizyki, które składają się na przedmiot niniejszej pracy.
+  
+  Wszystkie te dziedziny oprócz relatywnie młodego wieku mają jeszcze jedną wspólną cechę: sprawiają duże trudności w rozwiązywaniu metodami analitycznymi, w wyniku tego szeroko się w nich stosuje symulacje numeryczne.
+  
+  W pracy wyszedłem od modelu pojedynczego neuronu biologicznego (element wzbudny), w którym przy pewnych zakresach parametrów kontrolnych obserwuje się zjawisko rezonansu stochastycznego. Bazując na tym modelu i poruszając się w tym zakresie parametrów kontrolnych, rozszerzyłem go o połączenia międzyneuronowe, następnie dodając opóźnienie w przekazywaniu sygnałów do połączonych neuronów. Operując parametrami kontrolnymi, badałem przebiegi czasowe oraz signal-to-noise ratio (SNR) dla wszystkich neuronów w poszczególnych scenariuszach. 
+  
+  
+  \section{Podstawy Teoretyczne}
+  
+  \subsection{Rezonans Stochastyczny}
+  
+  \subsection{Modele Neuronów Biologicznych}
+  
+  \subsection{Pamięć i Opóźnienie}
+  
+  
+  \section{Symulacje Numeryczne}
+  
+  \subsection{Oprogramowanie}
+  
+  \subsection{Pojedynczy Neuron}
+  
+  Przed przystąpieniem do rozwiązywania układów wieloneuronowych rozpocząłem eksperyment od zbadania pojedynczego neuronu, jak opisywany w pracy A. Longtin \cite{longtin}. Dzięki temu mogłem sprawdzić zarówno poprawność własnego oprogramowania, jak i model oraz zestaw parametrów opisane w wyżej wymienionej publikacji.
+  
+  Stochastyczne równania różniczkowe składające się na model FHN całkowałem według metody opisanej w pracy Mannella, Palleschi \cite{mannella}. Po rozwiązaniu przedstawionego tam równania, krok całkowania po czasie dt liczony był następująco:
+  
+  Przebieg czasowy potencjału pojedynczego neuronu, z zestawem parametrów jak w \cite{longtin}.
+  
+  
+  Jest to przebieg zgodny z zaobserwowanym w pracy A. Longtin.
+  
+  \subsection{Układy Neuronów Bez Opóźnienia}
+  
+  Następnym krokiem pracy było połączenie neuronów (początkowo dwóch) w "sznur", z sygnałem przekazywanym w jedną stronę, tzn. sygnał z neuronu i jest odbierany przez neuron i-1.
+  
+  Odbierany sygnał jest dodawany do potencjału po przemnożeniu przez stałą wymiany c, wspólną dla wszystkich neuronów. Dodatkowo, aby zapobiec, odbierane są wyłącznie sygnały o potencjale przekraczającym próg odcięcia lh, aby zapobiec wzmocnieniu samowzbudzenia wyłącznie poprzez kumulację słabej składowej harmonicznej.
+  
+  \subsection{Układy Neuronów Z Opóźnieniem}
+  
+  
+  \newpage
+  
+  \addcontentsline{toc}{section}{Literatura}
+  \bibliographystyle{unsrtnat}
+  \bibliography{bibliografia}
+  
+  
+\end{document}
