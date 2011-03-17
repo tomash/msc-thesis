@@ -12,7 +12,7 @@
   \section{Wstęp}
   Rezonans stochastyczny jest zjawiskiem obserwowanym w elementach progowych oraz wzbudnych (excitable). Matematyczne modele neuronów biologicznych wraz z rezonansem stochastycznym i układami z pamięcią stanowią trójkę młodych gałęzi matematyki i fizyki, które składają się na przedmiot niniejszej pracy.
   
-  Wszystkie te dziedziny oprócz relatywnie młodego wieku mają jeszcze jedną wspólną cechę: sprawiają duże trudności w rozwiązywaniu metodami analitycznymi, w wyniku tego szeroko się w nich stosuje symulacje numeryczne.
+  Wszystkie te dziedziny oprócz relatywnie młodego wieku mają jeszcze jedną wspólną cechę: sprawiają duże trudności w rozwiązywaniu metodami analitycznymi, w wyniku czego szeroko się w nich stosuje symulacje numeryczne.
   
   W pracy wyszedłem od modelu pojedynczego neuronu biologicznego (element wzbudny), w którym przy pewnych zakresach parametrów kontrolnych obserwuje się zjawisko rezonansu stochastycznego. Bazując na tym modelu i poruszając się w tym zakresie parametrów kontrolnych, rozszerzyłem go o połączenia międzyneuronowe, następnie dodając opóźnienie w przekazywaniu sygnałów do połączonych neuronów. Operując parametrami kontrolnymi, badałem przebiegi czasowe oraz signal-to-noise ratio (SNR) dla wszystkich neuronów w poszczególnych scenariuszach. 
   
@@ -21,7 +21,23 @@
   
   \subsection{Rezonans Stochastyczny}
   
+  Rezonans stochastyczny (SR) jest zjawiskiem występującym w układach sterowanych co najmniej dwoma sygnałami, z których jeden jest periodyczny, drugi natomiast jest szumem. O występowaniu rezonansu stochastycznego mówimy, kiedy nałożenie sygnału periodycznego i niezerowego szumu skutkuje wysoką periodycznością sygnału wyjściowego.
+  
+  Podstawową wielkością używaną przy badaniu rezonansu stochastyznego jest stosunek sygnał-szum (signal-to-noise ratio, zwany dalej SNR), określający skuteczność wzmocnienia składowej periodycznej w wyniku działania szumu.
+  
+  Istnieje wiele modeli układów z rezonansem stochastycznym, od podwójnej studni potencjału, przez układy progowe po układy równań różniczkowych.
+  
   \subsection{Modele Neuronów Biologicznych}
+  
+  Fizyczne pobudzenie posiadającego układ nerwowy zwierzęcia powoduje zmienne w czasie prądy jonowe w membranach neuronów sensorycznych, które w konsekwencji wywołują potencjały czuciowe (?) ("strzały" lub "igły") w momencie depolaryzacji membrany.
+  
+  Modele neuronów biologicznych/sensorycznych (sensory neuron model, SNM), podobnie jak neuronów binarnych używanych w badaniu sieci neuronowych, wykazują bistabilność, tzn. istnienie dwóch stanów stabilnych w których układ może przebywać. Podstawową różnicą jest ciągły potencjał (napięcie) SNM, co oznacza traktowanie stanów stabilnych jako zakresów (zamiast pojedynczych wartości), pomiędzy którymi układ przechodzi poprzez stany niestabilne. 
+  
+  Naturalną konsekwencją ciągłego potencjału jest użycie równań różniczkowych (zamiast różnicowych w neuronach binarnych) w matematycznym opisie SNM. Oprócz potencjału w wielu SNM istnieje równanie różniczkowe na drugą zmienną układu, ujemnie wpływającą na pochodną potencjału, zwaną dalej relaksacja.
+  
+  Pierwszym SNM był model AAA-BBB, za który w roku XXXX twórcy zostali uhonorowani nagrodą Nobla. Jest to model skomplikowany, o dużej ilości równań i zmiennych, zaproponowany na podstawie badań nad neuronami sensorycznymi CRABFISH?
+  
+  Model Fitzhugh-Nagumo (FHN), będący podstawą tej pracy, modeluje potencjał neuronu jako układ dwóch równań różniczkowych z jedną zmienną losową. Spełnia zatem podstawowe kryterium układu nieliniowego (chaotycznego).
   
   \subsection{Pamięć i Opóźnienie}
   
@@ -29,6 +45,8 @@
   \section{Symulacje Numeryczne}
   
   \subsection{Oprogramowanie}
+  
+  
   
   \subsection{Pojedynczy Neuron}
   
