@@ -23,9 +23,13 @@
   
   Rezonans stochastyczny (SR) jest zjawiskiem występującym w układach sterowanych co najmniej dwoma sygnałami, z których jeden jest periodyczny, drugi natomiast jest szumem. O występowaniu rezonansu stochastycznego mówimy, kiedy nałożenie sygnału periodycznego i niezerowego szumu skutkuje wysoką periodycznością sygnału wyjściowego.
   
+  Powyższe oznacza, że odpowiednio dobrany szum potrafi wzmacniać i wydobywać z układu sygnał periodyczny. Szum, zazwyczaj traktowany jako zjawisko niepożądane ze względu na obniżanie dokładności pomiaru, w układach z rezonansem stochastycznym staje się zjawiskiem jak najbardziej pożądanym. 
+  
   Podstawową wielkością używaną przy badaniu rezonansu stochastyznego jest stosunek sygnał-szum (signal-to-noise ratio, zwany dalej SNR), określający skuteczność wzmocnienia składowej periodycznej w wyniku działania szumu.
   
   Istnieje wiele modeli układów z rezonansem stochastycznym, od podwójnej studni potencjału, przez układy progowe po układy równań różniczkowych.
+  
+  (PRZYKŁAD UKŁADU Z REZONANSEM STOCHASTYCZNYM, OPIS Z WYKRESAMI)
   
   \subsection{Modele Neuronów Biologicznych}
   
@@ -35,18 +39,27 @@
   
   Naturalną konsekwencją ciągłego potencjału jest użycie równań różniczkowych (zamiast różnicowych w neuronach binarnych) w matematycznym opisie SNM. Oprócz potencjału w wielu SNM istnieje równanie różniczkowe na drugą zmienną układu, ujemnie wpływającą na pochodną potencjału, zwaną dalej relaksacja.
   
-  Pierwszym SNM był model AAA-BBB, za który w roku XXXX twórcy zostali uhonorowani nagrodą Nobla. Jest to model skomplikowany, o dużej ilości równań i zmiennych, zaproponowany na podstawie badań nad neuronami sensorycznymi CRABFISH?
+  Pierwszym nowoczesnym SNM który dobrze opisywał powstawanie i propagację potencjałów czynnościowych w zbadanym układzie biologicznym (tutaj: olbrzymim aksonie kałamarnicy) jest model Hodgkina-Huxley'a, za który w roku 1963 twórcy zostali uhonorowani nagrodą Nobla. Jest to model skomplikowany, o dużej ilości równań i zmiennych, postulujący traktowanie membrany komórkowej jako układu elektrycznego zawierającego (między innymi) kondensator:
+  
+  (OBRAZEK Z WIKIPEDII \url{http://en.wikipedia.org/wiki/Hodgkin-Huxley_model} )
   
   Model Fitzhugh-Nagumo (FHN), będący podstawą tej pracy, modeluje potencjał neuronu jako układ dwóch równań różniczkowych z jedną zmienną losową. Spełnia zatem podstawowe kryterium układu nieliniowego (chaotycznego).
   
   \subsection{Pamięć i Opóźnienie}
   
+  Dotychczasowe badania (symulacje) nad układami neuronów według modelu FHN, choć dotyczyły układów neuronów połączonych (wymieniających sygnały, a dokładnie potencjał czynnościowy) nie brały pod uwagę wpływu opóźnienia w przekazywaniu sygnałów. Tymczasem w układach biologicznych prędkość propagacji potencjału przez akson, wynosząca od 0.5 m/s (receptory ciepła) 120 m/s (wrzecionko nerwowo-mięśniowe), oznacza niezerowe i często bardzo znaczące opóźnienia w przekazywaniu potencjałów czynnościowych pomiędzy neuronami.
+  
+  (PRZESUNIĘCIE FAZY, NEURONY W PRZESTRZENI, MOŻLIWOŚCI BADANIA SYGNAŁÓW)
+  
   
   \section{Symulacje Numeryczne}
   
+  (SZCZEGÓŁY TECHNICZNE / LICZBOWE?)
+  
+  
   \subsection{Oprogramowanie}
   
-  
+  (JAVA + GROOVY, KOD OPEN-SOURCE)
   
   \subsection{Pojedynczy Neuron}
   
@@ -54,8 +67,10 @@
   
   Stochastyczne równania różniczkowe składające się na model FHN całkowałem według metody opisanej w pracy Mannella, Palleschi \cite{mannella}. Po rozwiązaniu przedstawionego tam równania, krok całkowania po czasie dt liczony był następująco:
   
-  Przebieg czasowy potencjału pojedynczego neuronu, z zestawem parametrów jak w \cite{longtin}.
+  (CAŁKOWANIE)
   
+  Przebieg czasowy potencjału pojedynczego neuronu, z zestawem parametrów jak w \cite{longtin}.
+  (WYKRES)
   
   Jest to przebieg zgodny z zaobserwowanym w pracy A. Longtin.
   
@@ -67,6 +82,7 @@
   
   \subsection{Układy Neuronów Z Opóźnieniem}
   
+  Do układu opisanego powyżej dodałem opóźnienie w przekazywaniu sygnałów, tzn. do sąsiedniego neuronu trafiał potencjał z chwili t-Top.
   
   \newpage
   
