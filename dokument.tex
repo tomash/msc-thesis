@@ -19,9 +19,6 @@
   
   \section{Podstawy Teoretyczne}
   
-  REZONANS STOCHASTYCZNY, MODELE NEURONÓW BIOLOGICZNYCH, PAMIĘĆ I OPÓŹNIENIE
-  
-  
   \subsection{Rezonans Stochastyczny}
   
   Rezonans stochastyczny (SR) jest zjawiskiem występującym w układach sterowanych co najmniej dwoma sygnałami, z których jeden jest periodyczny, drugi natomiast jest szumem. O występowaniu rezonansu stochastycznego mówimy, kiedy nałożenie sygnału periodycznego i niezerowego szumu skutkuje wysoką periodycznością sygnału wyjściowego.
@@ -36,19 +33,26 @@
 
   (PRZYKŁAD UKŁADU Z REZONANSEM STOCHASTYCZNYM, OPIS Z WYKRESAMI)
 
+  Najprostszym w rozpatrywaniu analitycznym rezonatorem jest podwójna studnia potencjału, opisywana równaniem
+
+
+  Schematycznie przedstawia się taki układ następująco:
+
+
+
   \subsubsection{monostabilny - progowy}
-  \begin{itemize}
-    \item Gingl, Kiss, Miss, europhysics 29,191 (1995)
-    \item Chapeau-Blondeau, Phys Rev E53 5469; E55, 1478
-  \end{itemize}
 
-  \subsubsection{wzmocnienie SR przez sprzężenie 3}
-  Krawiecki/Stemler ref 12,13,14
+  W zastosowaniach praktycznych (wzmacnianie sygnałów) oraz symulacjach popularny jest rezonator monostabilny, progowy (układ niedynamiczny). Mechanizm jego działania polega na wysłaniu przez układ ''szpilki'' potencjału kiedy suma wymuszenia periodycznego i szumu przekroczy (wznosząco) wartość progową. Taki rezonator był badany empirycznie (symulacje, realizacja elektroniczna) i teoretycznie w pracy \cite{gingl_kiss_moss}. Dokładniejsza dyskusja teoretyczna rezonatora progowego była przedmiotem prac \cite{blondeau_e53} i \cite{blondeau_e55}.
 
-  Lindner, Meadows, Ditto, Inchiosa, Bulsara - Phys Rev Letters 75,3 (1995); Phys Rev E53, 2081 (1996)
+  \subsubsection{wzmocnienie SR przez sprzężenie}
+
+  Bardzo dobrą strategią wzmocnienia efektu SR -- czyli zwiększenia signal-to-noise ratio -- jest zbudowanie układu kilku identycznych rezonatorów, połączonych ze sobą i wymieniających sygnał. Rezonans stochastyczny w takim układzie nazywany jest ''Array Enhanced Stochastic Resonance'' (AESR) \cite{lindner_meadows} i, przy optymalnym doborze parametrów układu, jest silniejszy (w sensie wyższego SNR) niż SR w pojedynczym rezonatorze.
+
+  Dotychczas badano zachowanie AESR i obowiązujące w takich układach reguły skalowania \cite{lindner_meadows}, wpływ przesunięcia fazowego wymuszenia periodycznego (związanego z rozciągłością przestrzenną układu) \cite{ijmpb_14_8} oraz kompensację ww. przesunięcia opóźnieniem w transmisji sygnału pomiędzy rezonatorami \cite{ijmpb_23_2}. Większość dotychczasowych prac badała proste rezonatory, takie jak neurony dyskretne i inne układy progowe.
 
   \subsubsection{kontrola SR}
-  Stemler ref 17
+  
+  Podobnie jak w przypadku innych układów nieliniowych badane były możliwości kontroli rezonansu stochastycznego. \cite{gammaitoni}
   
   \subsection{Modele Neuronów Biologicznych}
   
@@ -99,7 +103,7 @@
   Zachowanie modelu FHN w wariancie deterministycznym, tj. bez szumu, było przedmiotem pracy \cite{alexander}
 
   \subsubsection{FHN-SR (Longtin)}
-  SR w sprzężonych neuronach, sposoby sprzężeń (budowania sieci).
+
 
   Tanabe, Shinokawa: Psys. Rev. E60, 2182-2185 (1999.08)
   
@@ -108,13 +112,12 @@
   Dotychczasowe badania (symulacje) nad układami neuronów według modelu FHN, choć dotyczyły układów neuronów połączonych (wymieniających sygnały, a dokładnie potencjał czynnościowy) nie brały pod uwagę wpływu opóźnienia w przekazywaniu sygnałów. Tymczasem w układach biologicznych prędkość propagacji potencjału przez akson, wynosząca od 0.5 m/s (receptory ciepła) 120 m/s (wrzecionko nerwowo-mięśniowe), oznacza niezerowe i często bardzo znaczące opóźnienia w przekazywaniu potencjałów czynnościowych pomiędzy neuronami.
 
   \subsubsection{przesunięcie fazy}
-  stemler ref 13,14, wpływ na SNR
 
-  \subsubsection{neurony w przestrzeni}
-  przesunięcie fazy przez propagację sygnału.
-  
-  \subsubsection{przesunięcie fazy}
-  wzmacnianie sygnału przez odbiór z kilku sygnałów. kompensacja opóźnienia przez przesunięcie w fazie (opóźnienie fazowe kontra opóźnienie w transmisji).
+  Połączenie ze sobą neuronów FHN pobudzanych tym samym sygnałem periodycznym, bez opóźnienia w transmisji sygnałów, powinno wzmacniać SNR analogicznie do wspomnianych wyżej prostszych rezonatorów. Przesunięcie fazowe sygnału periodycznego powinno także działać analogicznie jak w rezonatorach badanych w cytowanych pracach: od konkurencji (w wywoływaniu SR) po przeciwdziałanie (obniżanie SNR względem samodzielnego neuronu). \cite{ijmpb_14_8}
+
+  Przesunięcie fazowe w układzie neuronów FHN można interpretować podobnie jak we wcześniej badanych układach rezonatorów, to znaczy konsekwencję rozciągłości przestrzennej układu. Tym samym układ (macierz) połączonych neuronów traktujemy jako odbierające ten sam sygnał (częstotliwość) propagujący się w przestrzeni (różnica faz).
+
+  Analogicznie, opóźnienie w transmisji powinno działać podobnie jak w badanych wcześniej układach \cite{ijmpb_23_2}, czyli pozwalać, między innymi, na kompensację różnicy faz (opóźnienie równe przesunięciu fazy).
 
   Krawiecki, Jeżo - Int. Journal Mod. Phys B (2006,2007,2008,2009)
 
@@ -122,6 +125,8 @@
   odruchy, koszt.
   
   \subsubsection{o czym jest praca}
+
+  Tematem pracy jest badanie zachowania układów połączonych neuronów FHN. Jak na signal-to-noise ratio wpływa przesunięcie fazowe sygnału periodycznego (rozciągłość przestrzenna układu) oraz parametry wymiany (siła połączenia, opóźnienie).
 
     
   \section{Symulacje Numeryczne}
