@@ -29,7 +29,7 @@
 
   Istnieje wiele modeli układów z rezonansem stochastycznym, od podwójnej studni potencjału, przez układy progowe po układy równań różniczkowych.
 
-  \subsubsection{przykład układu z SR - dwustudnia}
+  \subsubsection{Układ Bistabilny - Dwustudnia}
 
   (PRZYKŁAD UKŁADU Z REZONANSEM STOCHASTYCZNYM, OPIS Z WYKRESAMI)
 
@@ -38,11 +38,17 @@
 
   Schematycznie przedstawia się taki układ następująco:
 
+  Ze względu na prostą postać analityczną, zależność SNR od szumu jest także znajdowalna w sposób analityczny:
 
 
-  \subsubsection{monostabilny - progowy}
 
-  W zastosowaniach praktycznych (wzmacnianie sygnałów) oraz symulacjach popularny jest rezonator monostabilny, progowy (układ niedynamiczny). Mechanizm jego działania polega na wysłaniu przez układ ''szpilki'' potencjału kiedy suma wymuszenia periodycznego i szumu przekroczy (wznosząco) wartość progową. Taki rezonator był badany empirycznie (symulacje, realizacja elektroniczna) i teoretycznie w pracy \cite{gingl_kiss_moss}. Dokładniejsza dyskusja teoretyczna rezonatora progowego była przedmiotem prac \cite{blondeau_e53} i \cite{blondeau_e55}.
+  \subsubsection{Układ Monostabilny - Progowy}
+
+  W zastosowaniach praktycznych (wzmacnianie sygnałów) oraz symulacjach popularny jest rezonator monostabilny, progowy (układ niedynamiczny). Mechanizm jego działania polega na wysłaniu przez układ ''szpilki'' potencjału kiedy suma wymuszenia periodycznego i szumu przekroczy (wznosząco) wartość progową. Taki rezonator był badany empirycznie (symulacje, realizacja elektroniczna) i teoretycznie w pracy \cite{gingl_kiss_moss}. Dokładniejsza dyskusja teoretyczna rezonatora progowego była przedmiotem prac \cite{blondeau_e53} i \cite{blondeau_e55}. Widmo mocy takiego układu posiada wysokie i wąskie piki dla częstotliwości bazowej i jej wielokrotności, stąd też jest bardzo wdzięcznym obiektem badań nad rezonansem stochastycznym. 
+
+  Układ zaprezentowany przez Gingla \cite{gingl_kiss_moss} oraz wyniki w nim uzyskane:
+
+  (FIG. 1 z Gingla)
 
   \subsubsection{wzmocnienie SR przez sprzężenie}
 
@@ -50,9 +56,19 @@
 
   Dotychczas badano zachowanie AESR i obowiązujące w takich układach reguły skalowania \cite{lindner_meadows}, wpływ przesunięcia fazowego wymuszenia periodycznego (związanego z rozciągłością przestrzenną układu) \cite{ijmpb_14_8} oraz kompensację ww. przesunięcia opóźnieniem w transmisji sygnału pomiędzy rezonatorami \cite{ijmpb_23_2}. Większość dotychczasowych prac badała proste rezonatory, takie jak neurony dyskretne i inne układy progowe.
 
+  (ZREFEROWAĆ TE WYNIKI)
+
+  (WZMOCNIENIE PO POŁĄCZENIU)
+
+  (RELACJE SKALOWANIA)
+
+  Budowanie macierzy połączonych rezonatorów, jako posunięcie zorientowane na maksymalizację SNR, można uznać za jedną z metod kontroli SR.
+
   \subsubsection{kontrola SR}
   
-  Podobnie jak w przypadku innych układów nieliniowych badane były możliwości kontroli rezonansu stochastycznego. \cite{gammaitoni}
+  Podobnie jak w przypadku innych układów nieliniowych badane były możliwości kontroli rezonansu stochastycznego (czyli technik maksymalizacji SR). W pracy Gammaitoniego et al. \cite{gammaitoni} badano układ progowy (zbudowany na Przerzutniku Schmitta) i próbowano kontrolować SR poprzez modulację progu, czyli jest to metoda kontroli bez sprzężenia zwrotnego. Największe wzmocnienie osiągnięto dla częstotliwości modulacji progu równej dwukrotności częstotliwości sygnału i różnicy faz równej $\pi/2$.
+
+
   
   \subsection{Modele Neuronów Biologicznych}
   
@@ -66,9 +82,24 @@
   
   (OBRAZEK Z WIKIPEDII \url{http://en.wikipedia.org/wiki/Hodgkin-Huxley_model} )
 
+  (H-H: wzory, złożoność (dyskusja))
+
   \subsubsection{FHN-równania}
 
   Model Fitzhugh-Nagumo (FHN), będący podstawą tej pracy, modeluje potencjał neuronu jako układ dwóch równań różniczkowych z jedną zmienną losową. Spełnia zatem podstawowe kryterium układu nieliniowego (chaotycznego).
+
+  \begin{equation}
+    \frac{dv}{dt} = v - v^3 - \omega + I_{ext}
+  \end{equation}
+
+  \begin{equation}
+    \epsilon \frac{d \omega}{dt} = v - d \omega - b
+  \end{equation}
+
+  W modelu FHN \emph{v(t)} pełni rolę szybkozmiennego ''potencjału'' (odpowiednik biologicznego potencjału czynnościowego neuronu), natomiast $\omega (t)$ pełni rolę wolnozmiennej ''relaksacji''. $I_{ext}$ to pobudzenie zewnętrzne.
+
+
+  Model użyty w niniejszej pracy ma zmodyfikowaną, bardziej rozbudowaną dla celów symulacji postać, zaproponowaną przez A. Longtina \cite{longtin}. Zewnętrzne pobudzenie jest w tej wersji rozbite na szum $\xi(t)$ oraz sygnał periodyczny $r sin(\beta t)$.
 
   \begin{equation} \label{eq:v}
     \epsilon \frac{dv}{dt} = v(v-a)(1-v)- \omega + \xi(t)
@@ -78,7 +109,7 @@
     \frac{d \omega}{dt} = v - d \omega - [b + r sin(\beta t)]
   \end{equation}
 
-  W modelu FHN \emph{v(t)} pełni rolę szybkozmiennego ''potencjału'' (odpowiednik biologicznego potencjału czynnościowego neuronu), natomiast $\omega (t)$ pełni rolę wolnozmiennej ''relaksacji''.
+  
 
   \subsubsection{FHN-przenaszalność elementów (Longtin)}
 
@@ -98,9 +129,13 @@
 
   Jedną z najważniejszych cech modelu Fitzhugh-Nagumo jest jego progowe zachowanie, tzn. gwałtowny wzrost potencjału czynnościowego jeśli przekroczy on pewną wartość graniczną. W połączeniu z szumem oraz (słabym) sygnałem periodycznym model FHN pozwala zaobserwować wzorcowy wręcz rezonans stochastyczny, z wyraźnymi pikami w widmie mocy dla częstotliwości wymuszenia periodycznego i jego harmonik.
 
+  (WIĘCEJ CYTOWAŃ)
+
   \subsubsection{ew. FHN-wariant bez szumu i bez period., goły}
 
   Zachowanie modelu FHN w wariancie deterministycznym, tj. bez szumu, było przedmiotem pracy \cite{alexander}
+
+  (ZREFEROWAĆ)
 
   \subsubsection{FHN-SR (Longtin)}
 
@@ -115,18 +150,22 @@
 
   Połączenie ze sobą neuronów FHN pobudzanych tym samym sygnałem periodycznym, bez opóźnienia w transmisji sygnałów, powinno wzmacniać SNR analogicznie do wspomnianych wyżej prostszych rezonatorów. Przesunięcie fazowe sygnału periodycznego powinno także działać analogicznie jak w rezonatorach badanych w cytowanych pracach: od konkurencji (w wywoływaniu SR) po przeciwdziałanie (obniżanie SNR względem samodzielnego neuronu). \cite{ijmpb_14_8}
 
+  (OBRAZEK)
+
   Przesunięcie fazowe w układzie neuronów FHN można interpretować podobnie jak we wcześniej badanych układach rezonatorów, to znaczy konsekwencję rozciągłości przestrzennej układu. Tym samym układ (macierz) połączonych neuronów traktujemy jako odbierające ten sam sygnał (częstotliwość) propagujący się w przestrzeni (różnica faz).
 
   Analogicznie, opóźnienie w transmisji powinno działać podobnie jak w badanych wcześniej układach \cite{ijmpb_23_2}, czyli pozwalać, między innymi, na kompensację różnicy faz (opóźnienie równe przesunięciu fazy).
 
   Krawiecki, Jeżo - Int. Journal Mod. Phys B (2006,2007,2008,2009)
 
+  (WZÓR, ''CZUŁOŚĆ'')
+
   \subsubsection{rola opóźnień w biologii}
   odruchy, koszt.
   
   \subsubsection{o czym jest praca}
 
-  Tematem pracy jest badanie zachowania układów połączonych neuronów FHN. Jak na signal-to-noise ratio wpływa przesunięcie fazowe sygnału periodycznego (rozciągłość przestrzenna układu) oraz parametry wymiany (siła połączenia, opóźnienie).
+  Tematem pracy jest badanie zachowania układów połączonych neuronów FHN. Jak na signal-to-noise ratio wpływa przesunięcie fazowe sygnału periodycznego (rozciągłość przestrzenna układu) oraz parametry wymiany (siła połączenia, opóźnienie transmisji).
 
     
   \section{Symulacje Numeryczne}
