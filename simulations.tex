@@ -1,0 +1,66 @@
+  \section{Symulacje Numeryczne}
+  
+  (SZCZEGÓŁY TECHNICZNE / LICZBOWE?)
+  
+  
+  \subsection{Oprogramowanie}
+
+  Do oprogramowania symulacji wybrałem język Java, jako oferujący dobrą wydajność w obliczeniach numerycznych, z dojrzałym ekosystemem narzędzi i bibliotek oraz wieloplatformowy. Oskryptowanie zestawów symulacji (''przemiatanie'' po parametrach, wiele powtórzeń dla uśrednienia wyników) napisałem w języku Groovy.
+  
+  Kod źródłowy jest dostępny jako open-source i dostępny w serwisie GitHub pod adresem http://github.com/tomash/zzzzz
+  
+  \subsection{Pojedynczy Neuron}
+  
+  Przed przystąpieniem do rozwiązywania układów wieloneuronowych rozpocząłem symulacje od zbadania pojedynczego neuronu, jak opisywany w pracy A. Longtin \cite{longtin}. Dzięki temu mogłem sprawdzić zarówno poprawność własnego oprogramowania, jak i model oraz zestaw parametrów opisane w wyżej wymienionej publikacji.
+  
+  Stochastyczne równania różniczkowe składające się na szum Ornsteina-Uhlenbecka całkowałem według metody opisanej w pracy Mannella, Palleschi \cite{mannella}. Po rozwiązaniu przedstawionego tam równania, przyrost szumu $\eta (t)$ liczony był następująco:
+
+  \begin{equation} \label{eq:deta}
+    d\eta(t) = dt(\lambda \xi_1(t) - \lambda \eta(t)) + \lambda \xi_2(t) \sqrt{dt}
+  \end{equation}
+
+  Gdzie $\xi_n(t)$ to szum gaussowski w chwili t.
+  
+  Przebieg czasowy potencjału pojedynczego neuronu, z zestawem parametrów jak w \cite{longtin}.
+  
+  \begin{figure}
+    \begin{center}
+      \begin{tabular}{cc}
+        \resizebox{100mm}{!}{\includegraphics[width=140mm]{images/1neuron/1}} \\
+        \resizebox{100mm}{!}{\includegraphics[width=140mm]{images/1neuron/2}} \\
+      \end{tabular}
+      \caption{Odtworzenie wyników Longtina (UZUPEŁNIĆ)}
+      \label{sym1v}
+    \end{center}
+  \end{figure}
+
+  Jest to przebieg zgodny z zaobserwowanym w pracy A. Longtin.
+
+  \begin{figure}
+    \includegraphics[width=140mm]{images/1neuron/3}
+    \caption{FFT odtworzenie wyników longtina}
+    \label{sym1fft}
+  \end{figure}
+
+  
+  \subsection{Układy Neuronów Bez Opóźnienia}
+  
+  Następnym krokiem pracy było połączenie neuronów (początkowo dwóch) w ''sznur'', z sygnałem przekazywanym w jedną stronę, tzn. sygnał z neuronu i jest odbierany przez neuron i-1.
+  
+  Odbierany sygnał jest dodawany do potencjału po przemnożeniu przez stałą wymiany c, wspólną dla wszystkich neuronów. Dodatkowo, aby zapobiec, odbierane są wyłącznie sygnały o potencjale przekraczającym próg odcięcia lh, aby zapobiec wzmocnieniu samowzbudzenia wyłącznie poprzez kumulację słabej składowej harmonicznej.
+  
+  \subsection{Układy Neuronów Z Opóźnieniem}
+  
+  Do układu opisanego powyżej dodałem opóźnienie w przekazywaniu sygnałów, tzn. do sąsiedniego neuronu trafiał potencjał z chwili t-Top.
+  
+  RÓWNANIE
+  
+  Ten układ równań jest w praktyce nierozwiązywalny analitycznie... PONIEWAŻ?
+  
+  \section{Wyniki}
+  
+  TUTAJ CZY W ''SYMULACJE''?
+  
+  \subsection{Układy Neuronów Bez Opóźnienia}
+  
+  Zaobserwowane przebiegi czasowe były zgodne ze spodziewanym analitycznie wynikiem: z każdym kolejnym neuronem w łańcuchu następował wzrost SNR (DO WARTOŚCI GRANICZNEJ) ze względu na wzrost prawdopodobieństwa wzbudzenia w przypadku wzbudzenia neuronu sąsiedniego.
