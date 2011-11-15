@@ -47,7 +47,13 @@
   
   Następnym krokiem pracy było połączenie neuronów (początkowo dwóch) w ''sznur'', z sygnałem przekazywanym w jedną stronę, tzn. sygnał z neuronu i jest odbierany przez neuron i-1.
   
-  Odbierany sygnał jest dodawany do potencjału po przemnożeniu przez stałą wymiany c, wspólną dla wszystkich neuronów. Dodatkowo, aby zapobiec, odbierane są wyłącznie sygnały o potencjale przekraczającym próg odcięcia lh, aby zapobiec wzmocnieniu samowzbudzenia wyłącznie poprzez kumulację słabej składowej harmonicznej.
+  Odbierany sygnał jest dodawany do potencjału po przemnożeniu przez stałą wymiany s, wspólną dla wszystkich neuronów. Dodatkowo, aby zapobiec, odbierane są wyłącznie sygnały o potencjale przekraczającym próg odcięcia lh, aby zapobiec wzmocnieniu samowzbudzenia wyłącznie poprzez kumulację słabej składowej harmonicznej.
+
+  (WYNIKI)
+
+  Zaobserwowane przebiegi czasowe były zgodne ze spodziewanym analitycznie wynikiem: z każdym kolejnym neuronem w łańcuchu następował wzrost SNR (DO WARTOŚCI GRANICZNEJ) ze względu na wzrost prawdopodobieństwa wzbudzenia w przypadku wzbudzenia neuronu sąsiedniego.
+
+
   
   \subsection{Układy Neuronów Z Opóźnieniem}
   
@@ -57,10 +63,17 @@
   
   Ten układ równań jest w praktyce nierozwiązywalny analitycznie... PONIEWAŻ?
   
-  \section{Wyniki}
-  
-  TUTAJ CZY W ''SYMULACJE''?
-  
-  \subsection{Układy Neuronów Bez Opóźnienia}
-  
-  Zaobserwowane przebiegi czasowe były zgodne ze spodziewanym analitycznie wynikiem: z każdym kolejnym neuronem w łańcuchu następował wzrost SNR (DO WARTOŚCI GRANICZNEJ) ze względu na wzrost prawdopodobieństwa wzbudzenia w przypadku wzbudzenia neuronu sąsiedniego.
+  \subsubsection{Macierz Dwóch Neuronów}
+
+  Pierwszym krokiem w badaniu macierzy neuronów z opóźnieniem uczyniłem zbadanie macierzy dwuelementowej, celem znalezienia zależności pomiędzy podstawowymi parametrami symulacji.
+
+  Przez c oznaczyłem opóźnienie transmisji, jako wielokrotność okresu sygnału periodycznego. Przesunięcie fazowe sygnału periodycznego p wynosiło pół okresu.
+  Znaleziona zależność SNR (WYKRES) od c oraz D (skalowanie szumu) posiada bardzo wyraźną ''grań'' dla c=0.5, co potwierdza oczekiwania: maksymalizację SNR można osiągnąć poprzez kompensację przesunięcia fazowego (rozciągłości przestrzennej) identycznym (lub prawie identycznym) opóźnieniem w transmisji.
+
+  \begin{figure}
+    \includegraphics[width=140mm]{images/2neuron/3d}
+    \caption{Dwa neurony, SNR w ''odbierającym'' w zależności od opóźnienia w transmisji c (jako wielokrotność T), dla przesunięcia fazowego równego 0.5T. Widać wyraźną ''grań'' kiedy c = p (= 0.5T)}
+    \label{snr_c_d_3d}
+  \end{figure}
+
+

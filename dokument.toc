@@ -20,6 +20,5 @@
 \contentsline {subsection}{\numberline {2.2}Pojedynczy Neuron}{14}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{14}{subsection.2.3}
 \contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{17}{subsection.2.4}
-\contentsline {section}{\numberline {3}Wyniki}{17}{section.3}
-\contentsline {subsection}{\numberline {3.1}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{17}{subsection.3.1}
-\contentsline {section}{Literatura}{18}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {2.4.1}Macierz Dw\IeC {\'o}ch Neuron\IeC {\'o}w}{17}{subsubsection.2.4.1}
+\contentsline {section}{Literatura}{19}{figure.7}
