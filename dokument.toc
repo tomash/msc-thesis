@@ -1,24 +1,25 @@
 \select@language {polish}
 \contentsline {section}{\numberline {1}Podstawy Teoretyczne}{3}{section.1}
 \contentsline {subsection}{\numberline {1.1}Rezonans Stochastyczny}{3}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}Uk\IeC {\l }ad Bistabilny - Dwustudnia}{3}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.2}Uk\IeC {\l }ad Monostabilny - Progowy}{4}{subsubsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.3}wzmocnienie SR przez sprz\IeC {\k e}\IeC {\.z}enie}{6}{subsubsection.1.1.3}
+\contentsline {subsubsection}{\numberline {1.1.1}Uk\IeC {\l }ad Bistabilny}{3}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Uk\IeC {\l }ad Progowy}{4}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}wzmocnienie SR przez sprz\IeC {\k e}\IeC {\.z}enie}{5}{subsubsection.1.1.3}
 \contentsline {subsubsection}{\numberline {1.1.4}kontrola SR}{7}{subsubsection.1.1.4}
-\contentsline {subsection}{\numberline {1.2}Modele Neuron\IeC {\'o}w Biologicznych}{7}{subsection.1.2}
-\contentsline {subsubsection}{\numberline {1.2.1}Model Neuronu Fitzhugh-Nagumo}{9}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {1.2.2}FHN-przenaszalno\IeC {\'s}\IeC {\'c} element\IeC {\'o}w (Longtin)}{10}{subsubsection.1.2.2}
-\contentsline {subsubsection}{\numberline {1.2.3}FHN-progowo\IeC {\'s}\IeC {\'c}, wzmocnienie szumu}{10}{subsubsection.1.2.3}
-\contentsline {subsubsection}{\numberline {1.2.4}ew. FHN-wariant bez szumu i bez period., go\IeC {\l }y}{11}{subsubsection.1.2.4}
-\contentsline {subsubsection}{\numberline {1.2.5}FHN-SR (Longtin)}{11}{subsubsection.1.2.5}
-\contentsline {subsection}{\numberline {1.3}Pami\IeC {\k e}\IeC {\'c} i Op\IeC {\'o}\IeC {\'z}nienie}{11}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1}Przesuni\IeC {\k e}cie Fazy}{12}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}Rola Op\IeC {\'o}\IeC {\'z}nie\IeC {\'n} w Biologii}{13}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}Zagadnienia Badane w Pracy}{13}{subsubsection.1.3.3}
-\contentsline {section}{\numberline {2}Symulacje Numeryczne}{14}{section.2}
-\contentsline {subsection}{\numberline {2.1}Oprogramowanie}{14}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Pojedynczy Neuron}{14}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{14}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{17}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Macierz Dw\IeC {\'o}ch Neuron\IeC {\'o}w}{17}{subsubsection.2.4.1}
-\contentsline {section}{Literatura}{19}{figure.7}
+\contentsline {subsection}{\numberline {1.2}Modele Neuron\IeC {\'o}w Biologicznych}{9}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Model Neuronu Fitzhugh-Nagumo}{11}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}FHN-przenaszalno\IeC {\'s}\IeC {\'c} element\IeC {\'o}w (Longtin)}{12}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}FHN-progowo\IeC {\'s}\IeC {\'c}, wzmocnienie szumu}{12}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}ew. FHN-wariant bez szumu i bez period., go\IeC {\l }y}{13}{subsubsection.1.2.4}
+\contentsline {subsubsection}{\numberline {1.2.5}FHN-SR (Longtin)}{14}{subsubsection.1.2.5}
+\contentsline {subsection}{\numberline {1.3}Pami\IeC {\k e}\IeC {\'c} i Op\IeC {\'o}\IeC {\'z}nienie}{14}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Przesuni\IeC {\k e}cie Fazy}{14}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Przestrzennie Rozci\IeC {\k a}g\IeC {\l }y Uk\IeC {\l }ad Neuron\IeC {\'o}w FHN}{15}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.3}Rola Op\IeC {\'o}\IeC {\'z}nie\IeC {\'n} w Biologii}{16}{subsubsection.1.3.3}
+\contentsline {subsubsection}{\numberline {1.3.4}Zagadnienia Badane w Pracy}{16}{subsubsection.1.3.4}
+\contentsline {section}{\numberline {2}Symulacje Numeryczne}{17}{section.2}
+\contentsline {subsection}{\numberline {2.1}Oprogramowanie}{17}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Pojedynczy Neuron}{17}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{17}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{20}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Macierz Dw\IeC {\'o}ch Neuron\IeC {\'o}w}{20}{subsubsection.2.4.1}
+\contentsline {section}{Literatura}{24}{figure.caption.13}

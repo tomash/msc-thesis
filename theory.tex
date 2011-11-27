@@ -10,15 +10,18 @@
 
   Istnieje wiele układów z rezonansem stochastycznym, od podwójnej studni potencjału, przez układy progowe po układy równań różniczkowych.
 
-  \subsubsection{Układ Bistabilny - Dwustudnia}
+  \subsubsection{Układ Bistabilny}
+  \label{sec:uklad_bistabilny}
 
-  Najprostszym w rozpatrywaniu analitycznym rezonatorem jest podwójna studnia potencjału, opisywana równaniem
+  Najprostszym w rozpatrywaniu analitycznym rezonatorem stochastycznym jest cząstka poruszająca się w  podwójnej studni potencjału, opisywanej równaniem
 
   \begin{equation} \label{sr:1}
     V_t(x) = \frac{1}{4} x^4 - \frac{1}{2} x^2 + \lambda_0 cos(2 \pi \epsilon t) x
   \end{equation}
 
-  gdzie t jest traktowane jako ''czas'' (modulacja potencjału w czasie), a $\lambda_0 > 0$ stałą dobraną tak, że dla każdego t potencjał $V_t(x)$ ma dwa lokalne minima. Taki model nazywa się asymetrycznym potencjałem podwójnej studni i zmienia się on w sposób ciągły w czasie z okresem $\frac{1}{\epsilon}$.
+  gdzie t jest czasem (modulacja potencjału w czasie), a $\lambda_0 > 0$ stałą dobraną tak, że potencjał $V_t(x)$ ma zawsze dwa lokalne minima. Taki model nazywa się asymetrycznym potencjałem podwójnej studni i zmienia się on w sposób ciągły w czasie z okresem $\frac{1}{\epsilon}$.
+
+  Sygnał periodyczny moduluje względną wysokość obu studni poencjału tak, że przez pierwszą połowę okresu głębsza jest ''prawa'' ($x>0$), a przez drugą połowę okresu -- ''lewa'' ($x<0$) studnia potencjału.
 
   Jeśli zobrazować sygnał wejściowy jako podnoszący minima potencjału, to schematycznie można przedstawić taki układ następująco:
 
@@ -34,61 +37,107 @@
 
 
 
-  \subsubsection{Układ Monostabilny - Progowy}
+  \subsubsection{Układ Progowy}
+  \label{sec:uklad_progowy}
 
-  W zastosowaniach praktycznych (wzmacnianie sygnałów) oraz symulacjach popularny jest rezonator monostabilny, progowy (układ niedynamiczny). Mechanizm jego działania polega na wysłaniu przez układ ''szpilki'' potencjału kiedy suma wymuszenia periodycznego i szumu przekroczy (wznosząco) wartość progową. Taki rezonator był badany doświadczalnie (symulacje, realizacja elektroniczna) i teoretycznie w pracy \cite{gingl_kiss_moss}. Dokładniejsza dyskusja teoretyczna rezonatora progowego była przedmiotem prac \cite{blondeau_e53} i \cite{blondeau_e55}. Widmo mocy takiego układu posiada wysokie i wąskie piki dla częstotliwości wejściowego sygnału i jej wielokrotności, stąd też jest bardzo wdzięcznym obiektem badań nad rezonansem stochastycznym. 
+  W zastosowaniach praktycznych (wzmacnianie sygnałów) oraz symulacjach popularny jest rezonator monostabilny, progowy (układ niedynamiczny). Mechanizm jego działania polega na wysłaniu przez układ ''szpilki'' potencjału kiedy suma wymuszenia periodycznego i szumu przekroczy (wznosząco) wartość progową. Taki rezonator był badany doświadczalnie (symulacje, realizacja elektroniczna) i teoretycznie w pracy \cite{gingl_kiss_moss}. Dokładniejsza dyskusja teoretyczna rezonatora progowego była przedmiotem prac \cite{blondeau_e53} i \cite{blondeau_e55}. Widmo mocy takiego układu posiada wysokie i wąskie piki dla częstotliwości wejściowego sygnału i jej wielokrotności, stąd też jest bardzo wdzięcznym obiektem badań nad rezonansem stochastycznym.
 
-  Układ zaprezentowany przez Gingla \cite{gingl_kiss_moss} oraz wyniki w nim uzyskane:
+  Sygnał wejściowy w układzie badanym przez Gingla \cite{gingl_kiss_moss} jest po prostu sumą sygnału periodycznego i szumu:
+
+  \begin{equation} \label{sr:gingl}
+    v_{in}(t) = A sin (\omega_0 t) + D \xi(t)
+  \end{equation}
+  
+  Wyniki uzyskane przez Gingla przedstawia grafika \ref{fig:graphics:gingl}. 
 
   \begin{figure}
     \includegraphics[scale=0.8]{images/gingl_1.png}
     \caption{Numeryczna reprezentacja niedynamicznego rezonansu stochastycznego. a) Sygnał koherentny, sygnał periodyczny i szum gaussowski, poniżej progu zaznaczonego linią. Odległość pomiędzy linią progu a średnią sygnału periodycznego jest równa wysokości progu. b) Przebieg czasowy impulsów odpowiadających przekraczaniu (''w górę'') progu przez sumę sygnałów. c) Znormalizowane widmo mocy przebiegu impulsów (za: Gingl, Kiss, Moss \cite{gingl_kiss_moss} )}
+    \label{fig:graphics:gingl}
   \end{figure}
 
-  Istnieją dwa sposoby budowania sygnału wyjściowego na podstawie sygnału zaszumionego w układach progowych. Pierwsza z nich produkuje pik o stałej szerokości kiedy sygnał zaszumiony gwałtownie wzrasta przekraczając próg ("rising peak"). Druga z nich produkuje pik o szerokości równej czasowi trwania impulsu (a dokładniej: czasowi przez jaki wartość sygnału przekracza wartość progową). Oba sposoby skutkują bardzo zbliżonym widmem i wprowadzają podobne (choć wynikające z innej cechy zastosowanej metody) niewielkie rozmycie piku głównego w widmie mocy.
+  Istnieją dwa sposoby budowania sygnału wyjściowego na podstawie sygnału zaszumionego w układach progowych. Pierwszy z nich produkuje pik o stałej szerokości kiedy sygnał zaszumiony gwałtownie wzrasta przekraczając próg (''rising peak''). Drugi z nich produkuje pik o szerokości równej czasowi trwania impulsu (a dokładniej: czasowi, przez jaki wartość sygnału przekracza wartość progową). Drugi sposób był przedmiotem badań w pracy \cite{blondeau_e53}, jako że posiada bardzo wdzięczną w analizie teoretycznej postać matematyczną (sygnał wyjściowy):
+
+  \begin{equation} \label{sr:gingl2}
+    v_{out}(t) = \Gamma[A sin (\omega_0 t) + D \xi(t) - \theta]
+  \end{equation}
+
+  gdzie $\theta$ jest progiem, a $\Gamma(u)$ jest funkcją Heaviside'a ($\Gamma(u) = 0$ dla $u \leq 0$, $\Gamma(u) = 1$ dla $u > 0$).
+
+  Oba sposoby skutkują bardzo zbliżonym widmem i wprowadzają podobne (choć wynikające z innej cechy zastosowanej metody) niewielkie rozmycie piku głównego w widmie mocy.
+
+  W pracy Gingla et al. zastosowano pierwszą metodę (''rising peak'') budowania sygnału wyjściowego z rezonatora.
+
+  (w tym miejscu warto wspomnieć, że) Układ opisany w pracy Chapeau, Blondeau \cite{blondeau_e53}, czyli progowy z nieliniowością typu Heaviside'a, można traktować jako model neuronu klasycznego (binarnego) z sygnałem periodycznym i szumem.
 
   \subsubsection{wzmocnienie SR przez sprzężenie}
 
-  Bardzo dobrą strategią wzmocnienia efektu SR -- czyli zwiększenia signal-to-noise ratio -- jest zbudowanie układu kilku identycznych rezonatorów, połączonych ze sobą i wymieniających sygnał. Rezonans stochastyczny w takim układzie nazywany jest ''Array Enhanced Stochastic Resonance'' (AESR) \cite{lindner_meadows} i, przy optymalnym doborze parametrów układu, jest silniejszy (w sensie wyższej maksymalnej wartości SNR) niż SR w pojedynczym rezonatorze.
+  Bardzo dobrą strategią wzmocnienia SR -- czyli zwiększenia signal-to-noise ratio -- jest zbudowanie układu kilku identycznych rezonatorów, połączonych ze sobą i wymieniających sygnał. Rezonans stochastyczny w takim układzie nazywany jest ''Array Enhanced Stochastic Resonance'' (AESR) \cite{lindner_meadows} i, przy optymalnym doborze parametrów układu, jest silniejszy (w sensie wyższej maksymalnej wartości SNR) niż SR w pojedynczym rezonatorze.
 
-  Dotychczas badano AESR i obowiązujące w takich układach reguły skalowania \cite{lindner_meadows} \cite{tanabe_shimokawa}, wpływ przesunięcia fazowego wymuszenia periodycznego (związanego z rozciągłością przestrzenną układu) \cite{ijmpb_14_8} oraz kompensację ww. przesunięcia opóźnieniem w transmisji sygnału pomiędzy rezonatorami \cite{ijmpb_23_2}. Większość dotychczasowych prac badała proste rezonatory, takie jak neurony dyskretne i inne układy progowe. Pewnym wyjątkiem jest tu praca \cite{tanabe_shimokawa}, której autorzy badali duże (tysiące rezonatorów) macierze aktywnych rotatorów \cite{wiesenfeld} \cite{pakdaman}.
+  %\begin{figure}
+  %  \includegraphics[width=140mm]{images/pending}
+  %  \caption{something}
+  %  \label{fig:graphics:blabla}
+  %\end{figure}
 
-  Wyniki uzyskane w badanych dotychczas układach (i przedstawione w cytowanych wyżej pracach) wykazywały, że zbudowanie macierzy rezonatorów istotnie wpływa na zwiększenie SNR, przy odpowiednim dobraniu parametrów układu. Interesującym zjawiskiem jest coraz mniejszy przyrost SNR w miarę rozbudowywania układu o kolejne rezonatory: nie jest to wzrost asymptotyczny do pewnej wartości progowej, a po prostu spowolnienie jego przyrostu (wykresy uzyskane w pracy \cite{lindner_meadows} wykazują podobieństwo do zależności logarytmicznej). Summa summarum wynika z tego, że optymalny przyrost SNR jest do osiągnięcia już w macierzy kilku bądź kilkunastu rezonatorów.
+  Dotychczas badano AESR głównie w układach przestrzennie rozciągłych. Zbadano m.in. obowiązujące w takich układach reguły skalowania \cite{lindner_meadows} \cite{tanabe_shimokawa}, wpływ przesunięcia fazowego wymuszenia periodycznego w poszczególnych rezonatorach (związanego z rozciągłością przestrzenną układu) \cite{ijmpb_14_8} oraz kompensację ww. przesunięcia opóźnieniem w transmisji sygnału pomiędzy rezonatorami \cite{ijmpb_23_2}. W większości dotychczasowych prac badano proste rezonatory, takie jak neurony dyskretne i inne układy progowe. Pewnym wyjątkiem jest tu praca \cite{tanabe_shimokawa}, której autorzy badali duże (tysiące rezonatorów) macierze aktywnych rotatorów \cite{wiesenfeld} \cite{pakdaman}.
+
+  Wyniki uzyskane w badanych dotychczas układach (i przedstawione w cytowanych wyżej pracach) wykazywały, że zbudowanie macierzy rezonatorów istotnie wpływa na maksymalizację SNR przy odpowiednim doborze parametrów układu.
 
   (SPRZĘŻENIE DYFUZYJNE -- WZORKI, WYNIKI)
 
   (RELACJE SKALOWANIA)
 
+  Interesującym zjawiskiem jest coraz mniejszy przyrost SNR w miarę rozbudowywania układu o kolejne rezonatory: nie jest to wzrost asymptotyczny do pewnej wartości progowej, a po prostu spowolnienie jego przyrostu (wykresy uzyskane w pracy \cite{lindner_meadows} wykazują podobieństwo do zależności logarytmicznej). Summa summarum wynika z tego, że optymalny przyrost SNR jest do osiągnięcia już w macierzy kilku bądź kilkunastu rezonatorów.
+
   Budowanie macierzy połączonych rezonatorów, jako posunięcie zorientowane na maksymalizację SNR, można uznać za jedną z metod kontroli SR.
 
-  Sprzęganie rezonatorów może się także odbywać w układach przestrzennie rozciągłych, a zatem o innym (różnica faz) sygnale periodycznym. Więcej na ten temat w dziale ~\ref{sec:przesuniecie_fazy} ''Przesunięcie Fazy''.
+%  Sprzęganie rezonatorów może się także odbywać w układach przestrzennie rozciągłych, a zatem o innym (różnica faz) sygnale periodycznym. Więcej na ten temat w dziale ~\ref{sec:przesuniecie_fazy} ''Przesunięcie Fazy''.
+
+  Ponieważ sygnały periodyczne (np. fale biegnące) rozchodzą się ze skończoną prędkością, w układach przestrzennie rozciągłych sygnały docierające do poszczególnych rezonatorów mogą być przesunięte w fazie. Więcej informacji na temat SR w takich układach zawiera rozdział ~\ref{sec:przesuniecie_fazy} ''Przesunięcie Fazy'' niniejszej pracy.
 
   \subsubsection{kontrola SR}
   
   Podobnie jak w przypadku innych układów nieliniowych badane były możliwości kontroli rezonansu stochastycznego (czyli technik maksymalizacji SR). 
 
-  W pracy Gammaitoniego i in. \cite{gammaitoni} badano układ progowy (zbudowany na Przerzutniku Schmitta) i próbowano kontrolować SR poprzez modulację progu, czyli jest to metoda kontroli bez sprzężenia zwrotnego. Największe wzmocnienie osiągnięto dla częstotliwości modulacji progu równej dwukrotności częstotliwości sygnału i różnicy faz równej $\pi/2$.
+  W pracy Gammaitoniego i in. \cite{gammaitoni} badano układ progowy (zbudowany na Przerzutniku Schmitta) i kontrolowano SR poprzez modulację progu, czyli jest to metoda kontroli bez sprzężenia zwrotnego. 
 
-  Przerzutnik Schmitta jest układem elektronicznym działającym analogicznie do dwustudni potencjału. Wyjście układu przyjmuje jedną z dwóch wartości (odpowiednik stanów) w zależności od przekroczenia (bądź nie) pewnego progu przez napięcie wejściowe. Wysłanie na wejście przerzutnika sygnału periodycznego jest prostą elektroniczną realizacją układu progowego. Modulowanie progu zadziałania jest odpowiednikiem modulowania kształtu dwustudni potencjału (''podnoszenie'' minimów ułatwiające zmianę stanu).
+  Przerzutnik Schmitta jest układem elektronicznym działającym analogicznie do bistabilnej studni potencjału. Wyjście układu przyjmuje jedną z dwóch wartości (odpowiednik stanów) w zależności od przekroczenia (bądź nie) pewnego progu przez napięcie wejściowe, co odpowiada układowi opisanemu w rozdziale \ref{sec:uklad_bistabilny} niniejszej pracy. Modulowanie progu zadziałania jest odpowiednikiem modulowania wysokości bariery potencjału pomiędzy studniami w układzie bistabilnym.
+
+  \begin{figure}
+    \includegraphics[width=100mm]{images/gammaitoni_1.png}
+    \caption{Sygnał wejściowy S(t) (środkowa krzywa) względem górnych i dolnych progów modulowanych dla czterech różnych przesunięć fazowych. Częstotliwości sygnału i modulacji progów są sobie równe $\omega_M = \omega_S$. Kolory czarny i szary oddzielają połówki cyklu działania. Strzałki wskazują najbardziej prawdopodobny moment przełączenia. Za \cite{gammaitoni}}
+    \label{fig:graphics:gammaitoni:fig1}
+  \end{figure}
+
+  \begin{figure}
+    \includegraphics[width=100mm]{images/gammaitoni_2.png}
+    \caption{To co w \ref{fig:graphics:gammaitoni:fig1}, ale dla $\omega_M = 2 \omega_S$. Za \cite{gammaitoni}}
+    \label{fig:graphics:gammaitoni:fig2}
+  \end{figure}
+
+  Największe wzmocnienie osiągnięto dla częstotliwości modulacji progu równej dwukrotności częstotliwości sygnału i różnicy faz równej $\pi/2$.
 
   W niniejszej pracy badam inną metodę kontroli rezonansu stochastycznego, poprzez maksymalizację periodyczności sygnału odbieranego od sąsiadujących w sieci neuronów.
 
   
   \subsection{Modele Neuronów Biologicznych}
   
-  Pobudzenie posiadającego układ nerwowy zwierzęcia wywołuje zmienne w czasie prądy jonowe w membranach neuronów czuciowych, które w konsekwencji wywołują potencjały czynnościowe (''szpilki'' potencjału elektrycznego) w momencie depolaryzacji membrany.
+  Pobudzenie układu nerwowego zwierzęcia wywołuje zmienne w czasie prądy jonowe w membranach neuronów czuciowych, które w konsekwencji wywołują potencjały czynnościowe (''szpilki'' potencjału elektrycznego) w momencie depolaryzacji membrany.
   
-  Modele neuronów czuciowych (sensory neuron model, SNM), podobnie jak neuronów binarnych używanych w badaniu sieci neuronowych, wykazują bistabilność, tzn. istnienie dwóch stanów stabilnych w których układ może przebywać. Podstawową różnicą jest ciągły potencjał (napięcie) SNM, co oznacza traktowanie stanów stabilnych jako zakresów (zamiast pojedynczych wartości), pomiędzy którymi układ przechodzi poprzez stany niestabilne. 
+  Modele neuronów czuciowych (sensory neuron model, SNM), podobnie jak neuronów binarnych używanych w badaniu sieci neuronowych, wykazują bistabilność, tzn. istnienie dwóch stanów stabilnych, w których układ może przebywać. Podstawową różnicą jest ciągły potencjał (napięcie) SNM, co oznacza traktowanie stanów stabilnych jako zakresów (zamiast pojedynczych wartości), pomiędzy którymi układ przechodzi poprzez stany niestabilne. 
   
   Naturalną konsekwencją ciągłego potencjału jest użycie równań różniczkowych (zamiast różnicowych, jak w neuronach binarnych) w matematycznym opisie SNM. Oprócz potencjału w wielu SNM istnieje równanie różniczkowe na drugą zmienną układu, ujemnie wpływającą na pochodną potencjału, zwaną dalej relaksacją.
   
-  Pierwszym nowoczesnym SNM który dobrze opisywał powstawanie i propagację potencjałów czynnościowych w zbadanym układzie biologicznym (tutaj: olbrzymim aksonie kałamarnicy) jest model Hodgkina-Huxley'a, za który w roku 1963 twórcy zostali uhonorowani nagrodą Nobla. Jest to model skomplikowany, o dużej ilości zmiennych, postulujący traktowanie membrany komórkowej jako obwodu elektrycznego.
+  Pierwszym nowoczesnym SNM który dobrze opisywał powstawanie i propagację potencjałów czynnościowych w układzie biologicznym (olbrzymim aksonie kałamarnicy) jest model Hodgkina-Huxleya, za który w roku 1963 twórcy zostali uhonorowani nagrodą Nobla. Jest to model skomplikowany, o dużej liczbie zmiennych, postulujący traktowanie membrany komórkowej jako obwodu elektrycznego.
 
-  \includegraphics[width=120mm]{images/hh.png}
+  \begin{figure}
+    \includegraphics[width=100mm]{images/hh.png}
+    \caption{Przedstawienie modelu Hodgkina-Huxleya, za ''Book of GENESIS'' \cite{genesis}}
+    \label{fig:graphics:genesis}
+  \end{figure}
 
-  Opis modelu H-H na podstawie ''Book of GENESIS'' \cite{genesis}, skąd także powyższa grafika.
-
-  Posługując się oznaczeniami z grafiki, w modelu Hodgkina-Huxleya $C_{m}$ pełni rolę pojemności membrany lipidowej, natomiast na łączny prąd jonowy $I_{ion}$ składają się trzy prądy: sodowy $I_{Na}$, potasowy $I_{K}$ i upływu $I_{L}$ (realizowany głównie przez jony chlorkowe).
+  Posługując się oznaczeniami z rysunku \ref{fig:graphics:genesis}, w modelu Hodgkina-Huxleya $C_{m}$ pełni rolę pojemności membrany lipidowej, natomiast na łączny prąd jonowy $I_{ion}$ składają się trzy prądy: sodowy $I_{Na}$, potasowy $I_{K}$ i upływu $I_{L}$ (realizowany głównie przez jony chlorkowe).
 
   W postaci ogólnej równanie różniczkowe opisujące taki obwód przedstawia się następująco
 
@@ -96,18 +145,18 @@
     C_{m} \frac{dV_{m}}{dt} + I_{ion} = I_{ext}
   \end{equation}
 
-  Gdzie $C_{m}$ to wspomniana już wyżej pojemność membrany, $V_{m}$ to potencjał wewnątrzkomórkowy (potencjał membrany), $I_{ion}$ to łączny prąd jonowy, a $I_{ext}$ jest przyłożonym z zewnątrz prądem.
+  gdzie $C_{m}$ to wspomniana już wyżej pojemność membrany, $V_{m}$ to potencjał wewnątrzkomórkowy (potencjał membrany), $I_{ion}$ to łączny prąd jonowy, a $I_{ext}$ jest przyłożonym z zewnątrz prądem.
 
   Konwencja w modelu H-H oznacza, że prąd jonowy i zewnętrzny mają przeciwne znaki. Przekłada się to na następujące zachowanie: dodatni prąd $I_{ext}$ będzie depolaryzował komórkę (zwiększał $V_{m}$), podczas kiedy dodatni prąd $I_{ion}$ będzie powodował nadpolaryzowację neuronu (zmniejszał $V_{m}$). Zgodnie z tą konwencją wpływ dodatnich jonów jest traktowany jako prąd ujemny, czyli odwrotnie niż klasyczne rozumienie prądu w teorii obwodów (dodatni prąd jest przepływem dodatnich ładunków). Taka konwencja dla prądów jonowych nosi nazwę \emph{konwencji fizjologów} i wynika z tego, że badanie prądów jonowych polega nie na mierzeniu prądu jonowego wewnątrz komórki (co jest eksperymentalnie bardzo trudne), tylko na pomiarze prądu przyłożonego (zewnętrznego) potrzebnego do zneutralizowania prądu jonowego.
 
   W oryginalnej pracy Hodgkin i Huxley depolaryzacja oznaczała spadek napięcia membrany. Współczesna konwencja, przyjęta także w niniejszej pracy, jest odwrotna: depolaryzacja zwiększa napięcie membrany $V_{m}$.
 
-  Choć opisywany względnie prostymi równaniami, model Hodgkina-Huxleya jest dla zastosowań symulacyjnych złożony i niezbyt praktyczny (konieczność modelowania i śledzenia każdego z prądów jonowych wraz z dobieraniem rezystancji/konduktancji każdego z kanałów). Wśród prób znalezienia modelu uproszczonego najpopularniejszy został model neuronu Fitzhugh-Nagumo.
+  Choć opisywany względnie prostymi równaniami, model Hodgkina-Huxleya jest dla zastosowań symulacyjnych złożony i niezbyt praktyczny (konieczność modelowania i śledzenia każdego z prądów jonowych wraz z dobieraniem zespolonej rezystancji każdego z kanałów). Wśród modeli uproszczonych najpopularniejszy jest model neuronu Fitzhugh-Nagumo.
 
 
   \subsubsection{Model Neuronu Fitzhugh-Nagumo}
 
-  Model Fitzhugh-Nagumo (FHN), będący podstawą tej pracy, modeluje potencjał neuronu jako układ dwóch równań różniczkowych z jedną zmienną losową. Spełnia zatem podstawowe kryterium układu nieliniowego.
+  Model Fitzhugh-Nagumo (FHN), będący podstawą niniejszej pracy, modeluje potencjał neuronu jako układ dwóch równań różniczkowych z jedną zmienną losową:
 
   \begin{equation}
     \frac{dv}{dt} = v - v^3 - \omega + I_{ext}
@@ -130,15 +179,18 @@
     \frac{d \omega}{dt} = v - d \omega - [b + r sin(\beta t)]
   \end{equation}
 
-  (W DOTYCHCZASOWYCH PRACACH SZUM SKORELOWANY)
+  Szum używany pierwotnie w systemach bistabilnych $\xi(t)$ jest białym szumem gaussowskim o zerowej średniej, nieskorelowanym $\langle \xi(t) \xi(s) \rangle\ = 2 D \delta (t-s)$. W pracy Longtina,  dla możliwości sterowania czasem korelacji szumu $\tau_c = \lambda^{-1}$, został on zastąpiony przez $\eta(t)$, szumem skorelowany generowany w procesie Ornsteina-Uhlenbecka:
 
-  (REFERAT O ZAKRESIE STOSOWALNOŚCI PARAMETRÓW)
+  \begin{equation} \label{eq:eta}
+    \frac{d \eta}{dt} = -\lambda \eta(t) + \lambda \xi(t)
+  \end{equation}
 
+  (REFERAT O ZAKRESIE STOSOWALNOŚCI PARAMETRÓW?)
   
 
   \subsubsection{FHN-przenaszalność elementów (Longtin)}
 
-  Równania \ref{eq:v}, \ref{eq:w} zawierają sygnał periodyczny zawarty w dynamice relaksacji, natomiast szum (element stochastyczny) w dynamice potencjału. Oryginalnym powodem takiego rozmieszczenia składowych sygnału zewnętrznego była łatwość porównania modelu stochastycznego z modelem deterministycznym (bez szumu) badanego w pracy Alexander \emph{et al.} \cite{alexander}. W pracy tej ściśle wykazano \cite{longtin}, że układ równań \ref{eq:v}, \ref{eq:w} jest równoważny postaci:
+  Równania \ref{eq:v}, \ref{eq:w} zawierają sygnał periodyczny zawarty w dynamice relaksacji, natomiast szum (element stochastyczny) w dynamice potencjału. Oryginalnym powodem takiego rozmieszczenia składowych sygnału zewnętrznego była łatwość porównania modelu stochastycznego z modelem deterministycznym (bez szumu) badanym w pracy Alexander \emph{et al.} \cite{alexander}. W pracy tej ściśle wykazano \cite{longtin}, że układ równań \ref{eq:v}, \ref{eq:w} jest równoważny układowi w postaci:
 
   \begin{equation}
     \epsilon \frac{dv}{dt} = v(v-a)(1-v)- \omega + A sin(\beta t) + \xi(t)
@@ -156,11 +208,11 @@
 
   (WIĘCEJ CYTOWAŃ)
 
-  W swojej pracy \cite{longtin} Andre Longtin dobrał zakres parametrów do powyższych równań oraz otrzymał bardzo obiecujące wyniki. Znalezione przezeń interwały czasowe pomiędzy ''szpilkami'' potencjału wyjściowego (Inter-Spike Interval ISIH) były podobne do danych zebranych empirycznie podczas badania włókien nerwów słuchowych kota.
+  W pracy \cite{longtin} Longtin dobrał zakres parametrów powyższych równań oraz otrzymał bardzo obiecujące wyniki. Znaleziony przezeń histogram interwałów czasowych pomiędzy ''szpilkami'' potencjału wyjściowego (Inter-Spike Interval Histogram, ISIH) był podobny do danych zebranych empirycznie podczas badania włókien nerwów słuchowych kota.
 
   \begin{figure}
     \includegraphics[width=80mm]{images/longtin_fig1b.png}
-    \caption{ISIH we włóknach nerwów słuchowych kota, pobudzanych sygnałem o częstotliwości 800Hz i natężeniu 60dB}
+    \caption{ISIH we włóknach nerwów słuchowych kota, pobudzanych sygnałem o częstotliwości 800Hz i natężeniu 60dB. Za \cite{longtin}}
   \end{figure}
 
   Wyniki symulacji modelu FHN w pracy Longtina, z dokładnością do parametrów (częstotliwość sygnału periodycznego), okazały się bardzo zbliżone.
@@ -176,7 +228,7 @@
 
   Zachowanie modelu FHN w wariancie deterministycznym, tj. bez szumu, było przedmiotem pracy \cite{alexander}
 
-  (ZREFEROWAĆ)
+  (ZREFEROWAĆ? WYRZUCIĆ PODROZDZIAŁ?)
 
   \subsubsection{FHN-SR (Longtin)}
 
@@ -192,37 +244,50 @@
   \subsubsection{Przesunięcie Fazy}
   \label{sec:przesuniecie_fazy}
 
-  Macierze układów przestrzennie rozciągłych odbierają sygnał (zewnętrzny periodyczny) przesunięty w fazie odpowiednio do odległości między elementami. Wpływ rozciągłości przestrzennej (i tym samym przesunięcia fazowego pobudzenia) na rezonans stochastyczny badany był m.in. w pracy \cite{ijmpb_14_8}. Badania te potwierdziły, że w układzie przestrzennie rozciągłym bez dodatkowej kompensacji przesunięć fazowych dochodzi do obniżenia SNR (pogarszania rezonansu stochastycznego).
+  Sprzężone rezonatory stochastyczne, tworzące układy przestrzennie rozciągłe, odbierają sygnał (np. w postaci fali biegnącej) przesunięty w fazie odpowiednio do odległości między elementami. Wpływ rozciągłości przestrzennej (i tym samym przesunięcia fazowego pobudzenia) na rezonans stochastyczny badany był m.in. w pracy \cite{ijmpb_14_8}. Badania te potwierdziły, że w układzie przestrzennie rozciągłym bez dodatkowej kompensacji przesunięć fazowych dochodzi do obniżenia SNR (pogarszania rezonansu stochastycznego) w poszczególnych rezonatorach.
 
-  Jednym ze sposobów kompensacji efektu rozciągłości przestrzennej jest opóźnienie w przekazywaniu sygnałów pomiędzy elementami macierzy (rezonatorami) dobrane tak, aby równoważyło różnicę faz. Badania nad macierzami prostych rezonatorów \cite{ijmpb_23_2} wykazały, że można tak dobrać opóźnienie w transmisji pomiędzy rezonatorami aby macierz wzmacniała sygnał periodyczny mocniej niż pojedynczy rezonator. Tym samym można układ przestrzennie rozciągły i z opóźnieniami doprowadzić do, po odpowiednim doborze parametrów, AESR.
-
+  Jednym ze sposobów kompensacji efektu rozciągłości przestrzennej jest opóźnienie w przekazywaniu sygnałów pomiędzy elementami (rezonatorami) dobrane tak, aby równoważyło różnicę faz. Badania nad macierzami prostych rezonatorów \cite{ijmpb_23_2} wykazały, że można tak dobrać opóźnienie w transmisji pomiędzy rezonatorami, aby macierz wzmacniała sygnał periodyczny mocniej niż pojedynczy rezonator. Tym samym można w układzie przestrzennie rozciągłym i z opóźnieniami zaobserwować AESR, po odpowiednim doborze parametrów.
 
   (OBRAZEK)
+
+  \subsubsection{Przestrzennie Rozciągły Układ Neuronów FHN}
+  \label{sec:przesuniecie_fazy}
 
   W modelu FHN, po uwzględnieniu potencjału czynnościowego od połączonych neuronów, równanie na potencjał przedstawia się następująco:
 
   \begin{equation} \label{eq:v2}
-    \epsilon \frac{dv}{dt} = v(v-a)(1-v)- \omega + A sin(\beta t) + \xi(t) + sv_{ext}(t)
+    \epsilon \frac{dv}{dt} = v(v-a)(1-v)- \omega + A sin(\beta t) + \eta(t) + sv_{ext}(t)
   \end{equation}
 
   \begin{equation} \label{eq:w2}
     \frac{d \omega}{dt} = v - d \omega - [b + r sin(\beta t + \phi)]
   \end{equation}
 
-  W powyższych równaniach $\phi$ to przesunięcie fazowe pobudzenia periodycznego, natomiast $v_{ext}$ to łączny potencjał od sąsiadów (pomnożony przez ''czułość'' s):
+  W powyższych równaniach $\phi$ to przesunięcie fazowe pobudzenia periodycznego w danym neuronie, natomiast $v_{ext}$ to łączny potencjał od sąsiadów (pomnożony przez ''czułość'' s):
 
   \begin{equation}
-    v_{ext}(t) = \displaystyle\sum\limits_{}^n v_{n}(t-\tau_{n})
+    v_{ext}(t) = \displaystyle\sum\limits_{n} \widetilde{v_{n}}(t-\tau_{n})
   \end{equation}
 
-  Gdzie $v_{n}(t-\tau_{n})$ to potencjał n-tego sąsiada w chwili $(t-\tau_{n})$, a $(\tau_{n})$ jest opóźnieniem w transmicji określonym dla każdej pary neuronów.
+  Gdzie $\widetilde{v_{n}}(t-\tau_{n})$ to przefiltrowany (patrz niżej) potencjał n-tego sąsiada w chwili $t-\tau_{n}$, a $\tau_{n}$ jest opóźnieniem w transmisji potencjału czynnościowego określonym dla każdej pary neuronów.
 
+  Potencjał przefiltrowany $\widetilde{v_{n}}(t)$, odbierany przez połączone neurony, jest liczony na podstawie ''oryginalnego'' potencjału $v_{n}(t)$ po zaaplikowaniu prostej transformacji progowej zerującej niskie wartości nie kwalifikujące się jako szpilki:
+
+  \begin{equation}
+    \tilde{v}(t) = 
+    \begin{cases}
+      0 & \text{dla } v < \gamma \\
+      v(t) & \text{dla } v \geq \gamma 
+    \end{cases}
+  \end{equation}
+
+  (próg $\gamma = 0.4$)
 
   \subsubsection{Rola Opóźnień w Biologii}
   odruchy, koszt.
   
   \subsubsection{Zagadnienia Badane w Pracy}
 
-  Tematem pracy jest badanie zachowania macierzy neuronów FHN. Jak na signal-to-noise ratio wpływa przesunięcie fazowe sygnału periodycznego (rozciągłość przestrzenna układu) oraz parametry wymiany (siła połączenia, opóźnienie transmisji). Analiza czy wyniki osiągnięte dla modeli neuronów biologicznych są zgodne z wynikami dla prostych, progowych rezonatorów.
+  Tematem pracy jest badanie zachowania macierzy neuronów FHN. Za pomocą symulacji numerycznej badałem, jak na signal-to-noise ratio wpływa przesunięcie fazowe sygnału periodycznego (rozciągłość przestrzenna układu) oraz parametry wymiany (siła połączenia, opóźnienie transmisji). Ważnym elementem analizy wyników symulacji było porównanie wyników osiągniętych dla modeli neuronów biologicznych (tj. będących przedmiotem niniejszej pracy) z wynikami dla prostych, progowych rezonatorów.
 
   Badałem układ kilku FHN połączonych w jednowymiarowy sznur. Dla uniknięcia sprzężenia zwrotnego  transmisja sygnału pomiędzy neuronami odbywała się w jedną stronę.
