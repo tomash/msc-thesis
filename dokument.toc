@@ -20,6 +20,7 @@
 \contentsline {subsubsection}{\numberline {2.1.2}Obliczanie Signal-to-Noise Ratio}{21}{subsubsection.2.1.2}
 \contentsline {subsection}{\numberline {2.2}Pojedynczy Neuron}{21}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{22}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{22}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Macierz Dw\IeC {\'o}ch Neuron\IeC {\'o}w}{22}{subsubsection.2.4.1}
-\contentsline {section}{Literatura}{28}{figure.caption.16}
+\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{27}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Macierz Dw\IeC {\'o}ch Neuron\IeC {\'o}w}{27}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}Macierz 9 Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{27}{subsubsection.2.4.2}
+\contentsline {section}{Literatura}{30}{figure.caption.17}

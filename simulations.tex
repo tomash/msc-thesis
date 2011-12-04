@@ -59,7 +59,7 @@
 
   Ważnym elementem tego etapu badań było dobranie nowej wartości skalowania szumu D. Dotychczasowa wartość, czyli 1E-5, powodowała maksymalizację SNR w pojedynczym neuronie, ale w macierzach neuronów powoduje tłumienie wpływu sygnałów odebranych od połączonych neuronów (przesterowanie).
 
-  Po wielu symulacjach z różnymi zakresami parametrów (patrz też wykres \ref{fig:graphics:snr_c_d_3d}) ustaliłem wartość w okolicach $D=2E{-6}$ jako pozwalającą zaobserwować SR w pojedynczym neuronie jak i obserwować wyraźne zwiększanie SNR w wyniku odbierania sygnału od połączonych neuronów. Dla potwierdzenia tej hipotezy dalsze symulacje prowadzone były dla wartości D w zakresie od $D=1E{-6}$ do $D=1E{-5}$.
+  Po wielu symulacjach z różnymi zakresami parametrów (patrz też wykres \ref{fig:graphics:snr_c_d_3d}) ustaliłem wartość D w okolicach $D=5E{-6}$ jako pozwalającą zaobserwować SR w pojedynczym neuronie jak i obserwować wyraźne zwiększanie SNR w wyniku odbierania sygnału od połączonych neuronów. Dla potwierdzenia tej hipotezy dalsze symulacje prowadzone były dla wartości D w zakresie od $D=1E{-6}$ do $D=2E{-5}$. Ważna jest też czułość na sygnał odebrany od połączonego neuronu, ustaliłem ją na poziomie 0.03 (czterokrotnie niższym niż skalowanie sygnału periodycznego).
 
   \begin{figure}
     \includegraphics[width=120mm]{images/pending}
@@ -68,6 +68,12 @@
   \end{figure}
 
   Zaobserwowane przebiegi czasowe były zgodne ze spodziewanym analitycznie wynikiem: z każdym kolejnym neuronem w łańcuchu następował wzrost SNR (do wartości granicznej około 2000) ze względu na wzrost prawdopodobieństwa wzbudzenia w przypadku wzbudzenia neuronu sąsiedniego.
+
+  \begin{figure}
+    \includegraphics[width=120mm]{images/pending}
+    \caption{Układ kilku 9 neuronów rozciągły przestrzennie o przesunięciu fazowym $\phi_i = 0.111 T i, \Delta \phi = 0.111 T$ i z opóźnieniem transmisji dobranym do kompensowania rozciągłości przestrzennej $c = \Delta \phi$. Wzrost SNR zgodnie z ''kierunkiem'' przekazywania sygnału jest maksymalny, do wartości granicznej około 1600. SNR liczony na podstawie nienormalizowanego widma mocy. 262144 ($2^{18}$) kroków iteracji dla każdego zestawu parametrów.}
+    \label{fig:graphics:sim:2010_10_03}
+  \end{figure}
 
   Na rysunku \ref{fig:graphics:sim:2010_10_03} można zaobserwować ciekawe i wymagające dalszych badań zjawisko. Otóż po osiągnięciu przez neuron i-ty regularności bliskiej maksymalnej ($SNR \approx 1500$), w neuronie i-1, do którego przekazywany jest sygnał, następował wyraźny spadek SNR. Wynika z tego, że zbyt periodyczny sygnał wejściowy przesterowuje neuron i tym samym wywołuje suboptymalny SR.
 
@@ -99,7 +105,7 @@
   \begin{figure}
     \includegraphics[width=120mm]{images/pending}
     \caption{Układ kilku 9 neuronów rozciągły przestrzennie o przesunięciu fazowym $\phi_i = 0.111 T i, \Delta \phi = 0.111 T$ i z opóźnieniem transmisji dobranym do kompensowania rozciągłości przestrzennej $c = \Delta \phi$. Wzrost SNR zgodnie z ''kierunkiem'' przekazywania sygnału jest maksymalny, do wartości granicznej około 1600. SNR liczony na podstawie nienormalizowanego widma mocy. 262144 ($2^{18}$) kroków iteracji dla każdego zestawu parametrów.}
-    \label{fig:graphics:sim:2010_10_03}
+    \label{fig:graphics:sim:2010_10_03b}
   \end{figure}
 
   Na rysunku \ref{fig:graphics:sim:2010_10_03} można zaobserwować 
