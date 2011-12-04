@@ -6,20 +6,20 @@
 \contentsline {subsubsection}{\numberline {1.1.3}wzmocnienie SR przez sprz\IeC {\k e}\IeC {\.z}enie}{5}{subsubsection.1.1.3}
 \contentsline {subsubsection}{\numberline {1.1.4}kontrola SR}{7}{subsubsection.1.1.4}
 \contentsline {subsection}{\numberline {1.2}Modele Neuron\IeC {\'o}w Biologicznych}{9}{subsection.1.2}
-\contentsline {subsubsection}{\numberline {1.2.1}Model Neuronu Fitzhugh-Nagumo}{11}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {1.2.2}FHN-przenaszalno\IeC {\'s}\IeC {\'c} element\IeC {\'o}w (Longtin)}{12}{subsubsection.1.2.2}
-\contentsline {subsubsection}{\numberline {1.2.3}FHN-progowo\IeC {\'s}\IeC {\'c}, wzmocnienie szumu}{12}{subsubsection.1.2.3}
-\contentsline {subsubsection}{\numberline {1.2.4}ew. FHN-wariant bez szumu i bez period., go\IeC {\l }y}{13}{subsubsection.1.2.4}
-\contentsline {subsubsection}{\numberline {1.2.5}FHN-SR (Longtin)}{14}{subsubsection.1.2.5}
-\contentsline {subsection}{\numberline {1.3}Pami\IeC {\k e}\IeC {\'c} i Op\IeC {\'o}\IeC {\'z}nienie}{14}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1}Przesuni\IeC {\k e}cie Fazy}{14}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}Przestrzennie Rozci\IeC {\k a}g\IeC {\l }y Uk\IeC {\l }ad Neuron\IeC {\'o}w FHN}{15}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}Rola Op\IeC {\'o}\IeC {\'z}nie\IeC {\'n} w Biologii}{16}{subsubsection.1.3.3}
-\contentsline {subsubsection}{\numberline {1.3.4}Zagadnienia Badane w Pracy}{16}{subsubsection.1.3.4}
-\contentsline {section}{\numberline {2}Symulacje Numeryczne}{17}{section.2}
-\contentsline {subsection}{\numberline {2.1}Oprogramowanie}{17}{subsection.2.1}
-\contentsline {subsection}{\numberline {2.2}Pojedynczy Neuron}{17}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{17}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{20}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Macierz Dw\IeC {\'o}ch Neuron\IeC {\'o}w}{20}{subsubsection.2.4.1}
-\contentsline {section}{Literatura}{24}{figure.caption.13}
+\contentsline {subsubsection}{\numberline {1.2.1}Model Neuronu Fitzhugh-Nagumo}{12}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {1.2.2}Przekszta\IeC {\l }cenia modelu FHN}{13}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.3}Zachowanie progowe i wzmacnianie szumu w modelu FHN}{13}{subsubsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.4}Rezonans Stochastyczny w macierzach rezonator\IeC {\'o}w ci\IeC {\k a}g\IeC {\l }ych}{15}{subsubsection.1.2.4}
+\contentsline {subsection}{\numberline {1.3}Pami\IeC {\k e}\IeC {\'c} i Op\IeC {\'o}\IeC {\'z}nienie}{16}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {1.3.1}Przesuni\IeC {\k e}cie Fazy}{16}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {1.3.2}Przestrzennie Rozci\IeC {\k a}g\IeC {\l }y Uk\IeC {\l }ad Neuron\IeC {\'o}w FHN}{18}{subsubsection.1.3.2}
+\contentsline {subsubsection}{\numberline {1.3.3}Zagadnienia Badane w Pracy}{20}{subsubsection.1.3.3}
+\contentsline {section}{\numberline {2}Symulacje Numeryczne}{21}{section.2}
+\contentsline {subsection}{\numberline {2.1}Oprogramowanie}{21}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Obliczanie Widma Mocy}{21}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Obliczanie Signal-to-Noise Ratio}{21}{subsubsection.2.1.2}
+\contentsline {subsection}{\numberline {2.2}Pojedynczy Neuron}{21}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{22}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{22}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Macierz Dw\IeC {\'o}ch Neuron\IeC {\'o}w}{22}{subsubsection.2.4.1}
+\contentsline {section}{Literatura}{28}{figure.caption.16}

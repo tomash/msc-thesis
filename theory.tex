@@ -23,17 +23,19 @@
 
   Sygnał periodyczny moduluje względną wysokość obu studni poencjału tak, że przez pierwszą połowę okresu głębsza jest ''prawa'' ($x>0$), a przez drugą połowę okresu -- ''lewa'' ($x<0$) studnia potencjału.
 
-  Jeśli zobrazować sygnał wejściowy jako podnoszący minima potencjału, to schematycznie można przedstawić taki układ następująco:
+  Jeśli zobrazować sygnał wejściowy jako podnoszący minima potencjału, to schematycznie można przedstawić taki układ następująco (rys. \ref{fig:graphics:double_well}).
 
   \begin{figure}
     \includegraphics[width=80mm]{images/sr.jpg}
     \caption{obrazowe przedstawienie rezonansu stochastycznego w podwójnej studni potencjału}
+    \label{fig:graphics:double_well}
   \end{figure}
 
+  Na podstawie badań takiego układu bistabilnego zaobserwowano, że optymalny rezonans stochastyczny, czyli dwa ''przejścia'' pomiędzy studniami na jeden okres modulacji periodycznej, można opisać ilościowo jako zrównanie się czasu Kramersa (średni czas przebywania w jednej studni; odwrotność współczynnika Kramersa, czyli częstotliwości ''przejścia'') z połową okresu sygnału periodycznego \cite{fauve}:
 
-  Ze względu na prostą postać analityczną, zależność SNR od szumu jest także znajdowalna w sposób analityczny:
-
-  Wykreślone na podstawie powyższego wzoru wykresy SNR odpowiadają danym zebranym w symulacjach i przedstawiają się następująco:
+  \begin{equation} \label{sr:kramers}
+    t_K \approx \frac{T}{2}
+  \end{equation}  
 
 
 
@@ -71,28 +73,25 @@
   (w tym miejscu warto wspomnieć, że) Układ opisany w pracy Chapeau, Blondeau \cite{blondeau_e53}, czyli progowy z nieliniowością typu Heaviside'a, można traktować jako model neuronu klasycznego (binarnego) z sygnałem periodycznym i szumem.
 
   \subsubsection{wzmocnienie SR przez sprzężenie}
+  \label{sec:wzmocnienie_przez_sprzezenie}
 
   Bardzo dobrą strategią wzmocnienia SR -- czyli zwiększenia signal-to-noise ratio -- jest zbudowanie układu kilku identycznych rezonatorów, połączonych ze sobą i wymieniających sygnał. Rezonans stochastyczny w takim układzie nazywany jest ''Array Enhanced Stochastic Resonance'' (AESR) \cite{lindner_meadows} i, przy optymalnym doborze parametrów układu, jest silniejszy (w sensie wyższej maksymalnej wartości SNR) niż SR w pojedynczym rezonatorze.
-
-  %\begin{figure}
-  %  \includegraphics[width=140mm]{images/pending}
-  %  \caption{something}
-  %  \label{fig:graphics:blabla}
-  %\end{figure}
 
   Dotychczas badano AESR głównie w układach przestrzennie rozciągłych. Zbadano m.in. obowiązujące w takich układach reguły skalowania \cite{lindner_meadows} \cite{tanabe_shimokawa}, wpływ przesunięcia fazowego wymuszenia periodycznego w poszczególnych rezonatorach (związanego z rozciągłością przestrzenną układu) \cite{ijmpb_14_8} oraz kompensację ww. przesunięcia opóźnieniem w transmisji sygnału pomiędzy rezonatorami \cite{ijmpb_23_2}. W większości dotychczasowych prac badano proste rezonatory, takie jak neurony dyskretne i inne układy progowe. Pewnym wyjątkiem jest tu praca \cite{tanabe_shimokawa}, której autorzy badali duże (tysiące rezonatorów) macierze aktywnych rotatorów \cite{wiesenfeld} \cite{pakdaman}.
 
   Wyniki uzyskane w badanych dotychczas układach (i przedstawione w cytowanych wyżej pracach) wykazywały, że zbudowanie macierzy rezonatorów istotnie wpływa na maksymalizację SNR przy odpowiednim doborze parametrów układu.
 
-  (SPRZĘŻENIE DYFUZYJNE -- WZORKI, WYNIKI)
+  %(SPRZĘŻENIE DYFUZYJNE -- WZORKI, WYNIKI)
 
-  (RELACJE SKALOWANIA)
+  Interesującym zjawiskiem jest coraz mniejszy przyrost SNR w miarę rozbudowywania układu o kolejne rezonatory: nie jest to wzrost asymptotyczny do pewnej wartości progowej, a po prostu spowolnienie jego przyrostu (wykresy uzyskane w pracy \cite{lindner_meadows} wykazują podobieństwo do zależności logarytmicznej). Summa summarum wynika z tego, że optymalny przyrost SNR jest do osiągnięcia już w macierzy kilku bądź kilkunastu rezonatorów. Wyniki Lindnera et. al. przedstawia rysunek ~\ref{fig:graphics:lindner_meadows}.
 
-  Interesującym zjawiskiem jest coraz mniejszy przyrost SNR w miarę rozbudowywania układu o kolejne rezonatory: nie jest to wzrost asymptotyczny do pewnej wartości progowej, a po prostu spowolnienie jego przyrostu (wykresy uzyskane w pracy \cite{lindner_meadows} wykazują podobieństwo do zależności logarytmicznej). Summa summarum wynika z tego, że optymalny przyrost SNR jest do osiągnięcia już w macierzy kilku bądź kilkunastu rezonatorów.
+  \begin{figure}
+    \includegraphics[width=120mm]{images/lindner_meadows.png}
+    \caption{Fig. 4 z pracy Lindnera et al. \cite{lindner_meadows}. Relacje skalowania: znormalizowanego szumu oraz SNR w miarę przyrostu liczby połączonych w macierz rezonatorów.}
+    \label{fig:graphics:lindner_meadows}
+  \end{figure}
 
   Budowanie macierzy połączonych rezonatorów, jako posunięcie zorientowane na maksymalizację SNR, można uznać za jedną z metod kontroli SR.
-
-%  Sprzęganie rezonatorów może się także odbywać w układach przestrzennie rozciągłych, a zatem o innym (różnica faz) sygnale periodycznym. Więcej na ten temat w dziale ~\ref{sec:przesuniecie_fazy} ''Przesunięcie Fazy''.
 
   Ponieważ sygnały periodyczne (np. fale biegnące) rozchodzą się ze skończoną prędkością, w układach przestrzennie rozciągłych sygnały docierające do poszczególnych rezonatorów mogą być przesunięte w fazie. Więcej informacji na temat SR w takich układach zawiera rozdział ~\ref{sec:przesuniecie_fazy} ''Przesunięcie Fazy'' niniejszej pracy.
 
@@ -119,7 +118,6 @@
   Największe wzmocnienie osiągnięto dla częstotliwości modulacji progu równej dwukrotności częstotliwości sygnału i różnicy faz równej $\pi/2$.
 
   W niniejszej pracy badam inną metodę kontroli rezonansu stochastycznego, poprzez maksymalizację periodyczności sygnału odbieranego od sąsiadujących w sieci neuronów.
-
   
   \subsection{Modele Neuronów Biologicznych}
   
@@ -179,16 +177,16 @@
     \frac{d \omega}{dt} = v - d \omega - [b + r sin(\beta t)]
   \end{equation}
 
-  Szum używany pierwotnie w systemach bistabilnych $\xi(t)$ jest białym szumem gaussowskim o zerowej średniej, nieskorelowanym $\langle \xi(t) \xi(s) \rangle\ = 2 D \delta (t-s)$. W pracy Longtina,  dla możliwości sterowania czasem korelacji szumu $\tau_c = \lambda^{-1}$, został on zastąpiony przez $\eta(t)$, szumem skorelowany generowany w procesie Ornsteina-Uhlenbecka:
+  Szum używany pierwotnie w systemach bistabilnych $\xi(t)$ jest białym szumem gaussowskim o zerowej średniej, nieskorelowanym $\langle \xi(t) \xi(s) \rangle\ = 2 D \delta (t-s)$. W pracy Longtina,  dla możliwości sterowania czasem korelacji szumu $\tau_c = \lambda^{-1}$, został on zastąpiony przez $\eta(t)$, szum skorelowany generowany w procesie Ornsteina-Uhlenbecka:
 
   \begin{equation} \label{eq:eta}
     \frac{d \eta}{dt} = -\lambda \eta(t) + \lambda \xi(t)
   \end{equation}
 
-  (REFERAT O ZAKRESIE STOSOWALNOŚCI PARAMETRÓW?)
+  %(REFERAT O ZAKRESIE STOSOWALNOŚCI PARAMETRÓW?)
   
 
-  \subsubsection{FHN-przenaszalność elementów (Longtin)}
+  \subsubsection{Przekształcenia modelu FHN}
 
   Równania \ref{eq:v}, \ref{eq:w} zawierają sygnał periodyczny zawarty w dynamice relaksacji, natomiast szum (element stochastyczny) w dynamice potencjału. Oryginalnym powodem takiego rozmieszczenia składowych sygnału zewnętrznego była łatwość porównania modelu stochastycznego z modelem deterministycznym (bez szumu) badanym w pracy Alexander \emph{et al.} \cite{alexander}. W pracy tej ściśle wykazano \cite{longtin}, że układ równań \ref{eq:v}, \ref{eq:w} jest równoważny układowi w postaci:
 
@@ -202,11 +200,11 @@
 
   tak długo, jak długo spełniona jest nierówność $\beta < \frac{1}{\epsilon}$.
 
-  \subsubsection{FHN-progowość, wzmocnienie szumu}
+  \subsubsection{Zachowanie progowe i wzmacnianie szumu w modelu FHN}
 
   Jedną z najważniejszych cech modelu Fitzhugh-Nagumo jest jego progowe zachowanie, tzn. gwałtowny wzrost potencjału czynnościowego jeśli przekroczy on pewną wartość graniczną. W połączeniu z szumem oraz (słabym) sygnałem periodycznym model FHN pozwala zaobserwować rezonans stochastyczny, z wyraźnymi pikami w widmie mocy dla częstotliwości wymuszenia periodycznego i jej wielokrotności.
 
-  (WIĘCEJ CYTOWAŃ)
+  %(WIĘCEJ CYTOWAŃ)
 
   W pracy \cite{longtin} Longtin dobrał zakres parametrów powyższych równań oraz otrzymał bardzo obiecujące wyniki. Znaleziony przezeń histogram interwałów czasowych pomiędzy ''szpilkami'' potencjału wyjściowego (Inter-Spike Interval Histogram, ISIH) był podobny do danych zebranych empirycznie podczas badania włókien nerwów słuchowych kota.
 
@@ -215,7 +213,7 @@
     \caption{ISIH we włóknach nerwów słuchowych kota, pobudzanych sygnałem o częstotliwości 800Hz i natężeniu 60dB. Za \cite{longtin}}
   \end{figure}
 
-  Wyniki symulacji modelu FHN w pracy Longtina, z dokładnością do parametrów (częstotliwość sygnału periodycznego), okazały się bardzo zbliżone.
+  Wyniki symulacji modelu FHN w pracy Longtina, z dokładnością do parametrów (częstotliwość sygnału periodycznego), okazały się bardzo zbliżone do danych empirycznych zebranych podczas badania organizmów żywych (por. wykresy).
 
   \begin{figure}
     \includegraphics[width=80mm]{images/longtin_fig5a.png}
@@ -223,35 +221,58 @@
   \end{figure}  
 
 
+  %\subsubsection{ew. FHN-wariant bez szumu i bez period., goły}
 
-  \subsubsection{ew. FHN-wariant bez szumu i bez period., goły}
+  %Zachowanie modelu FHN w wariancie deterministycznym, tj. bez szumu, było przedmiotem pracy \cite{alexander}
 
-  Zachowanie modelu FHN w wariancie deterministycznym, tj. bez szumu, było przedmiotem pracy \cite{alexander}
+  %(ZREFEROWAĆ? WYRZUCIĆ PODROZDZIAŁ?)
 
-  (ZREFEROWAĆ? WYRZUCIĆ PODROZDZIAŁ?)
+  \subsubsection{Rezonans Stochastyczny w macierzach rezonatorów ciągłych}
 
-  \subsubsection{FHN-SR (Longtin)}
+  Podobnie jak proste rezonatory (patrz rozdział \ref{sec:wzmocnienie_przez_sprzezenie}), także rezonatory ciągłe (w tym neurony Fitzhugh-Nagumo) łączono w macierz, celem zbadania dynamiki takiego układu i maksymalizacji periodyczności sygnału wyjściowego. 
 
+  Ekstensywne badania nad macierzami ciągłych rezonatorów zostały przeprowadzone przez Tanabe \emph{et al.} i opisane w pracy \cite{tanabe_shimokawa}. Badane były duże (kilka tysięcy elementów) macierze aktywnych rotatorów (AR), jako prostszych w analizie teoretycznej i zarazem posiadających podobną dynamikę co modele neuronów Fitzhugh-Nagumo, Morris-Lecar i Hodgkin-Huxley. Równanie opisujące dynamikę AR zostało zaczerpnięte z pracy \cite{shinomoto} i rozszerzone o wpływ rotatorów połączonych:
 
-  Tanabe, Shinokawa: Psys. Rev. E60, 2182-2185 (1999.08)
-  
+  \begin{equation}
+    \frac{d \phi_i}{dt} = 1 - a sin(\phi_i) + \frac{G}{N} \sum\limits_{j=1}^{N} sin(\phi_j - \phi_i) + A sin(\Omega t) + \sigma \xi_i
+  \end{equation}
+
+  Gdzie $\phi_i$ jest kątem na jednostkowym kole, $a > 1$, $G \ge 0$ jest siłą połączenia, $\sigma$ jest natężeniem szumu gaussowskiego $\xi_i$. Podobnie jak we wszystkich pracach zorientowanych na badanie SR, rozważano wyłącznie podprogowe poziomy wymuszenia periodycznego $sin(\Omega t)$.
+
+  Rozpoczęto symulacje od bardzo małych wartości $\sigma$, najmniejszych wystarczających do zaobserwowania ''szpilek''. Wyniki obrazuje rysunek \ref{fig:graphics:tanabe}. Co ciekawe, dla małego poziomu szumu, jeśli już następował ''strzał'' (gwałtowny wzrost wartości), to następował on w całej sieci jednocześnie - był synchroniczny w całej sieci, natomiast interwały pomiędzy strzałami były nieregularne. Zwiększanie poziomu szumu co prawda zwiększało regularność ''strzałów'' (regularne interwały), ale za to redukowało ich synchroniczność.
+
+  Konkluzją pracy było poszukanie źródeł tak złożonych odpowiedzi w dynamice pojedynczego rezonatora. Istotnie, na poziomie nawet pojedynczego rezonatora, można wyodrębnić trzy zakresy dynamiki rezonansu stochastycznego. Dla niskich poziomów szumu rezonator ''strzela'' sporadycznie i nieregularnie, natomiast jego strzały bardzo zależą od czynników zewnętrznych - np. maksimum sygnału periodycznego. Dla wysokich poziomów szumu ''strzały'' rezonatora są częste i nieregularne, mało zależne od czynników zewnętrznych, aż do przypadku skrajnego: rezonatora bez pobudzenia periodycznego, ''strzelającego'' od samego szumu. Pomiędzy tymi dwoma zakresami istnieje trzeci, zakres umiarkowanego szumu, w którym ''strzały'' są regularne i dość częste, i w którym rezonator można traktować jako \emph{wewnętrzne} oscylatory perturbowane szumem. Zbadana przez Tanabe \emph{et al.} dynamika dużych macierzy rezonatorów odzwierciedla te zakresy i charakterystyczne w nich zachowania.
+
+  \begin{figure}
+    \includegraphics[width=80mm]{images/tanabe.png}
+    \caption{Lewa kolumna: globalna aktywność macierzy AR złożonych z 10 000 rotatorów. Oś rzędnych przedstawia czas (ms), oś odciętych współczynnik ($ms^{-1}$) zdefiniowany jako ułamek elementów przekraczających wartość $3 \pi / 2$ w zakresie 0.1ms. Prawa kolumna: przepływ rozwiązania równiania Fokkera-Plancka przez wartość $3 \pi / 2$. Poziom szumu $\sigma$ rośnie ''z góry na dół''. Za \cite{tanabe_shimokawa}}
+    \label{fig:graphics:tanabe}
+  \end{figure}
+
   \subsection{Pamięć i Opóźnienie}
   
-  Dotychczasowe badania (symulacje) nad układami neuronów według modelu FHN, choć dotyczyły układów neuronów połączonych (wymieniających sygnały, a dokładnie potencjał czynnościowy) nie brały pod uwagę wpływu opóźnienia w przekazywaniu sygnałów. Tymczasem w układach biologicznych prędkość propagacji potencjału przez akson, wynosząca od 0.5 m/s (receptory ciepła) 120 m/s (wrzecionko nerwowo-mięśniowe), oznacza niezerowe i często bardzo znaczące opóźnienia w przekazywaniu potencjałów czynnościowych pomiędzy neuronami.
+  Dotychczasowe badania (symulacje) nad układami neuronów według modelu FHN, choć dotyczyły układów neuronów połączonych (wymieniających sygnały, a dokładnie potencjał czynnościowy) nie brały pod uwagę wpływu opóźnienia w przekazywaniu sygnałów. Tymczasem w układach biologicznych prędkość propagacji potencjału przez akson, wynosząca od 0.5 m/s (receptory ciepła) 120 m/s (wrzecionko nerwowo-mięśniowe), oznacza niezerowe i często bardzo znaczące opóźnienia w przekazywaniu potencjałów czynnościowych pomiędzy neuronami. \cite{kandel}
 
-  (CITATION NEEDED)
+  Istnieją organizmy, w których opóźnienia neuronalne są nie tylko celowe i jako mechanizm usprawniający działanie układu nerwowego per se, ale też pełnią rolę kluczową w rozpoznawaniu sygnałów. Układy nerwowe ptaków i ssaków zawierają neurony wykrywające koincydencję (coincidence detector neurons), linie opóźniające i używają międzyauralnych różnic czasowych (Interaural Time Difference, ITD) do określenia kierunku źródła sygnału dźwiękowego. Badania przeprowadzone na sowach i opisane w pracy Pena \emph{et al.} \cite{pena} wykazują, że opóźnienia aksonalne pełnią kluczową rolę w określaniu ITD i tym samym różnic fazy, pozwalając określić kierunek nadejścia fali dźwiękowej.
+
+  Niniejsza praca skupia się na innym zastosowaniu opóźnień aksonalnych, do maksymalizacji wzmocnienia sygnału wejściowego, niemniej jest inspirowana ich nieprzypadkową obecnością w układach biologicznych.
+  
 
   \subsubsection{Przesunięcie Fazy}
   \label{sec:przesuniecie_fazy}
 
-  Sprzężone rezonatory stochastyczne, tworzące układy przestrzennie rozciągłe, odbierają sygnał (np. w postaci fali biegnącej) przesunięty w fazie odpowiednio do odległości między elementami. Wpływ rozciągłości przestrzennej (i tym samym przesunięcia fazowego pobudzenia) na rezonans stochastyczny badany był m.in. w pracy \cite{ijmpb_14_8}. Badania te potwierdziły, że w układzie przestrzennie rozciągłym bez dodatkowej kompensacji przesunięć fazowych dochodzi do obniżenia SNR (pogarszania rezonansu stochastycznego) w poszczególnych rezonatorach.
+  Sprzężone rezonatory stochastyczne, tworzące układy przestrzennie rozciągłe, odbierają sygnał (np. w postaci fali biegnącej) przesunięty w fazie odpowiednio do odległości między elementami. Wpływ rozciągłości przestrzennej, i tym samym przesunięcia fazowego pobudzenia, na rezonans stochastyczny badany był m.in. w pracy \cite{ijmpb_14_8}. Badania te potwierdziły, że w układzie przestrzennie rozciągłym bez dodatkowej kompensacji przesunięć fazowych dochodzi do obniżenia SNR (pogarszania rezonansu stochastycznego) w poszczególnych rezonatorach.
 
-  Jednym ze sposobów kompensacji efektu rozciągłości przestrzennej jest opóźnienie w przekazywaniu sygnałów pomiędzy elementami (rezonatorami) dobrane tak, aby równoważyło różnicę faz. Badania nad macierzami prostych rezonatorów \cite{ijmpb_23_2} wykazały, że można tak dobrać opóźnienie w transmisji pomiędzy rezonatorami, aby macierz wzmacniała sygnał periodyczny mocniej niż pojedynczy rezonator. Tym samym można w układzie przestrzennie rozciągłym i z opóźnieniami zaobserwować AESR, po odpowiednim doborze parametrów.
+  Jednym ze sposobów kompensacji efektu rozciągłości przestrzennej jest opóźnienie w przekazywaniu sygnałów pomiędzy elementami (rezonatorami) dobrane tak, aby równoważyło różnicę faz. Badania nad macierzami prostych rezonatorów \cite{ijmpb_23_2} wykazały, że można tak dobrać opóźnienie w transmisji pomiędzy rezonatorami, aby macierz wzmacniała sygnał periodyczny mocniej niż pojedynczy rezonator. Tym samym można w układzie przestrzennie rozciągłym i z opóźnieniami zaobserwować AESR, po odpowiednim doborze parametrów. Wyniki uzyskane w pracy \cite{ijmpb_23_2} przedstawia rysunek \ref{fig:graphics:krawiecki_jezo}.
 
-  (OBRAZEK)
+  \begin{figure}
+    \includegraphics[width=120mm]{images/krawiecki_jezo_1.png}
+    \caption{Rys. 1. z pracy \cite{ijmpb_23_2}. Wykresy SNR w zależności od $\tau$ (czas opóźnienia) i D (skalowanie szumu $\eta$. Łańcuch $N=128$ rezonatorów progowych odbierających falę biegnącą, częstotliwość fali $T_s = 128$. Skalowanie wektora falowego $k=\frac{2\pi}{\lambda}$ (a), (d) $\lambda = 2$, (b), (e) $\lambda = 4$, (c), (f) $\lambda = 8$. Lewa kolumna - wyniki symulacji numerycznej, prawa kolumna - wyniki obliczeń teoretycznych}
+    \label{fig:graphics:krawiecki_jezo}
+  \end{figure}
 
   \subsubsection{Przestrzennie Rozciągły Układ Neuronów FHN}
-  \label{sec:przesuniecie_fazy}
+  \label{sec:przestrzennie_rozciagly_fhn}
 
   W modelu FHN, po uwzględnieniu potencjału czynnościowego od połączonych neuronów, równanie na potencjał przedstawia się następująco:
 
@@ -282,9 +303,6 @@
   \end{equation}
 
   (próg $\gamma = 0.4$)
-
-  \subsubsection{Rola Opóźnień w Biologii}
-  odruchy, koszt.
   
   \subsubsection{Zagadnienia Badane w Pracy}
 
