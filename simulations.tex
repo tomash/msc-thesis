@@ -1,23 +1,35 @@
   \section{Symulacje Numeryczne}
   
-  (SZCZEGÓŁY TECHNICZNE / LICZBOWE?)
-  
   
   \subsection{Oprogramowanie}
 
   Do oprogramowania symulacji wybrałem język Java, jako oferujący dobrą wydajność w obliczeniach numerycznych, z dojrzałym ekosystemem narzędzi i bibliotek oraz wieloplatformowy. Oskryptowanie zestawów symulacji (''przemiatanie'' po parametrach, wiele powtórzeń dla uśrednienia wyników) napisałem w języku Groovy.
   
-  Kod źródłowy jest dostępny jako open-source i dostępny w serwisie GitHub pod adresem http://github.com/tomash/zzzzz
+  Kod źródłowy jest dostępny jako open-source, na licencji MIT, i dostępny w serwisie GitHub pod adresem http://github.com/tomash/fhneurotic
 
   \subsubsection{Obliczanie Widma Mocy}
 
+  Widmo mocy obliczane było z użyciem biblioteki JTransforms, używając szybkiej transformaty Fouriera (FFT). Ponieważ dane wejściowe, tj. wartości potencjału $v$ w zależności od czasu, były rzeczywiste, zastosowana była jednowymiarowa szybka transformata Fouriera dla danych rzeczywistych, zgodna z kanonicznym wzorem
+
   \begin{equation}
-    |P| = F(x)^2
+    P_k = \sum\limits^{N-1}_{n=0} v_n e^{-i2\pi \frac{k}{N} n}
   \end{equation}
+
+  ale algorytm liczył pół elementów rzeczywistej transformaty, ponieważ druga połowa spełniała warunek symetrii
+
+  \begin{equation}
+    P_{N-k} = X^{*}_{k}
+  \end{equation}
+
+  Biblioteka JTransforms do liczenia FFT danych rzeczywistych stosuje algorytmy Split-Radix oraz Mixed-Radix. Dla optymalizacji liczenia FFT, ilość kroków symulacji (wartości $v$ poddawanych transformacie) w symulacjach jest potęgą 2.
 
   \subsubsection{Obliczanie Signal-to-Noise Ratio}
 
   Stosunek sygnał-szum obliczałem poprzez podzielenie wartości lokalnie najwyższej (tj. piku głównego) przez sumę 10 wartości sąsiadujących (5 niższych, 5 wyższych).
+
+  \begin{equation}
+    SNR = \frac{P_i}{\sum\limits^{i-1}_{j=i-5} P_j + \sum\limits^{i+5}_{j=i+1} P_j}
+  \end{equation}  
   
   \subsection{Pojedynczy Neuron}
   
