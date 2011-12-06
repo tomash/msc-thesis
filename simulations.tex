@@ -5,45 +5,55 @@
 
   Do oprogramowania symulacji wybrałem język Java, jako oferujący dobrą wydajność w obliczeniach numerycznych, z dojrzałym ekosystemem narzędzi i bibliotek oraz wieloplatformowy. Oskryptowanie zestawów symulacji (''przemiatanie'' po parametrach, wiele powtórzeń dla uśrednienia wyników) napisałem w języku Groovy.
   
-  Kod źródłowy jest dostępny jako open-source, na licencji MIT, i dostępny w serwisie GitHub pod adresem http://github.com/tomash/fhneurotic
+  Kod źródłowy jest dostępny jako open-source, na licencji MIT, i dostępny w serwisie GitHub pod adresem http://github.com/tomash/fhneurotic .
 
   \subsubsection{Obliczanie Widma Mocy}
 
   Widmo mocy obliczane było z użyciem biblioteki JTransforms, używając szybkiej transformaty Fouriera (FFT). Ponieważ dane wejściowe, tj. wartości potencjału $v$ w zależności od czasu, były rzeczywiste, zastosowana była jednowymiarowa szybka transformata Fouriera dla danych rzeczywistych, zgodna z kanonicznym wzorem
 
   \begin{equation}
-    P_k = \sum\limits^{N-1}_{n=0} v_n e^{-i2\pi \frac{k}{N} n}
+    F_k = \sum\limits^{N-1}_{n=0} v_n e^{-i2\pi \frac{k}{N} n}
   \end{equation}
 
   ale algorytm liczył pół elementów rzeczywistej transformaty, ponieważ druga połowa spełniała warunek symetrii
 
   \begin{equation}
-    P_{N-k} = X^{*}_{k}
+    F_{N-k} = X^{*}_{k}
   \end{equation}
 
   Biblioteka JTransforms do liczenia FFT danych rzeczywistych stosuje algorytmy Split-Radix oraz Mixed-Radix. Dla optymalizacji liczenia FFT, ilość kroków symulacji (wartości $v$ poddawanych transformacie) w symulacjach jest potęgą 2.
 
-  \subsubsection{Obliczanie Signal-to-Noise Ratio}
-
-  Stosunek sygnał-szum obliczałem poprzez podzielenie wartości lokalnie najwyższej (tj. piku głównego) przez sumę 10 wartości sąsiadujących (5 niższych, 5 wyższych).
+  Widmo mocy (widmowa gęstość energii?) było obliczane zgodnie z kanoniczną postacią, jako kwadrat modułu  transformaty Fouriera
 
   \begin{equation}
-    SNR = \frac{P_i}{\sum\limits^{i-1}_{j=i-5} P_j + \sum\limits^{i+5}_{j=i+1} P_j}
+    S_k = |F_k|^2
+  \end{equation}
+
+  \subsubsection{Obliczanie Signal-to-Noise Ratio}
+
+  Stosunek sygnał-szum obliczałem poprzez podzielenie wartości lokalnie najwyższej (tj. piku głównego) przez średnią 10 wartości sąsiadujących (5 niższych, 5 wyższych).
+
+  \begin{equation}
+    SNR = \frac{P_i}{\frac{1}{10} \left ( \sum\limits^{i-1}_{j=i-5} P_j + \sum\limits^{i+5}_{j=i+1} P_j \right )}
   \end{equation}  
   
   \subsection{Pojedynczy Neuron}
   
   Przed przystąpieniem do rozwiązywania układów wieloneuronowych rozpocząłem symulacje od zbadania pojedynczego neuronu, jak opisywany w pracy A. Longtin \cite{longtin}. Dzięki temu mogłem sprawdzić zarówno poprawność własnego oprogramowania, jak i model oraz zestaw parametrów opisane w wyżej wymienionej publikacji.
   
-  Stochastyczne równania różniczkowe składające się na szum Ornsteina-Uhlenbecka całkowałem według metody opisanej w pracy Mannella, Palleschi \cite{mannella}. Po rozwiązaniu przedstawionego tam równania, przyrost szumu $\eta (t)$ liczony był następująco:
+  Stochastyczne równania różniczkowe składające się na szum Ornsteina-Uhlenbecka całkowałem według metody opisanej w pracy Mannella, Palleschi \cite{mannella}. Po rozwiązaniu przedstawionego tam równania, szumu $\eta (t)$ liczony był następująco:
 
-  \begin{equation} \label{eq:deta}
-    d\eta(t) = dt(\lambda \xi_1(t) - \lambda \eta(t)) + \lambda \xi_2(t) \sqrt{dt}
+  \begin{equation} \label{eq:deta:final}
+    \Delta \eta(t) = \Delta t(\lambda \xi_1(t) - \lambda \eta(t)) + \lambda \xi_2(t) \sqrt{\Delta t}
   \end{equation}
 
-  Gdzie $\xi_n(t)$ to szum gaussowski w chwili t.
+  \begin{equation} \label{eq:eta:final}
+    \eta(t) = \eta(t-1) + \Delta \eta(t)
+  \end{equation}
+
+  Gdzie $\xi_1(t)$, $\xi_2(t)$ to dwa niezależne szumy gaussowskie w chwili t.
   
-  Przebieg czasowy potencjału pojedynczego neuronu, z zestawem parametrów jak w \cite{longtin}.
+  Wyniki symulacji dla pojedynczego neuronu, z zestawem parametrów jak w \cite{longtin}, przedstawiają rysunki \ref{graphics:sym1v} (przebieg czasowy) i \ref{graphics:sym1fft} (widmo mocy).
   
   \begin{figure}
     \begin{center}
@@ -52,7 +62,7 @@
         \resizebox{100mm}{!}{\includegraphics[width=140mm]{images/1neuron/2}} \\
       \end{tabular}
       \caption{Odtworzenie wyników Longtina. 32768 kroków iteracji, $\Delta t = 1/256 s$ (łączny czas symulacji 128s), $t_c=0.01$, $q=1.0$, $\epsilon = 0.005$, $D=1E{-5}$}
-      \label{sym1v}
+      \label{graphics:sym1v}
     \end{center}
   \end{figure}
 
@@ -60,8 +70,8 @@
 
   \begin{figure}
     \includegraphics[width=140mm]{images/1neuron/3}
-    \caption{FFT odtworzenie wyników longtina}
-    \label{sym1fft}
+    \caption{widmo mocy: odtworzenie wyników longtina}
+    \label{graphics:sym1fft}
   \end{figure}
 
   
