@@ -1,6 +1,6 @@
-  \section{Podstawy Teoretyczne}
+  \section{Podstawy teoretyczne}
   
-  \subsection{Rezonans Stochastyczny}
+  \subsection{Rezonans stochastyczny}
   
   Rezonans stochastyczny (SR) jest zjawiskiem występującym (między innymi, na potrzeby niniejszej pracy) w układach pobudzanych co najmniej dwoma sygnałami, z których jeden jest periodyczny, drugi natomiast jest szumem. O występowaniu rezonansu stochastycznego mówimy, kiedy nałożenie sygnału periodycznego i niezerowego szumu na wejściu układu skutkuje wysoką periodycznością sygnału wyjściowego.
   
@@ -10,18 +10,18 @@
 
   Istnieje wiele układów z rezonansem stochastycznym, od podwójnej studni potencjału, przez układy progowe po układy równań różniczkowych.
 
-  \subsubsection{Układ Bistabilny}
+  \subsubsection{Układ bistabilny}
   \label{sec:uklad_bistabilny}
 
-  Najprostszym w rozpatrywaniu analitycznym rezonatorem stochastycznym jest cząstka poruszająca się w  podwójnej studni potencjału, opisywanej równaniem
+  Najprostszym w rozpatrywaniu analitycznym rezonatorem stochastycznym jest cząstka poruszająca się w  podwójnej studni potencjału, opisywanej równaniem \cite{mcnamara}
 
   \begin{equation} \label{sr:1}
-    V_t(x) = \frac{1}{4} x^4 - \frac{1}{2} x^2 + \lambda_0 cos(2 \pi \epsilon t) x
+    V_t(x) = \frac{b}{4} x^4 - \frac{a}{2} x^2 + \lambda_0 x cos(\beta t)
   \end{equation}
 
-  gdzie t jest czasem (modulacja potencjału w czasie), a $\lambda_0 > 0$ stałą dobraną tak, że potencjał $V_t(x)$ ma zawsze dwa lokalne minima. Taki model nazywa się asymetrycznym potencjałem podwójnej studni i zmienia się on w sposób ciągły w czasie z okresem $\frac{1}{\epsilon}$.
+  gdzie t jest czasem (modulacja potencjału w czasie), a $\lambda_0 > 0$ amplitudą modulacji dobraną tak, że potencjał $V_t(x)$ ma zawsze dwa lokalne minima. Taki model nazywa się asymetrycznym potencjałem podwójnej studni i zmienia się on w sposób ciągły w czasie z okresem $T_0 = \frac{2 \pi}{\beta}$.
 
-  Sygnał periodyczny moduluje względną wysokość obu studni poencjału tak, że przez pierwszą połowę okresu głębsza jest ''prawa'' ($x>0$), a przez drugą połowę okresu -- ''lewa'' ($x<0$) studnia potencjału.
+  Sygnał periodyczny moduluje względną wysokość obu studni poencjału, tak że przez pierwszą połowę okresu głębsza jest ''prawa'' ($x>0$), a przez drugą połowę okresu -- ''lewa'' ($x<0$) studnia potencjału.
 
   Jeśli zobrazować sygnał wejściowy jako podnoszący minima potencjału, to schematycznie można przedstawić taki układ następująco (rys. \ref{fig:graphics:double_well}).
 
@@ -31,18 +31,93 @@
     \label{fig:graphics:double_well}
   \end{figure}
 
-  Na podstawie badań takiego układu bistabilnego zaobserwowano, że optymalny rezonans stochastyczny, czyli dwa ''przejścia'' pomiędzy studniami na jeden okres modulacji periodycznej, można opisać ilościowo jako zrównanie się czasu Kramersa (średni czas przebywania w jednej studni; odwrotność współczynnika Kramersa, czyli częstotliwości ''przejścia'') z połową okresu sygnału periodycznego \cite{fauve}:
+  W przypadku silnego tłumienia równanie ruchu cząstki w modulowanym potencjale bistabilnym w obecności szumu ma postać
+
+  \begin{equation} \label{sr:2}
+    \dot x = - \partial_x V_t(x) + \xi (t)
+  \end{equation}
+
+  czyli przy danym w ~\ref{sr:1} potencjale ruch cząstki opisuje równanie Langevina
+
+  \begin{equation} \label{sr:3}
+    \dot x = -bx ^3 + ax + \lambda_0 cos(\beta t) + \xi (t)
+  \end{equation}
+
+  gdzie $\xi (t)$ jest białym (nieskorelowanym) szumem gaussowskim o natężeniu D
+
+  \begin{equation} \label{sr:noise_correlation}
+    \langle \xi(t) \xi(s) \rangle\ = 2 D \delta (t-s)
+  \end{equation}
+
+  Prawdopodobieństwo (na jednostkę czasu) że, przy braku sygnału periodycznego, cząstka znajdująca się w jednej ze studni potencjału przeskoczy do drugiej pod wpływem szumu dane jest wzorem Kramersa (tzw. Kramers rate)
+
+  \begin{equation} \label{sr:kramers_rate}
+    t^{-1}_K (D) = r_K (D) = 2 \pi \sqrt{|V''(x_{min})| |V''(x_{max})|} e^{-\frac{\Delta V}{2D}}
+  \end{equation}
+
+  gdzie $x_{min}$ i $x_{max}$ oznaczają położenia odpowiednio lokalnego minimum i maksimum potencjału, a $\Delta V = V(x_{max}) - V(x_{min})$ jest wysokością bariery potencjału.
+
+  Dodanie sygnału periodycznego moduluje prawdopodobieństwo \ref{sr:kramers_rate} tak, że przez pierwszą połowę okresu większe jest prawdopodobieństwo przeskoku ze studni lewej (w tej połowie okresu płytszej) do prawej (w tej połowie okresu głębszej), a przez drugą połowę - odwrotnie.
+
+  Jako sygnał wyjściowy przyjmuje się sygnał o wartościach dyskretnych odzwierciedlających w której ze studni potencjału przebywa cząstka:
+
+    \begin{equation}
+    y(t) = 
+    \begin{cases}
+      -1 & \text{dla } x(t) < 0 \\
+      -1 & \text{dla } x(t) > 0 
+    \end{cases}
+  \end{equation}
+
+  Niech $\langle y(t) \rangle$ oznacza sygnał $y(t)$ uśredniony po wielu okresach sygnału periodycznego. Widmo mocy takiego sygnału
+
+  \begin{equation} \label{sr:power_spectrum}
+    S(\beta) = |Y(\beta)|^2 = |\int_{-T}^T \langle y(t) \rangle e^{-i \beta t} dt |^2
+  \end{equation}
+
+  składa się z szerokiego tła szumowego oraz pików dla częstości $\beta$ %i jej nieparzystych wielokrotności%
+  , co obrazuje rys. \ref{fig:graphics:mcnamara8}.
+
+  \begin{figure}
+    \includegraphics[width=100mm]{images/mcnamara_8.png}
+    \caption{Widmo mocy $S(f)$ cząstki w podwójnej studni potencjału. Częstotliwość modulacji $f_s = \frac{\beta}{2 \pi} = 0.195$, $a=32$, $\Delta V = 256$, $\lambda_0 = 8$, $D = 256$ i $\Delta t = 0.005$. Sygnał teoretyczny (krzyżyk) i wyniki symulacji różnią się o około 1dB. (za: McNamara, Wiesenfeld \cite{mcnamara})}
+    \label{fig:graphics:mcnamara8}
+  \end{figure}
+
+  Stosunek sygnału do szumu
+
+  \begin{equation} \label{sr:snr}
+    SNR = 10 log \frac{S(\beta)}{S_N(\beta)}
+  \end{equation}
+
+  (gdzie $S_N(\beta)$ oznacza wartość tła szumowego w widmie mocy w okolicach wartości sygnału periodycznego) ma maksimum jako funkcja nateżęnia szumu SNR(D). Patrz też rys. \ref{fig:graphics:mcnamara9b}
+
+  \begin{figure}
+    \includegraphics[width=100mm]{images/mcnamara_9b.png}
+    \caption{SNR (oznaczony tutaj jako $R_{expt}$) jako funkcja wariancji szumu D. Parametry takie jak użyte do rys. \ref{fig:graphics:mcnamara8} (za: McNamara, Wiesenfeld \cite{mcnamara})}
+    \label{fig:graphics:mcnamara9b}
+  \end{figure}
+
+  Maksimum SNR odpowiada w przybliżeniu takiemu natężeniu szumu, że dwa ''przejścia'' pomiędzy studniami przypadają na jeden okres modulacji periodycznej. Odpowiada to zrównaniu się czasu Kramersa (średni czas przebywania w jednej studni; odwrotność współczynnika Kramersa $r_K$) z połową okresu sygnału periodycznego \cite{fauve}:
 
   \begin{equation} \label{sr:kramers}
-    t_K \approx \frac{T}{2}
+    t_K = r_{K}^{-1} \approx \frac{T_0}{2}
   \end{equation}  
 
+  Dokładniejsze obliczenia w przybliżeniu adiabatycznym (założenie częstości sygnału periodycznego o wiele mniejszej od czasu relaksacji układu $\beta \ll \tau^{-1}_r$) pozwalają uzyskać dokładniejszy wzór na SNR (za \cite{mcnamara}):
+
+  \begin{equation} \label{sr:snr_theoretical}
+    SNR(D) = \frac{\sqrt{2}a \lambda^{2}_0 c^2}{D^2} e^{-\frac{\Delta V}{2D}}
+  \end{equation}
+
+  Wzór ten dobrze opisuje wyniki symulacji numerycznych, przedstawionych na rys. \ref{fig:graphics:mcnamara9b}.
 
 
-  \subsubsection{Układ Progowy}
+
+  \subsubsection{Układ progowy}
   \label{sec:uklad_progowy}
 
-  W zastosowaniach praktycznych (wzmacnianie sygnałów) oraz symulacjach popularny jest rezonator monostabilny, progowy (układ niedynamiczny). Mechanizm jego działania polega na wysłaniu przez układ ''szpilki'' potencjału kiedy suma wymuszenia periodycznego i szumu przekroczy (wznosząco) wartość progową. Taki rezonator był badany doświadczalnie (symulacje, realizacja elektroniczna) i teoretycznie w pracy \cite{gingl_kiss_moss}. Dokładniejsza dyskusja teoretyczna rezonatora progowego była przedmiotem prac \cite{blondeau_e53} i \cite{blondeau_e55}. Widmo mocy takiego układu posiada wysokie i wąskie piki dla częstotliwości wejściowego sygnału i jej wielokrotności, stąd też jest bardzo częstym przedmiotem badań nad rezonansem stochastycznym.
+  W zastosowaniach praktycznych (wzmacnianie sygnałów) oraz symulacjach popularny jest rezonator monostabilny, progowy (układ niedynamiczny). Mechanizm jego działania polega na wysłaniu przez układ ''szpilki'' potencjału kiedy suma sygnału periodycznego i szumu przekroczy (wznosząco) wartość progową. Taki rezonator był badany doświadczalnie (symulacje, realizacja elektroniczna) i teoretycznie w pracy \cite{gingl_kiss_moss}. Widmo mocy takiego układu posiada wysokie i wąskie piki dla częstotliwości wejściowego sygnału i jej wszystkich (parzystych i nieparzystych) wielokrotności.
 
   Sygnał wejściowy w układzie badanym przez Gingla \cite{gingl_kiss_moss} jest po prostu sumą sygnału periodycznego i szumu:
 
@@ -50,15 +125,34 @@
     v_{in}(t) = A sin (\omega_0 t) + D \xi(t)
   \end{equation}
   
-  Wyniki uzyskane przez Gingla przedstawia grafika \ref{fig:graphics:gingl}. 
+  Wyniki uzyskane przez Gingla \emph{et al.} przedstawia rys. \ref{fig:graphics:gingl}. 
 
   \begin{figure}
-    \includegraphics[scale=0.8]{images/gingl_1.png}
+    \includegraphics[width=100mm]{images/gingl_1.png}
     \caption{Numeryczna reprezentacja niedynamicznego rezonansu stochastycznego. a) Sygnał koherentny, sygnał periodyczny i szum gaussowski, poniżej progu zaznaczonego linią. Odległość pomiędzy linią progu a średnią sygnału periodycznego jest równa wysokości progu. b) Przebieg czasowy impulsów odpowiadających przekraczaniu (''w górę'') progu przez sumę sygnałów. c) Znormalizowane widmo mocy przebiegu impulsów (za: Gingl, Kiss, Moss \cite{gingl_kiss_moss} )}
     \label{fig:graphics:gingl}
   \end{figure}
 
-  Istnieją dwa sposoby budowania sygnału wyjściowego na podstawie sygnału zaszumionego w układach progowych. Pierwszy z nich produkuje pik o stałej szerokości kiedy sygnał zaszumiony gwałtownie wzrasta przekraczając próg (''rising peak''). Drugi z nich produkuje pik o szerokości równej czasowi trwania impulsu (a dokładniej: czasowi, przez jaki wartość sygnału przekracza wartość progową). Drugi sposób był przedmiotem badań w pracy \cite{blondeau_e53}, jako że posiada wygodną w analizie teoretycznej postać matematyczną (sygnał wyjściowy):
+  \begin{figure}
+    \includegraphics[width=120mm]{images/gingl_2.png}
+    \caption{Wyniki eksperymentów z szumem białym przeprowadzonych przez Gingla \emph{et al.} (punkty) oraz krzywe obliczone teoretycznie (linie przerywane) na układzie progowym. Sygnał wejściowy: $\lambda_0 = 0.1V$, $f_0 = 38 Hz \text{i } 305 Hz $, szum biały, $U_t = 0.45V$. $\triangle$ i $\times$ 305 Hz, $\circ$ i $\Box$ 38Hz. Linie przerywane: krzywe dopasowane według \ref{sr:gingl:snr}. (za: Gingl, Kiss, Moss \cite{gingl_kiss_moss} )}
+    \label{fig:graphics:gingl2}
+  \end{figure}
+
+  Przed przystąpieniem do eksperymentów Gingl \emph{et al.} wyprowadzili teoretyczny wzór na SNR układu przy spełnieniu pewnych założeń (przybliżenie adiabatyczne, sygnał periodyczny wolnozmienny i słabszy niż średnia kwadratowa szumu), korzystając z twierdzenia Campbella i wzoru Rice'a (na przejścia przez zero) \cite{rice}
+
+  \begin{equation} \label{sr:gingl:snr}
+    SNR = \nu_0 (\lambda_0 U_t)^2 \sigma ^{-4} exp [-(U_t/{\sigma})^2 / 2]
+  \end{equation}
+
+  W powyższym wzorze $\lambda_0$ jest amplitudą sygnału periodycznego, $\nu_0$ średnią częstotliwością jednokierunkowych przejść przez zero (obliczoną z wzoru Rice'a), a $\sigma$ jest średnią kwadratową szumu.
+
+  Pomimo różnic w badanym układzie, kształt krzywej $SNR(\sigma)$ oraz wyniki eksperymentów przeprowadzonych przez Gingla \emph{et al.} odpowiadają kształtowi tej krzywej dla układu w studni bistabilnej, patrz rys. \ref{fig:graphics:gingl2}.
+
+
+  Rezonator badany przez Gingla \emph{et al.} generuje na wyjściu wąski pik o stałej szerokości kiedy sygnał zaszumiony gwałtownie wzrasta przekraczając próg (''rising peak'').
+
+  Nieco inny rezonator progowy badany był w pracach \cite{blondeau_e53} i \cite{blondeau_e55}. Układ ten produkuje pik o szerokości równej czasowi trwania impulsu (a dokładniej: czasowi, przez jaki wartość sygnału przekracza wartość progową). Sygnał wyjściowy z takiego rezonatora ma postać ma postać:
 
   \begin{equation} \label{sr:gingl2}
     v_{out}(t) = \Gamma[A sin (\omega_0 t) + D \xi(t) - \theta]
