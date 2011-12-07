@@ -18,10 +18,14 @@
 \contentsline {subsection}{\numberline {2.1}Oprogramowanie}{27}{subsection.2.1}
 \contentsline {subsubsection}{\numberline {2.1.1}Obliczanie Widma Mocy}{27}{subsubsection.2.1.1}
 \contentsline {subsubsection}{\numberline {2.1.2}Obliczanie Signal-to-Noise Ratio}{28}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Pojedynczy Neuron}{28}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{28}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{31}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Macierz Dw\IeC {\'o}ch Neuron\IeC {\'o}w}{31}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}Macierz 9 Neuron\IeC {\'o}w Z Op\IeC {\'o}\IeC {\'z}nieniem}{34}{subsubsection.2.4.2}
-\contentsline {section}{\numberline {3}Wnioski}{37}{section.3}
-\contentsline {section}{Literatura}{38}{section.3}
+\contentsline {subsection}{\numberline {2.2}Parametry symulacji}{28}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}Pojedynczy Neuron}{28}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{29}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}Metodologia}{29}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}\IeC {\L }a\IeC {\'n}cuch 9 neuron\IeC {\'o}w}{32}{subsubsection.2.4.2}
+\contentsline {subsection}{\numberline {2.5}Uk\IeC {\l }ady neuron\IeC {\'o}w z op\IeC {\'o}\IeC {\'z}nieniem}{32}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}Metodologia}{32}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}\IeC {\L }a\IeC {\'n}cuch 2 neuron\IeC {\'o}w}{36}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}\IeC {\L }a\IeC {\'n}cuch 9 neuron\IeC {\'o}w z op\IeC {\'o}\IeC {\'z}nieniem}{36}{subsubsection.2.5.3}
+\contentsline {section}{\numberline {3}Wnioski}{40}{section.3}
+\contentsline {section}{Literatura}{41}{section.3}

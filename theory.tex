@@ -295,11 +295,11 @@
   Równania \ref{eq:v}, \ref{eq:w} zawierają sygnał periodyczny zawarty w dynamice relaksacji, natomiast szum (element stochastyczny) w dynamice potencjału. Oryginalnym powodem takiego rozmieszczenia składowych sygnału zewnętrznego była łatwość porównania modelu stochastycznego z modelem deterministycznym (bez szumu) badanym w pracy Alexander \emph{et al.} \cite{alexander}. W pracy tej ściśle wykazano \cite{longtin}, że układ równań (\ref{eq:v}, \ref{eq:w}) jest równoważny układowi w postaci:
 
   \begin{equation}
-    \epsilon \frac{dv}{dt} = v(v-a)(1-v)- \omega + A sin(\beta t) + \xi(t)
+    \epsilon \frac{dv}{dt} = v(v-a)(1-v)- \omega + r sin(\beta t) + \xi(t)
   \end{equation}
 
   \begin{equation}
-    \frac{d \omega}{dt} = v - d \omega - b
+    \frac{d \omega}{dt} = v - d \cdot \omega - b
   \end{equation}
 
   tak długo, jak długo spełniona jest nierówność $\beta < \frac{1}{\epsilon}$.
@@ -409,7 +409,7 @@
   W modelu FHN, po uwzględnieniu potencjału czynnościowego od połączonych neuronów, równanie na potencjał przedstawia się następująco:
 
   \begin{equation} \label{eq:v2}
-    \epsilon \frac{dv_i}{dt} = v_i(v_i-a)(1-v_i)- \omega + A sin(\beta t) + \eta_i(t) + sv_{ext}(t)
+    \epsilon \frac{dv_i}{dt} = v_i(v_i-a)(1-v_i)- \omega  + \eta_i(t) + sv_{ext}(t)
   \end{equation}
 
   \begin{equation} \label{eq:w2}
@@ -418,7 +418,7 @@
 
   W powyższych równaniach $\phi$ to przesunięcie fazowe pobudzenia periodycznego w danym neuronie, natomiast $v_{ext}$ to łączny potencjał od sąsiadów (pomnożony przez ''czułość'' s):
 
-  \begin{equation}
+  \begin{equation} \label{eq:vext1}
     v_{ext}(t) = \displaystyle\sum\limits_{n=1}^{k_i} \widetilde{v_{n}}(t-\tau_{n})
   \end{equation}
 
