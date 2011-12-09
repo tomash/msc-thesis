@@ -1,3 +1,18 @@
-  \section{Wnioski}
+\section{Wnioski}
+
+Układy badane w niniejszej pracy to łańcuchy neuronów FitzHugh-Nagumo z przesunięciami fazowymi (modelującymi wpływ rozciągłości przestrzennej układu) sygnału periodycznego i opóźnieniem czasowym w transmisji sygnału między połączonymi elementami. W szczególności badano łańcuchy bez opóźnień transmisji i przesunięć fazowych, łańcuchy bez opóźnień i z przesunięciami fazowymi oraz kompensacyjny efekt opóźnień w łańcuchach z przesunięciami fazowymi.
+
+Opracowano oprogramowanie, w szczególności implementujące metodę rozwiązywania stochastycznych równań różniczkowych do modelowania ww. układów neuronów FitzHugh-Nagumo.
+
+W zależności od cech badanego układu zaobserwowano różne zjawiska.
+\begin{enumerate}
+  \item Wzmocnienie SR w układach bez opóźnień i przesunięć fazowych, będące analogiem zjawiska zwanego Array-Enhanced Stochastic Resonance.
+  \item Osłabieie SR wskutek przesunięć fazowych przy braku odpowiednio dobranych opóźnień.
+  \item Zjawisko wzmocnienia SR po wprowadzeniu odpowiednio dobranych opóźnień do układu przestrzennie rozciągłego, dobranych tak, by skompensować różnice faz pomiędzy oddziałującymi elementami.
+\end{enumerate}
   
-  Do uzupełnienia.
+Pomimo zupełnie różnego modelu, można w macierzach połączonych neuronów FitzHugh-Nagumo zaobserwować zjawiska podobne do zaobserwowanych w macierzach prostych, progowych elementów. Wymaga to operowania w wąskim zakresie parametrów, w którym neuron FHN zachowuje się podobnie do elementu progowego.
+
+Warunkiem zaobserwowania Array-Enhanced Stochastic Resonance w macierzach połączonych neuronów FitzHugh-Nagumo jest wprowadzenie opóźnień w transmisji sygnałów kompensująceych przesunięcie fazowe wynikające z rozciągłości przestrzenej. Pomimo wąskiego zakresu użytecznego parametrów, macierz neuronów FitzHugh-Nagumo z opóźnieniami w transmisji potrafi wzmonić sygnał periodyczny nawet w przypadku niewielkich fluktuacji różnic fazy.
+
+Wyniki wskazują na dużą użyteczność i uniwersalność metody wzmocnienia SR w układach przestrzennie rozciągłych przy pomocy odpowiednich opóźnień w transmisji sygnału pomiędzy oddziałującymi elementami, stanowiącej pewną formę kontroli rezonansu stochastycznego.

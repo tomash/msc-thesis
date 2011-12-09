@@ -19,15 +19,15 @@
     V_t(x) = \frac{b}{4} x^4 - \frac{a}{2} x^2 + \lambda_0 x cos(\beta t)
   \end{equation}
 
-  gdzie t jest czasem (modulacja potencjału w czasie), a $\lambda_0 > 0$ amplitudą modulacji dobraną tak, że potencjał $V_t(x)$ ma zawsze dwa lokalne minima. Taki model nazywa się asymetrycznym potencjałem podwójnej studni i zmienia się on w sposób ciągły w czasie z okresem $T_0 = \frac{2 \pi}{\beta}$.
+  gdzie t jest czasem (modulacja potencjału w czasie), a $\lambda_0 > 0$ amplitudą modulacji dobraną tak, że potencjał $V_t(x)$ ma zawsze dwa lokalne minima. Taki model nazywa się asymetrycznym potencjałem podwójnej studni i zmienia się on w sposób ciągły w czasie z okresem $T = \frac{2 \pi}{\beta}$.
 
   Sygnał periodyczny moduluje względną wysokość obu studni poencjału, tak że przez pierwszą połowę okresu głębsza jest ''prawa'' ($x>0$), a przez drugą połowę okresu -- ''lewa'' ($x<0$) studnia potencjału.
 
-  Jeśli zobrazować sygnał wejściowy jako podnoszący minima potencjału, to schematycznie można przedstawić taki układ następująco (rys. \ref{fig:graphics:double_well}).
+  Jeśli zobrazować sygnał wejściowy jako podnoszący minima potencjału, to schematycznie można przedstawić taki układ jak na rysunku \ref{fig:graphics:double_well}.
 
   \begin{figure}
     \includegraphics[width=80mm]{images/sr.jpg}
-    \caption{obrazowe przedstawienie rezonansu stochastycznego w podwójnej studni potencjału}
+    \caption{Obrazowe przedstawienie rezonansu stochastycznego w podwójnej studni potencjału.}
     \label{fig:graphics:double_well}
   \end{figure}
 
@@ -37,46 +37,45 @@
     \dot x = - \partial_x V_t(x) + \xi (t)
   \end{equation}
 
-  czyli przy danym w ~\ref{sr:1} potencjale ruch cząstki opisuje równanie Langevina
+  czyli przy danym w (\ref{sr:1}) potencjale ruch cząstki opisuje równanie Langevina
 
   \begin{equation} \label{sr:3}
     \dot x = -bx ^3 + ax + \lambda_0 cos(\beta t) + \xi (t)
   \end{equation}
 
-  gdzie $\xi (t)$ jest białym (nieskorelowanym) szumem gaussowskim o natężeniu D
+  gdzie $\xi (t)$ jest białym (nieskorelowanym) szumem gaussowskim o natężeniu $D$
 
   \begin{equation} \label{sr:noise_correlation}
-    \langle \xi(t) \xi(s) \rangle\ = 2 D \delta (t-s)
+    \langle \xi(t) \xi(s) \rangle\ = 2 D \delta (t-s) \quad .
   \end{equation}
 
   Prawdopodobieństwo (na jednostkę czasu) że, przy braku sygnału periodycznego, cząstka znajdująca się w jednej ze studni potencjału przeskoczy do drugiej pod wpływem szumu dane jest wzorem Kramersa (tzw. Kramers rate)
 
   \begin{equation} \label{sr:kramers_rate}
-    t^{-1}_K (D) = r_K (D) = 2 \pi \sqrt{|V''(x_{min})| |V''(x_{max})|} e^{-\frac{\Delta V}{2D}}
+    r_K (D) = t^{-1}_K (D) =  2 \pi \sqrt{|V''(x_{min})| |V''(x_{max})|} e^{-\frac{\Delta V}{2D}}
   \end{equation}
 
-  gdzie $x_{min}$ i $x_{max}$ oznaczają położenia odpowiednio lokalnego minimum i maksimum potencjału, a $\Delta V = V(x_{max}) - V(x_{min})$ jest wysokością bariery potencjału.
+  gdzie $x_{min} (= \pm \sqrt{\frac{a}{b}})$ i $x_{max} (=0)$ oznaczają położenia odpowiednio lokalnego minimum i maksimum potencjału, a $\Delta V = V(x_{max}) - V(x_{min})$ jest wysokością bariery potencjału.
 
-  Dodanie sygnału periodycznego moduluje prawdopodobieństwo \ref{sr:kramers_rate} tak, że przez pierwszą połowę okresu większe jest prawdopodobieństwo przeskoku ze studni lewej (w tej połowie okresu płytszej) do prawej (w tej połowie okresu głębszej), a przez drugą połowę - odwrotnie.
+  Dodanie sygnału periodycznego moduluje prawdopodobieństwo (\ref{sr:kramers_rate}) tak, że przez pierwszą połowę okresu większe jest prawdopodobieństwo przeskoku ze studni lewej (w tej połowie okresu płytszej) do prawej (w tej połowie okresu głębszej), a przez drugą połowę - odwrotnie.
 
-  Jako sygnał wyjściowy przyjmuje się sygnał o wartościach dyskretnych odzwierciedlających w której ze studni potencjału przebywa cząstka:
+  Jako sygnał wyjściowy przyjmuje się sygnał o wartościach dyskretnych, odzwierciedlających w której ze studni potencjału przebywa cząstka:
 
     \begin{equation}
     y(t) = 
     \begin{cases}
       -1 & \text{dla } x(t) < 0 \\
-      -1 & \text{dla } x(t) > 0 
+      +1 & \text{dla } x(t) > 0 
     \end{cases}
   \end{equation}
 
   Niech $\langle y(t) \rangle$ oznacza sygnał $y(t)$ uśredniony po wielu okresach sygnału periodycznego. Widmo mocy takiego sygnału
 
   \begin{equation} \label{sr:power_spectrum}
-    S(\beta) = |Y(\beta)|^2 = |\int_{-T}^T \langle y(t) \rangle e^{-i \beta t} dt |^2
+    S(\omega) = |Y(\omega)|^2 = |\int_{-T}^T \langle y(t) \rangle e^{-i \omega t} dt |^2
   \end{equation}
 
-  składa się z szerokiego tła szumowego oraz pików dla częstości $\beta$ %i jej nieparzystych wielokrotności%
-  , co obrazuje rys. \ref{fig:graphics:mcnamara8}.
+  składa się z szerokiego tła szumowego oraz pików dla częstości sygnału periodycznego $\omega = \beta$ oraz (ewentualnie) jej nieparzystych wielokrotności, co obrazuje rys. \ref{fig:graphics:mcnamara8}.
 
   \begin{figure}
     \includegraphics[width=100mm]{images/mcnamara_8.png}
@@ -87,10 +86,10 @@
   Stosunek sygnału do szumu
 
   \begin{equation} \label{sr:snr}
-    SNR = 10 log \frac{S(\beta)}{S_N(\beta)}
+    SNR = 10 \log \frac{S(\beta)}{S_N(\beta)}
   \end{equation}
 
-  (gdzie $S_N(\beta)$ oznacza wartość tła szumowego w widmie mocy w okolicach wartości sygnału periodycznego) ma maksimum jako funkcja nateżęnia szumu SNR(D). Patrz też rys. \ref{fig:graphics:mcnamara9b}
+  (gdzie $S_N(\beta)$ oznacza wartość tła szumowego w widmie mocy w okolicach częstości sygnału periodycznego) ma maksimum jako funkcja nateżęnia szumu SNR(D) (patrz rys. \ref{fig:graphics:mcnamara9b}).
 
   \begin{figure}
     \includegraphics[width=100mm]{images/mcnamara_9b.png}
@@ -98,16 +97,16 @@
     \label{fig:graphics:mcnamara9b}
   \end{figure}
 
-  Maksimum SNR odpowiada w przybliżeniu takiemu natężeniu szumu, że dwa ''przejścia'' pomiędzy studniami przypadają na jeden okres modulacji periodycznej. Odpowiada to zrównaniu się czasu Kramersa (średni czas przebywania w jednej studni; odwrotność współczynnika Kramersa $r_K$) z połową okresu sygnału periodycznego \cite{fauve}:
+  Maksimum SNR odpowiada w przybliżeniu takiemu natężeniu szumu, że dwa ''przejścia'' pomiędzy studniami przypadają na jeden okres modulacji periodycznej. Odpowiada to zrównaniu się czasu Kramersa $t_K$ (średni czas przebywania w jednej studni; odwrotność współczynnika Kramersa $r_K$) z połową okresu sygnału periodycznego \cite{fauve}:
 
   \begin{equation} \label{sr:kramers}
-    t_K = r_{K}^{-1} \approx \frac{T_0}{2}
+    t_K = r_{K}^{-1} \approx \frac{T}{2}
   \end{equation}  
 
   Dokładniejsze obliczenia w przybliżeniu adiabatycznym (założenie częstości sygnału periodycznego o wiele mniejszej od czasu relaksacji układu $\beta \ll \tau^{-1}_r$) pozwalają uzyskać dokładniejszy wzór na SNR (za \cite{mcnamara}):
 
   \begin{equation} \label{sr:snr_theoretical}
-    SNR(D) = \frac{\sqrt{2}a \lambda^{2}_0 c^2}{D^2} e^{-\frac{\Delta V}{2D}}
+    SNR(D) = \frac{\sqrt{2}a \lambda^{2}_0 x_{min}^2}{(2D)^2} e^{-\frac{\Delta V}{4D}}
   \end{equation}
 
   Wzór ten dobrze opisuje wyniki symulacji numerycznych, przedstawionych na rys. \ref{fig:graphics:mcnamara9b}.
@@ -119,17 +118,17 @@
 
   W zastosowaniach praktycznych (wzmacnianie sygnałów) oraz symulacjach popularny jest rezonator monostabilny, progowy (układ niedynamiczny). Mechanizm jego działania polega na wysłaniu przez układ ''szpilki'' potencjału kiedy suma sygnału periodycznego i szumu przekroczy (wznosząco) wartość progową. Taki rezonator był badany doświadczalnie (symulacje, realizacja elektroniczna) i teoretycznie w pracy \cite{gingl_kiss_moss}. Widmo mocy takiego układu posiada wysokie i wąskie piki dla częstotliwości wejściowego sygnału i jej wszystkich (parzystych i nieparzystych) wielokrotności.
 
-  Sygnał wejściowy w układzie badanym przez Gingla \cite{gingl_kiss_moss} jest po prostu sumą sygnału periodycznego i szumu:
+  Sygnał wejściowy w układzie badanym przez Gingla \emph{et al.} \cite{gingl_kiss_moss} jest po prostu sumą sygnału periodycznego i szumu:
 
   \begin{equation} \label{sr:gingl}
-    v_{in}(t) = A sin (\omega_0 t) + D \xi(t)
+    v_{in}(t) = \lambda_0 sin (\beta t) + \xi(t)
   \end{equation}
   
   Wyniki uzyskane przez Gingla \emph{et al.} przedstawia rys. \ref{fig:graphics:gingl}. 
 
   \begin{figure}
     \includegraphics[width=100mm]{images/gingl_1.png}
-    \caption{Numeryczna reprezentacja niedynamicznego rezonansu stochastycznego. a) Sygnał koherentny, sygnał periodyczny i szum gaussowski, poniżej progu zaznaczonego linią. Odległość pomiędzy linią progu a średnią sygnału periodycznego jest równa wysokości progu. b) Przebieg czasowy impulsów odpowiadających przekraczaniu (''w górę'') progu przez sumę sygnałów. c) Znormalizowane widmo mocy przebiegu impulsów (za: Gingl, Kiss, Moss \cite{gingl_kiss_moss} )}
+    \caption{Numeryczna reprezentacja niedynamicznego rezonansu stochastycznego. a) Wejściowy sygnał periodyczny i szum gaussowski, poniżej progu zaznaczonego linią. Odległość pomiędzy linią progu a średnią sygnału periodycznego jest równa wysokości progu. b) Przebieg czasowy impulsów odpowiadających przekraczaniu (''w górę'') progu przez sumę sygnałów. c) Znormalizowane widmo mocy przebiegu impulsów (za: Gingl, Kiss, Moss \cite{gingl_kiss_moss} )}
     \label{fig:graphics:gingl}
   \end{figure}
 
@@ -139,23 +138,22 @@
     \label{fig:graphics:gingl2}
   \end{figure}
 
-  Przed przystąpieniem do eksperymentów Gingl \emph{et al.} wyprowadzili teoretyczny wzór na SNR układu przy spełnieniu pewnych założeń (przybliżenie adiabatyczne, sygnał periodyczny wolnozmienny i słabszy niż średnia kwadratowa szumu), korzystając z twierdzenia Campbella i wzoru Rice'a (na przejścia przez zero) \cite{rice}
+  Przed przystąpieniem do eksperymentów Gingl \emph{et al.} wyprowadzili teoretyczny wzór na SNR układu przy spełnieniu pewnych założeń (przybliżenie adiabatyczne, sygnał periodyczny wolnozmienny i słabszy niż wariancja szumu), korzystając z twierdzenia Campbella i wzoru Rice'a (na przejścia przez zero) \cite{rice}
 
   \begin{equation} \label{sr:gingl:snr}
     SNR = \nu_0 (\lambda_0 U_t)^2 \sigma ^{-4} exp [-(U_t/{\sigma})^2 / 2]
   \end{equation}
 
-  W powyższym wzorze $\lambda_0$ jest amplitudą sygnału periodycznego, $\nu_0$ średnią częstotliwością jednokierunkowych przejść przez zero (obliczoną z wzoru Rice'a), a $\sigma$ jest średnią kwadratową szumu.
+  W powyższym wzorze $\lambda_0$ jest amplitudą sygnału periodycznego, $U_t$ progiem potencjału, $\nu_0$ średnią częstotliwością jednokierunkowych przejść przez zero (obliczoną z wzoru Rice'a), a $\sigma$ jest wariancją szumu.
 
   Pomimo różnic w badanym układzie, kształt krzywej $SNR(\sigma)$ oraz wyniki eksperymentów przeprowadzonych przez Gingla \emph{et al.} odpowiadają kształtowi tej krzywej dla układu w studni bistabilnej, patrz rys. \ref{fig:graphics:gingl2}.
 
-
-  Rezonator badany przez Gingla \emph{et al.} generuje na wyjściu wąski pik o stałej szerokości kiedy sygnał zaszumiony gwałtownie wzrasta przekraczając próg (''rising peak'').
+  Rezonator badany przez Gingla \emph{et al.} generuje na wyjściu wąski pik o stałej szerokości, kiedy sygnał zaszumiony gwałtownie wzrasta przekraczając próg (''rising peak'').
 
   Nieco inny rezonator progowy badany był w pracach \cite{blondeau_e53} i \cite{blondeau_e55}. Układ ten produkuje pik o szerokości równej czasowi trwania impulsu (a dokładniej: czasowi, przez jaki wartość sygnału przekracza wartość progową). Sygnał wyjściowy z takiego rezonatora ma postać ma postać:
 
   \begin{equation} \label{sr:gingl2}
-    v_{out}(t) = \Gamma[A sin (\omega_0 t) + D \xi(t) - \theta]
+    v_{out}(t) = \Gamma[A sin (\beta t) + D \xi(t) - \theta]
   \end{equation}
 
   gdzie $\theta$ jest progiem, a $\Gamma(u)$ jest funkcją Heaviside'a ($\Gamma(u) = 0$ dla $u \leq 0$, $\Gamma(u) = 1$ dla $u > 0$).
@@ -173,23 +171,27 @@
 
   Wyniki uzyskane w badanych dotychczas układach (i przedstawione w cytowanych wyżej pracach) wykazywały, że zbudowanie macierzy oddziałujących rezonatorów istotnie wpływa na maksymalizację SNR przy odpowiednim doborze parametrów układu.
 
-  W pracy \cite{lindner_meadows} zbadano jednowymiarowy układ (łańcuch) sprzężonych dyfuzyjnie bistabilnych rezonatorów stochastycznych, pobudzanych wspólnym sygnałem periodycznym i nieskorelowanymi przestrzennie szumami stochastycznymi
+  W pracy \cite{lindner_meadows} zbadano jednowymiarowy układ (łańcuch) sprzężonych dyfuzyjnie bistabilnych rezonatorów stochastycznych, pobudzanych wspólnym sygnałem periodycznym i nieskorelowanymi (zarówno w czasie, jak i przestrzeni) szumami stochastycznymi,
 
   \begin{equation}
     \dot x_i = -x_i^3 + x + \lambda_0 cos(\beta t) + k(x_{i+1} + x_{i-1} -2 x_{i}) + \xi_i (t)
   \end{equation}
 
-  gdzie $\xi(t)$ to szum nieskorelowany, jak w \ref{sr:noise_correlation}, $i$ jest indeksem rezonatorów w łańcuchu ($ i = 1,2,3...N$), a $k$ oznacza stałą sprzężenia (przyjęto periodyczne warunki brzegowe).
+  \begin{equation}
+    \langle \xi_i(t) \xi_j(s) \rangle\ = 2 D \delta_{ij} \delta (t-s)
+  \end{equation}
 
-  Wykazano, że optymalne natężenie szumu, przy którym obserwuje się maksimum SNR w pojedynczym rezonatorze, zależy od k i długości łańcucha N. Maksimum SNR w funkcji szumu w zasadzie rośnie z długością łańcucha N przy ustalonym sprzężeniu k. Natomiast przy ustalonej długości łańcucha N istnieje optymalna wartość sprzężenia k, dla której maksimum SNR w funkcji szumu przyjmuje najwyższą możliwą wartość.
+  gdzie $\xi_i(t)$ to szum nieskorelowany, jak w (\ref{sr:noise_correlation}), $i$ jest indeksem rezonatora w łańcuchu ($ i = 1,2,3...N$), a $k$ oznacza stałą sprzężenia (przyjęto periodyczne warunki brzegowe).
 
-  Zjawisko AESR związane jest z synchronizacją czasowo-przestrzenną przeskoków pomiędzy studniami potencjału we wszystkich rezonatorach, do której [synchronizacji] dochodzi przy optymalnym sprzężeniu i wartości szumu, odpowiadającej maksimum SNR.
+  Wykazano, że optymalne natężenie szumu, przy którym obserwuje się maksimum SNR w pojedynczym rezonatorze, zależy od $k$ i długości łańcucha $N$. Maksimum SNR w funkcji szumu w zasadzie rośnie z długością łańcucha $N$ przy ustalonym sprzężeniu $k$. Natomiast przy ustalonej długości łańcucha $N$ istnieje optymalna wartość sprzężenia $k$, dla której maksimum SNR w funkcji szumu przyjmuje najwyższą możliwą wartość.
+
+  Zjawisko AESR związane jest z synchronizacją czasowo-przestrzenną przeskoków pomiędzy studniami potencjału we wszystkich rezonatorach, do której dochodzi przy optymalnym sprzężeniu i wartości szumu, odpowiadającej maksimum SNR.
 
   Interesującym zjawiskiem jest coraz mniejszy przyrost maksimum SNR w miarę rozbudowywania układu o kolejne rezonatory: nie jest to wzrost asymptotyczny do pewnej wartości progowej, a po prostu spowolnienie jego przyrostu (wykresy uzyskane w pracy \cite{lindner_meadows} wykazują podobieństwo do zależności logarytmicznej). Wynika z tego, że optymalny przyrost SNR jest do osiągnięcia już w macierzy kilku bądź kilkunastu rezonatorów. Wyniki Lindnera et. al. \cite{lindner_meadows} przedstawia rysunek ~\ref{fig:graphics:lindner_meadows}.
 
   \begin{figure}
     \includegraphics[width=120mm]{images/lindner_meadows.png}
-    \caption{Fig. 4 z pracy Lindnera et al. \cite{lindner_meadows}. Relacje skalowania znormalizowanego szumu oraz SNR w miarę przyrostu liczby połączonych w macierz rezonatorów. (a) wartość szumu (znormalizowana do N) dla której występuje maksimum SNR, (b) wartość maksimum SNR przy optymalnie dobranym sprzężeniu k}
+    \caption{Fig. 4 z pracy Lindnera \emph{et al.} \cite{lindner_meadows}. Relacje skalowania znormalizowanego szumu oraz SNR w miarę przyrostu liczby połączonych w macierz rezonatorów. (a) wartość szumu (znormalizowana do $N$) dla której występuje maksimum SNR, (b) wartość maksimum SNR przy optymalnie dobranym sprzężeniu $k$}
     \label{fig:graphics:lindner_meadows}
   \end{figure}
 
@@ -199,25 +201,20 @@
 
   \subsubsection{Kontrola SR}
   
-  Podobnie jak w przypadku innych układów nieliniowych badane były możliwości kontroli rezonansu stochastycznego (czyli technik maksymalizacji SR). 
+  Podobnie jak w przypadku innych układów nieliniowych badane były możliwości kontroli rezonansu stochastycznego (czyli techniki maksymalizacji SR). 
 
-  W pracy Gammaitoniego i in. \cite{gammaitoni} badano układ progowy (zbudowany na przerzutniku Schmitta) i kontrolowano SR poprzez modulację progu, czyli jest to metoda kontroli bez sprzężenia zwrotnego. 
+  W pracy Gammaitoniego \emph{et al.} \cite{gammaitoni} badano układ progowy (zbudowany na przerzutniku Schmitta) i kontrolowano SR poprzez modulację progu, czyli jest to metoda kontroli bez sprzężenia zwrotnego. 
 
   Przerzutnik Schmitta jest układem elektronicznym działającym analogicznie do bistabilnej studni potencjału. Wyjście układu przyjmuje jedną z dwóch wartości (odpowiednik stanów) w zależności od przekroczenia (bądź nie) pewnego progu przez napięcie wejściowe, co odpowiada układowi opisanemu w rozdziale \ref{sec:uklad_bistabilny}. Modulowanie progu zadziałania jest odpowiednikiem modulowania wysokości bariery potencjału pomiędzy studniami w układzie bistabilnym.
 
-  %\begin{figure}
-  %  \includegraphics[width=100mm]{images/gammaitoni_1.png}
-  %  \caption{Sygnał wejściowy S(t) (środkowa krzywa) względem górnych i dolnych progów modulowanych dla czterech różnych przesunięć fazowych. Częstotliwości sygnału i modulacji progów są sobie równe $\omega_M = \omega_S$. Kolory czarny i szary oddzielają połówki cyklu działania. Strzałki wskazują najbardziej prawdopodobny moment przełączenia. Za \cite{gammaitoni}}
-  %  \label{fig:graphics:gammaitoni:fig1}
-  %\end{figure}
-
   \begin{figure}
     \includegraphics[width=100mm]{images/gammaitoni_2.png}
-    \caption{Sygnał wejściowy S(t) (środkowa krzywa) względem górnych i dolnych progów modulowanych dla czterech różnych przesunięć fazowych. Częstotliwość modulacji progów $\omega_M$ jest dwa razy większa od częstotliwości sygnału $\omega_S$, tj. $\omega_M = 2 \omega_S$. Kolory czarny i szary oddzielają połówki cyklu działania. Strzałki wskazują najbardziej prawdopodobny moment przełączenia. Za \cite{gammaitoni}}
+    \caption{Sygnał wejściowy $S(t)$ (środkowa krzywa) względem górnych i dolnych progów modulowanych dla czterech różnych przesunięć fazowych. Częstotliwość modulacji progów $\omega_M$ jest dwa razy większa od częstotliwości sygnału $\beta$, tj. $\omega_M = 2 \beta$. Kolory czarny i szary oddzielają połówki cyklu działania. Strzałki wskazują najbardziej prawdopodobny moment przełączenia. Za \cite{gammaitoni}}
     \label{fig:graphics:gammaitoni:fig2}
   \end{figure}
 
-  W pracy \cite{gammaitoni} największe wzmocnienie wyjściowego osiągnięto SNR dla częstotliwości modulacji progu równej dwukrotności częstotliwości sygnału $\omega_M = 2 \omega_S$ i różnicy faz równej $\pi/2$ -- patrz rys. \ref{fig:graphics:gammaitoni:fig2}.
+  W pracy \cite{gammaitoni} największe wzmocnienie wyjściowego SNR osiągnięto dla częstotliwości modulacji progu równej dwukrotności częstotliwości sygnału $\omega_M = 2 \beta$ i różnicy faz równej $\pi/2$ -- patrz rys. \ref{fig:graphics:gammaitoni:fig2}.
+  W bistabilnej studni potencjału taka modulacja powoduje obniżenie wysokości bariery potenchału w chwili, gdy głębokość którejkolwiek ze studni potencjału staje się najmniejsza pod wpływem sygnału periodycznego. Obniżenie wysokości bariery powoduje wzrost prawdopodobieństwa przeskoku, co prowadzi do większego synchronizacji przeskoków z sygnałem periodycznym i tym samym wzrostu SNR.
 
   W niniejszej pracy badam inną metodę kontroli rezonansu stochastycznego, poprzez maksymalizację periodyczności sygnału odbieranego od sąsiadujących w sieci neuronów.
   
@@ -227,9 +224,9 @@
   
   Modele neuronów czuciowych (sensory neuron model, SNM), podobnie jak neuronów binarnych używanych w badaniu sieci neuronowych, wykazują bistabilność, tzn. istnienie dwóch stanów stabilnych, w których układ może przebywać. Podstawową różnicą jest ciągły potencjał (napięcie) SNM, co oznacza traktowanie stanów stabilnych jako zakresów (zamiast pojedynczych wartości), pomiędzy którymi układ przechodzi poprzez stany niestabilne. 
   
-  Naturalną konsekwencją ciągłego potencjału jest użycie równań różniczkowych (zamiast różnicowych, jak w neuronach binarnych) w matematycznym opisie SNM. Oprócz potencjału w wielu SNM istnieje równanie różniczkowe na drugą zmienną układu, ujemnie wpływającą na pochodną potencjału, zwaną dalej relaksacją.
+  Naturalną konsekwencją ciągłego potencjału jest użycie równań różniczkowych (zamiast różnicowych, jak w neuronach binarnych) w matematycznym opisie SNM. Oprócz równania na potencjał w wielu SNM istnieje równanie różniczkowe na drugą zmienną układu, ujemnie wpływającą na pochodną potencjału, zwaną dalej relaksacją.
   
-  Pierwszym nowoczesnym SNM który dobrze opisywał powstawanie i propagację potencjałów czynnościowych w układzie biologicznym (olbrzymim aksonie kałamarnicy) jest model Hodgkina-Huxleya \cite{hodgkin}, za który w roku 1963 twórcy zostali uhonorowani nagrodą Nobla. Jest to model skomplikowany, o dużej liczbie zmiennych, postulujący traktowanie membrany komórkowej jako obwodu elektrycznego.
+  Pierwszym nowoczesnym SNM, który dobrze opisywał powstawanie i propagację potencjałów czynnościowych w układzie biologicznym (olbrzymim aksonie kałamarnicy), jest model Hodgkina-Huxleya \cite{hodgkin}, za który w roku 1963 twórcy zostali uhonorowani nagrodą Nobla. Jest to model skomplikowany, o dużej liczbie zmiennych, postulujący traktowanie membrany komórkowej jako obwodu elektrycznego.
 
   \begin{figure}
     \includegraphics[width=100mm]{images/hh.png}
@@ -282,17 +279,17 @@
   Szum używany pierwotnie w systemach bistabilnych $\xi(t)$ jest białym szumem gaussowskim o zerowej średniej, nieskorelowanym $\langle \xi(t) \xi(s) \rangle\ = 2 D \delta (t-s)$ (patrz też rozdział \ref{sec:uklad_bistabilny}). W pracy Longtina, dla możliwości sterowania czasem korelacji szumu $\tau_c = \lambda^{-1}$, został on zastąpiony przez $\eta(t)$, szum skorelowany generowany w procesie Ornsteina-Uhlenbecka:
 
   \begin{equation} \label{eq:eta}
-    \frac{d \eta}{dt} = -\lambda \eta(t) + \lambda \xi(t)
+    \frac{d \eta}{dt} = -\lambda \eta(t) + \lambda \xi(t) ,
   \end{equation}
 
-  $d \cdot \omega$ po prawej stronie równania \ref{eq:w} jest pomnożeniem $\omega$ przez parametr $d$, a nie różniczką. 
+  ($d \cdot \omega$ po prawej stronie równania \ref{eq:w} jest pomnożeniem $\omega$ przez parametr $d$, a nie różniczką).
 
   %(REFERAT O ZAKRESIE STOSOWALNOŚCI PARAMETRÓW?)
   
 
   \subsubsection{Przekształcenia modelu FHN}
 
-  Równania \ref{eq:v}, \ref{eq:w} zawierają sygnał periodyczny zawarty w dynamice relaksacji, natomiast szum (element stochastyczny) w dynamice potencjału. Oryginalnym powodem takiego rozmieszczenia składowych sygnału zewnętrznego była łatwość porównania modelu stochastycznego z modelem deterministycznym (bez szumu) badanym w pracy Alexander \emph{et al.} \cite{alexander}. W pracy tej ściśle wykazano \cite{longtin}, że układ równań (\ref{eq:v}, \ref{eq:w}) jest równoważny układowi w postaci:
+  Równania (\ref{eq:v}, \ref{eq:w}) zawierają sygnał periodyczny zawarty w dynamice relaksacji, natomiast szum (element stochastyczny) w dynamice potencjału. Oryginalnym powodem takiego rozmieszczenia składowych sygnału zewnętrznego była łatwość porównania modelu stochastycznego z modelem deterministycznym (bez szumu) badanym w pracy Alexander \emph{et al.} \cite{alexander}. W pracy tej ściśle wykazano \cite{longtin}, że układ równań (\ref{eq:v}, \ref{eq:w}) jest równoważny układowi w postaci:
 
   \begin{equation}
     \epsilon \frac{dv}{dt} = v(v-a)(1-v)- \omega + r sin(\beta t) + \xi(t)
@@ -318,13 +315,13 @@
     \label{fig:graphics:longtin1b}
   \end{figure}
 
-  Dla optymalnego natężenia szumu D, odpowiadającego występowaniu R, w histogramie interwałów międzyszpilkowych pojawiają się ostre maksima, dla wartości odpowiadających okresowi pobudzenia periodycznego lub jego wielokrotnościom. Oznacza to, że pojawienie się ''szpilek'' potencjału czynnościowego jest zsynchronizowane z pobudzeniem periodycznym. Dla innych natężeń szumu maksima histogramu są niższe i rozmyte, co odpowiada miejszej synchronizacji pomiędzy aktywnością neuronu a pobudzeniem periodycznym.
+  Dla optymalnego natężenia szumu $D$, odpowiadającego występowaniu SR, w histogramie interwałów międzyszpilkowych pojawiają się ostre maksima, dla wartości odpowiadających okresowi pobudzenia periodycznego lub jego wielokrotnościom. Oznacza to, że pojawienie się ''szpilek'' potencjału czynnościowego jest zsynchronizowane z pobudzeniem periodycznym. Dla innych natężeń szumu maksima histogramu są niższe i rozmyte, co odpowiada miejszej synchronizacji pomiędzy aktywnością neuronu a pobudzeniem periodycznym.
 
   %Wyniki symulacji modelu FHN w pracy Longtina, z dokładnością do parametrów (częstotliwość sygnału periodycznego), okazały się bardzo zbliżone do danych empirycznych zebranych podczas badania organizmów żywych (por. wykresy).
 
   \begin{figure}
     \includegraphics[width=80mm]{images/longtin_fig5a.png}
-    \caption{ISIH w symulacji układu FHN. Okres sygnału periodycznego wynosi 0.84s ($\beta = 7.5$)}
+    \caption{ISIH w symulacji układu FHN. Okres sygnału periodycznego wynosi 0.84s ($\beta = 7.5$). Za \cite{longtin}.}
     \label{fig:graphics:longtin5a}
   \end{figure}  
 
@@ -339,25 +336,25 @@
 
   Podobnie jak proste rezonatory (patrz rozdział \ref{sec:wzmocnienie_przez_sprzezenie}), także rezonatory ciągłe (w tym neurony FitzHugh-Nagumo) łączono w macierz, celem zbadania dynamiki takiego układu i maksymalizacji periodyczności sygnału wyjściowego. 
 
-  Badania macierzy ciągłych rezonatorów zostały przeprowadzone przez Tanabe \emph{et al.} i opisane w pracy \cite{tanabe_shimokawa}. Badane były duże (kilka tysięcy elementów) macierze aktywnych rotatorów (AR), jako prostszych w analizie teoretycznej i zarazem posiadających podobną dynamikę jak modele neuronów FitzHugh-Nagumo i Hodgkin-Huxley. Równanie opisujące dynamikę AR zostało zaczerpnięte z pracy \cite{shinomoto} i rozszerzone o wpływ rotatorów połączonych w postaci pola średniego:
+  Badania macierzy ciągłych rezonatorów zostały przeprowadzone przez Tanabe \emph{et al.} i opisane w pracy \cite{tanabe_shimokawa}. Badane były duże (kilka tysięcy elementów) macierze aktywnych rotatorów (AR), jako prostszych w analizie teoretycznej i zarazem posiadających podobną dynamikę jak modele neuronów FitzHugh-Nagumo i Hodgkin-Huxley. Równanie opisujące dynamikę AR zostało zaczerpnięte z pracy \cite{shinomoto} i rozszerzone o wpływ rotatorów połączonych w postaci pola średniego
 
   \begin{equation}
-    \frac{d \phi_i}{dt} = 1 - a sin(\phi_i) + \frac{G}{N} \sum\limits_{j=1}^{N} sin(\phi_j - \phi_i) + A sin(\Omega t) + \sigma \xi_i
+    \frac{d \phi_i}{dt} = 1 - a sin(\phi_i) + \frac{G}{N} \sum\limits_{j=1}^{N} sin(\phi_j - \phi_i) + A sin(\beta t) + \sigma \xi_i \quad ,
   \end{equation}
 
-  Gdzie $i=1,2,...N$, $\phi_i$ jest fazą rotatora, $a > 1$, $G \ge 0$ jest siłą połączenia, $\sigma$ jest natężeniem szumu gaussowskiego $\xi_i$. Podobnie jak we wszystkich pracach zorientowanych na badanie SR, rozważano wyłącznie podprogowe poziomy wymuszenia periodycznego $sin(\Omega t)$.
+  gdzie $i=1,2,...N$, $\phi_i$ jest fazą rotatora, $a > 1$, $G \ge 0$ jest siłą połączenia, $\sigma$ jest natężeniem szumu gaussowskiego $\xi_i$. Podobnie jak we wszystkich pracach zorientowanych na badanie SR, rozważano wyłącznie podprogowe poziomy wymuszenia periodycznego $A sin(\beta t)$.
 
-  Symulacje rozpoczęto od bardzo małych wartości $\sigma$, najmniejszych wystarczających do zaobserwowania ''szpilek''. Wyniki obrazuje rysunek \ref{fig:graphics:tanabe}. Sygnałem wyjściowym z całego układu (macierzy rezonatorów) był współczynnik reakcji, zdefiniowany jako ułamek elementów przekraczających wartość $3 \pi / 2$ w krótkim zakresie. Dla małego poziomu szumu, jeśli następował ''strzał'' (gwałtowny wzrost fazy rotatora), to następował on w całej sieci jednocześnie - był synchroniczny w całej sieci, natomiast interwały pomiędzy strzałami były nieregularne. Zwiększanie poziomu szumu co prawda zwiększało regularność ''strzałów'' (regularne interwały), ale za to redukowało ich synchroniczność, co na rysunku \ref{fig:graphics:tanabe} objawia się rozmyciem ''szpilek'' współczynnika reakcji.
+  Symulacje rozpoczęto od bardzo małych wartości $\sigma$. Wyniki obrazuje rysunek \ref{fig:graphics:tanabe}. Sygnałem wyjściowym z całego układu (macierzy rezonatorów) był współczynnik reakcji, zdefiniowany jako ułamek elementów przekraczających wartość $3 \pi / 2$ w krótkim zakresie. Dla małego poziomu szumu, jeśli następował ''strzał'' (gwałtowny wzrost fazy rotatora), to następował on w całej sieci jednocześnie - był synchroniczny w całej sieci, natomiast interwały pomiędzy ''strzałami'' były nieregularne. Zwiększanie poziomu szumu co prawda zwiększało regularność ''strzałów'' (regularne interwały), ale za to redukowało ich synchroniczność, co na rysunku \ref{fig:graphics:tanabe} objawia się rozmyciem ''szpilek'' współczynnika reakcji.
 
-  Konkluzją pracy było poszukanie źródeł tak złożonych odpowiedzi w dynamice pojedynczego rezonatora. Istotnie, na poziomie nawet pojedynczego rezonatora, można wyodrębnić trzy zakresy dynamiki. Dla niskich poziomów szumu rezonator ''strzela'' sporadycznie i nieregularnie, natomiast jego strzały bardzo zależą od czynników zewnętrznych - np. maksimum sygnału periodycznego. Dla wysokich poziomów szumu ''strzały'' rezonatora są częste i nieregularne, mało zależne od czynników zewnętrznych, aż do przypadku skrajnego: rezonatora bez pobudzenia periodycznego, ''strzelającego'' pod wpływem samego szumu. Pomiędzy tymi dwoma zakresami istnieje trzeci, zakres umiarkowanego szumu, w którym ''strzały'' są regularne i dość częste, i w którym rezonator można traktować jako \emph{wewnętrzne} oscylatory perturbowane szumem. Zbadana przez Tanabe \emph{et al.} dynamika dużych macierzy rezonatorów odzwierciedla te zakresy i charakterystyczne w nich zachowania.
+  Konkluzją pracy było poszukanie źródeł tak złożonych odpowiedzi w dynamice pojedynczego rezonatora. Istotnie, na poziomie nawet pojedynczego rezonatora, można wyodrębnić trzy zakresy dynamiki. Dla niskich poziomów szumu rezonator ''strzela'' sporadycznie i nieregularnie, natomiast jego strzały bardzo zależą od czynników zewnętrznych - np. maksimum sygnału periodycznego. Dla wysokich poziomów szumu ''strzały'' rezonatora są częste i nieregularne, mało zależne od czynników zewnętrznych, aż do przypadku skrajnego: rezonatora bez pobudzenia periodycznego, ''strzelającego'' pod wpływem samego szumu. Pomiędzy tymi dwoma zakresami istnieje trzeci, zakres umiarkowanego szumu, w którym ''strzały'' są regularne i dość częste, i w którym rezonatory można traktować jako \emph{wewnętrzne} oscylatory perturbowane szumem. Zbadana przez Tanabe \emph{et al.} dynamika dużych macierzy rezonatorów odzwierciedla te zakresy i charakterystyczne w nich zachowania.
 
   \begin{figure}
     \includegraphics[width=80mm]{images/tanabe.png}
-    \caption{Lewa kolumna: globalna aktywność macierzy AR złożonych z 10 000 rotatorów. Oś rzędnych przedstawia czas (ms), oś odciętych współczynnik ($ms^{-1}$) zdefiniowany jako ułamek elementów przekraczających wartość $3 \pi / 2$ w zakresie 0.1ms. Prawa kolumna: przepływ rozwiązania równiania Fokkera-Plancka przez wartość $3 \pi / 2$. Poziom szumu $\sigma$ rośnie ''z góry na dół''. Za \cite{tanabe_shimokawa}}
+    \caption{Lewa kolumna: globalna aktywność macierzy AR złożonych z 10 000 rotatorów. Oś rzędnych przedstawia czas (ms), oś odciętych współczynnik reakcji ($ms^{-1}$) zdefiniowany jako ułamek elementów przekraczających wartość $3 \pi / 2$ w zakresie 0.1ms. Prawa kolumna: przepływ rozwiązania równiania Fokkera-Plancka przez wartość $3 \pi / 2$. Poziom szumu $\sigma$ rośnie ''z góry na dół''. Za \cite{tanabe_shimokawa}}
     \label{fig:graphics:tanabe}
   \end{figure}
 
-  \subsection{Pamięć i Opóźnienie}
+  \subsection{Pamięć i opóźnienie}
   
   Dotychczasowe badania (symulacje) układów neuronów FHN, choć dotyczyły układów neuronów połączonych (wymieniających sygnały, a dokładnie potencjał czynnościowy), nie brały pod uwagę wpływu opóźnienia w przekazywaniu sygnałów. Tymczasem w układach biologicznych prędkość propagacji potencjału przez akson, wynosząca od 0.5 m/s (receptory ciepła) 120 m/s (wrzecionko nerwowo-mięśniowe), oznacza niezerowe i często bardzo znaczące opóźnienia w przekazywaniu potencjałów czynnościowych pomiędzy neuronami \cite{kandel}.
 
@@ -366,23 +363,23 @@
   Niniejsza praca skupia się na innym zastosowaniu opóźnień aksonalnych, do maksymalizacji wzmocnienia sygnału wejściowego, niemniej jest inspirowana ich nieprzypadkową obecnością w układach biologicznych.
   
 
-  \subsubsection{Przesunięcie Fazy}
+  \subsubsection{Przesunięcie fazy}
   \label{sec:przesuniecie_fazy}
 
-  Sprzężone rezonatory stochastyczne, tworzące układy przestrzennie rozciągłe, odbierają sygnał (np. w postaci fali biegnącej) przesunięty w fazie odpowiednio do odległości między elementami. Wpływ rozciągłości przestrzennej, i tym samym przesunięcia fazowego pobudzenia, na rezonans stochastyczny badany był m.in. w pracy \cite{ijmpb_14_8}. Zbadano w niej jednowymiarowy układ (łańcuch) połączonych elementów progowych (binarnych neuronów z czasem dyskretnym) pobudzanych falą biegnącą i szumem białym, nieskorelowanym w czasie i przestrzeni. Dynamika układu (potencjał danego rezonatora w danej chwili) została zdefiniowana następująco:
+  Sprzężone rezonatory stochastyczne, tworzące układy przestrzennie rozciągłe, odbierają sygnał (np. w postaci fali biegnącej) przesunięty w fazie odpowiednio do odległości między elementami. Wpływ rozciągłości przestrzennej, i tym samym przesunięcia fazowego pobudzenia, na rezonans stochastyczny badany był m.in. w pracy \cite{ijmpb_14_8}. Zbadano w niej jednowymiarowy układ (łańcuch) połączonych elementów progowych (binarnych neuronów z czasem dyskretnym) pobudzanych falą biegnącą i szumem białym, nieskorelowanym w czasie i przestrzeni. Dynamika układu (stan danego rezonatora w danej chwili) została zdefiniowana następująco:
   \begin{equation} \label{sr:jezo:1}
-    v_i (t+1) = \Gamma [A sin (k_i - \beta t) + D \xi_i (t) + \frac{w}{2}(v_{i-1}(t) + v_{i+1}(t)) - \Theta]
+    v_i (t+1) = \Gamma [A sin (ki - \beta t) + D \xi_i (t) + \frac{w}{2}(v_{i-1}(t) + v_{i+1}(t)) - \theta]
   \end{equation}
-  gdzie $i$ jest indeksem rezonatora, $w$ jest stałą sprzężenia, $k = \frac{2 \pi}{\lambda}$ jest wektorem falowym fali biegnącej. Przyjęto periodyczne warunki brzegowe i badano SNR w funkcji D w pojedynczym elemencie progowym przy warunku $A < \Theta$ i ustalonym $k$.
+  gdzie $i$ jest indeksem rezonatora, $w$ jest stałą sprzężenia, $k = \frac{2 \pi}{\lambda}$ jest wektorem falowym fali biegnącej. Przyjęto periodyczne warunki brzegowe i badano SNR w funkcji $D$ w pojedynczym elemencie progowym przy warunku $A < \theta$ i ustalonym $k$.
 
   Badania te potwierdziły, że w układzie przestrzennie rozciągłym bez dodatkowej kompensacji przesunięć fazowych dochodzi do obniżenia SNR (pogarszania rezonansu stochastycznego) w poszczególnych rezonatorach.
 
   Jednym ze sposobów kompensacji efektu rozciągłości przestrzennej jest opóźnienie w przekazywaniu sygnałów pomiędzy elementami (rezonatorami) dobrane tak, aby równoważyło różnicę faz. 
 
-  W pracy \cite{ijmpb_23_2} zbadano jednowymiarowy układ (łańcuch) połączonych elementów progowych, podobny do opisywanego równaniem \ref{sr:jezo:1}, ale z dodanym opóźnieniem (oznaczonym $\tau$) w transmisji sygnału pomiędzy sąsiednimi elementami progowymi:
+  W pracy \cite{ijmpb_23_2} zbadano jednowymiarowy układ (łańcuch) połączonych elementów progowych, podobny do opisywanego równaniem (\ref{sr:jezo:1}), ale z dodanym opóźnieniem (oznaczonym $\tau$) w transmisji sygnału pomiędzy sąsiednimi elementami progowymi:
 
   \begin{equation} \label{sr:jezo:2}
-    v_i (t+1) = \Gamma [A sin (k_i - \beta t) + D \xi_i (t) + \frac{w}{2}(v_{i-1}(t-\tau_{i,i-1}) + v_{i+1}(t+\tau_{i,i+1})) - \Theta]
+    v_i (t+1) = \Gamma [A sin (ki - \beta t) + D \xi_i (t) + \frac{w}{2}(v_{i-1}(t-\tau_{i,i-1}) + v_{i+1}(t+\tau_{i,i+1})) - \theta]
   \end{equation}
 
   Badania wykazały, że można tak dobrać opóźnienie w transmisji pomiędzy rezonatorami, aby macierz wzmacniała sygnał periodyczny mocniej niż pojedynczy rezonator. Tym samym można w układzie przestrzennie rozciągłym i z opóźnieniami zaobserwować AESR, po odpowiednim doborze parametrów. Wyniki uzyskane w pracy \cite{ijmpb_23_2} przedstawia rysunek \ref{fig:graphics:krawiecki_jezo}.
@@ -394,12 +391,12 @@
   \end{equation}
 
   \begin{equation} \label{sr:jezo:3b}
-    \tau_{i,i-1} = T - \frac{T}{\lambda}
+    \tau_{i,i-1} = T - \frac{T}{\lambda} \quad .
   \end{equation}
 
   \begin{figure}
     \includegraphics[width=120mm]{images/krawiecki_jezo_1.png}
-    \caption{Rys. 1. z pracy \cite{ijmpb_23_2}. Wykresy SNR w zależności od $\tau$ (czas opóźnienia) i D (skalowanie szumu $\eta$. Łańcuch $N=128$ rezonatorów progowych odbierających falę biegnącą, częstotliwość fali $T_s = 128$. Skalowanie wektora falowego $k=\frac{2\pi}{\lambda}$ (a), (d) $\lambda = 2$, (b), (e) $\lambda = 4$, (c), (f) $\lambda = 8$. Lewa kolumna - wyniki symulacji numerycznej, prawa kolumna - wyniki obliczeń teoretycznych}
+    \caption{Rys. 1. z pracy \cite{ijmpb_23_2}. Wykresy SNR w zależności od $\tau$ (czas opóźnienia) i $D$ (natężenie szumu). Łańcuch $N=128$ rezonatorów progowych odbierających falę biegnącą, okres fali $T = 128$, wektor falowy $k=\frac{2\pi}{\lambda}$ (a), (d) $\lambda = 2$, (b), (e) $\lambda = 4$, (c), (f) $\lambda = 8$. Lewa kolumna - wyniki symulacji numerycznej układu (\ref{sr:jezo:2}), prawa kolumna - wyniki obliczeń teoretycznych}
     \label{fig:graphics:krawiecki_jezo}
   \end{figure}
 
@@ -409,22 +406,22 @@
   W modelu FHN, po uwzględnieniu potencjału czynnościowego od połączonych neuronów, równanie na potencjał przedstawia się następująco:
 
   \begin{equation} \label{eq:v2}
-    \epsilon \frac{dv_i}{dt} = v_i(v_i-a)(1-v_i)- \omega  + \eta_i(t) + sv_{ext}(t)
+    \epsilon \frac{dv_i}{dt} = v_i(v_i-a)(1-v_i)- \omega  + \eta_i(t) + sv_{iext}(t)
   \end{equation}
 
   \begin{equation} \label{eq:w2}
     \frac{d \omega_i}{dt} = v_i - d \cdot \omega_i - [b + r sin(\beta t + \phi_i)]
   \end{equation}
 
-  W powyższych równaniach $\phi$ to przesunięcie fazowe pobudzenia periodycznego w danym neuronie, natomiast $v_{ext}$ to łączny potencjał od sąsiadów (pomnożony przez ''czułość'' s):
+  W powyższych równaniach $\phi_i$ to przesunięcie fazowe pobudzenia periodycznego w danym neuronie, natomiast $v_{iext}(t)$ to łączny potencjał od sąsiadów odebrany przez neuron $i$ w chwili $t$, pomnożony przez stałą sprzężenia $s$
 
   \begin{equation} \label{eq:vext1}
-    v_{ext}(t) = \displaystyle\sum\limits_{n=1}^{k_i} \widetilde{v_{n}}(t-\tau_{n})
+    v_{iext}(t) = \displaystyle\sum\limits_{n=1}^{k_i} \widetilde{v_{n}}(t-\tau_{i,n}) \quad ,
   \end{equation}
 
-  Gdzie $\widetilde{v_{n}}(t-\tau_{n})$ to przefiltrowany (patrz niżej) potencjał n-tego sąsiada w chwili $t-\tau_{n}$, a $\tau_{n}$ jest opóźnieniem w transmisji potencjału czynnościowego określonym dla każdej pary neuronów.
+  gdzie $k_i$ oznacza liczbę neuronów połączonych z neuronem $i$-tym (zależną od topologii połączeń), $\widetilde{v_{n}}(t-\tau_{n})$ to przefiltrowany (patrz niżej) potencjał $n$-tego sąsiada w chwili $t-\tau_{i,n}$, a $\tau_{i,n}$ jest opóźnieniem w transmisji potencjału czynnościowego od neuronu $n$-tego do neuronu $i$-tego.
 
-  Potencjał przefiltrowany $\widetilde{v_{n}}(t)$, odbierany przez połączone neurony, jest liczony na podstawie ''oryginalnego'' potencjału $v_{n}(t)$ po zaaplikowaniu prostej transformacji progowej zerującej niskie wartości nie kwalifikujące się jako szpilki:
+  Potencjał przefiltrowany $\widetilde{v_{n}}(t)$, odbierany przez połączone neurony, jest obliczany na podstawie oryginalnego potencjału $v_{n}(t)$ po zaaplikowaniu prostej transformacji progowej zerującej niskie wartości, nie kwalifikujące się jako szpilki,
 
   \begin{equation}
     \tilde{v}(t) = 
@@ -434,12 +431,14 @@
     \end{cases}
   \end{equation}
 
-  (próg $\gamma = 0.4$)
+  (w dalszym ciągu pracy przyjęto próg $\gamma = 0.4$).
 
-  Zabieg ten wynika z dynamiki układu FHN, w którym potencjał podprogowy (pomiędzy ''strzałami'') oscyluje wokół wartości wyższej niż zero. Tym samym odbieranie niefiltrowanego, podprogowego potencjału od połączonych neuronów może powodować częste i chaotyczne ''strzały'', niszcząc synchronizację pomiędzy neuronami, co byłoby efektem odwrotnym do zamierzonego.
+  Zabieg ten wynika z dynamiki układu FHN, w którym potencjał podprogowy (pomiędzy ''szpilkami'') oscyluje wokół wartości wyższej niż zero. Tym samym odbieranie niefiltrowanego, podprogowego potencjału od połączonych neuronów może powodować częste i chaotyczne ''szpilki'', niszcząc synchronizację pomiędzy neuronami, co byłoby efektem odwrotnym do zamierzonego.
   
-  \subsubsection{Zagadnienia Badane w Pracy}
+  \subsubsection{Zagadnienia badane w pracy}
+  \label{sec:zagadnienia_badane}
 
-  Tematem pracy jest badanie zachowania macierzy neuronów FHN. Za pomocą symulacji numerycznej badałem, jak na signal-to-noise ratio wpływa przesunięcie fazowe sygnału periodycznego (rozciągłość przestrzenna układu) oraz parametry wymiany (siła połączenia, opóźnienie transmisji). Ważnym elementem analizy wyników symulacji było porównanie wyników osiągniętych dla modeli neuronów biologicznych (tj. będących przedmiotem niniejszej pracy) z wynikami dla prostych, progowych rezonatorów.
+  Tematem pracy jest badanie zachowania macierzy neuronów FHN. Za pomocą symulacji numerycznej badałem, jak na SNR wpływa przesunięcie fazowe sygnału periodycznego pomiędzy oddziałującymi neuronami (rozciągłość przestrzenna układu) oraz parametry wymiany (siła połączenia, opóźnienie transmisji). Ważnym elementem analizy wyników symulacji było porównanie wyników osiągniętych dla modeli neuronów biologicznych (tj. będących przedmiotem niniejszej pracy) z wynikami dla prostych, progowych rezonatorów.
 
-  Badałem układ kilku FHN połączonych w jednowymiarowy sznur. Dla uniknięcia sprzężenia zwrotnego  transmisja sygnału pomiędzy neuronami odbywała się w jedną stronę.
+  Badałem układ kilku neuronów FHN połączonych w jednowymiarowy łańcuch. Dla uniknięcia sprzężenia zwrotnego transmisja sygnału pomiędzy neuronami odbywała się w jedną stronę. Przyjąłem konwencję transmisji sygnału od neuronu o wyższym indeksie do neuronu o niższym: neuron o indeksie 0 nie przekazuje swojego potencjału dalej, natomiast neuron o indeksie najwyższym nie odbiera swojego potencjału od żadnego neuronu (i tym samym powinien się zachowywać jak samodzielny neuron z takim samym zestawem parametrów).
+

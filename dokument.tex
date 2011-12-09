@@ -16,6 +16,9 @@
   \usepackage{amsmath}
   \usepackage{latexsym}
 
+  \usepackage{titlesec}
+  \titlelabel{\thetitle.\quad}
+
   %strona tytulowa
   \usepackage{strona_tytulowa}
 
@@ -40,20 +43,10 @@
   \thispagestyle{empty}               %na tej stronie: brak numeru
   \stronatytulowa                     %strona tytulowa tworzona przez pakiet strona_tytulowa.tex
 
-  \begin{abstract}
-  Przedmiotem niniejszej pracy jest badanie rezonansu stochastycznego w matematycznych układach neuronów biologicznych, trakowanych jako układy z pamięcia i połączonych w sieci przestrzennie rozciągłe.
-
-  Rezonans stochastyczny jest zjawiskiem obserwowanym w m.in. elementach progowych oraz wzbudnych (excitable). Matematyczne modele neuronów biologicznych wraz z rezonansem stochastycznym i układami z pamięcią stanowią trójkę młodych gałęzi matematyki i fizyki, które składają się na przedmiot niniejszej pracy.
-  
-  Wszystkie te dziedziny oprócz relatywnie młodego wieku mają jeszcze jedną wspólną cechę: rozpatrywanie tego rodzaju zagadnień metodami analitycznymi jest trudne (w skrajnych przypadkach niemożliwe), w wyniku czego szeroko się w nich stosuje symulacje numeryczne.
-  
-  W pracy wyszedłem od modelu pojedynczego neuronu biologicznego (element wzbudny), w którym w pewnym zakresie parametrów obserwuje się zjawisko rezonansu stochastycznego. Bazując na tym modelu i poruszając się w tym zakresie parametrów, rozszerzyłem go o połączenia międzyneuronowe, następnie dodając opóźnienie w przekazywaniu sygnałów do połączonych neuronów. Operując parametrami, takimi jak wartość szumu, opóźnienie w transmisji sygnałów i przesunięcie fazowe wzbudzenia (analog rozciągłości przestrzennej w układach fizycznych), badałem przebiegi czasowe oraz stosunek sygnał-szum (signal-to-noise ratio, w skrócie SNR) dla wszystkich neuronów w poszczególnych scenariuszach. 
-
-  \end{abstract}
-
+  \tableofcontents
   \newpage
 
-  \tableofcontents
+  \input{intro.tex}
   \newpage
 
   \input{theory.tex}

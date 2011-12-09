@@ -1,31 +1,36 @@
 \select@language {polish}
-\contentsline {section}{\numberline {1}Podstawy teoretyczne}{4}{section.1}
-\contentsline {subsection}{\numberline {1.1}Rezonans stochastyczny}{4}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}Uk\IeC {\l }ad bistabilny}{4}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.2}Uk\IeC {\l }ad progowy}{8}{subsubsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.3}Wzmocnienie SR przez sprz\IeC {\k e}\IeC {\.z}enie}{11}{subsubsection.1.1.3}
-\contentsline {subsubsection}{\numberline {1.1.4}Kontrola SR}{12}{subsubsection.1.1.4}
-\contentsline {subsection}{\numberline {1.2}Modele neuron\IeC {\'o}w biologicznych}{15}{subsection.1.2}
-\contentsline {subsubsection}{\numberline {1.2.1}Model Neuronu FitzHugh-Nagumo}{17}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {1.2.2}Przekszta\IeC {\l }cenia modelu FHN}{18}{subsubsection.1.2.2}
-\contentsline {subsubsection}{\numberline {1.2.3}Zachowanie progowe i wzmacnianie szumu w modelu FHN}{18}{subsubsection.1.2.3}
-\contentsline {subsubsection}{\numberline {1.2.4}Rezonans Stochastyczny w macierzach rezonator\IeC {\'o}w ci\IeC {\k a}g\IeC {\l }ych}{20}{subsubsection.1.2.4}
-\contentsline {subsection}{\numberline {1.3}Pami\IeC {\k e}\IeC {\'c} i Op\IeC {\'o}\IeC {\'z}nienie}{21}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {1.3.1}Przesuni\IeC {\k e}cie Fazy}{21}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {1.3.2}Przestrzennie rozci\IeC {\k a}g\IeC {\l }y uk\IeC {\l }ad neuron\IeC {\'o}w FHN}{24}{subsubsection.1.3.2}
-\contentsline {subsubsection}{\numberline {1.3.3}Zagadnienia Badane w Pracy}{26}{subsubsection.1.3.3}
-\contentsline {section}{\numberline {2}Symulacje Numeryczne}{27}{section.2}
-\contentsline {subsection}{\numberline {2.1}Oprogramowanie}{27}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Obliczanie Widma Mocy}{27}{subsubsection.2.1.1}
-\contentsline {subsubsection}{\numberline {2.1.2}Obliczanie Signal-to-Noise Ratio}{28}{subsubsection.2.1.2}
-\contentsline {subsection}{\numberline {2.2}Parametry symulacji}{28}{subsection.2.2}
-\contentsline {subsection}{\numberline {2.3}Pojedynczy Neuron}{28}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Uk\IeC {\l }ady Neuron\IeC {\'o}w Bez Op\IeC {\'o}\IeC {\'z}nienia}{29}{subsection.2.4}
-\contentsline {subsubsection}{\numberline {2.4.1}Metodologia}{29}{subsubsection.2.4.1}
-\contentsline {subsubsection}{\numberline {2.4.2}\IeC {\L }a\IeC {\'n}cuch 9 neuron\IeC {\'o}w}{32}{subsubsection.2.4.2}
-\contentsline {subsection}{\numberline {2.5}Uk\IeC {\l }ady neuron\IeC {\'o}w z op\IeC {\'o}\IeC {\'z}nieniem}{32}{subsection.2.5}
-\contentsline {subsubsection}{\numberline {2.5.1}Metodologia}{32}{subsubsection.2.5.1}
-\contentsline {subsubsection}{\numberline {2.5.2}\IeC {\L }a\IeC {\'n}cuch 2 neuron\IeC {\'o}w}{36}{subsubsection.2.5.2}
-\contentsline {subsubsection}{\numberline {2.5.3}\IeC {\L }a\IeC {\'n}cuch 9 neuron\IeC {\'o}w z op\IeC {\'o}\IeC {\'z}nieniem}{36}{subsubsection.2.5.3}
-\contentsline {section}{\numberline {3}Wnioski}{40}{section.3}
-\contentsline {section}{Literatura}{41}{section.3}
+\contentsline {section}{\numberline {1}Wst\IeC {\k e}p}{4}{section.1}
+\contentsline {section}{\numberline {2}Podstawy teoretyczne}{5}{section.2}
+\contentsline {subsection}{\numberline {2.1}Rezonans stochastyczny}{5}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Uk\IeC {\l }ad bistabilny}{5}{subsubsection.2.1.1}
+\contentsline {subsubsection}{\numberline {2.1.2}Uk\IeC {\l }ad progowy}{9}{subsubsection.2.1.2}
+\contentsline {subsubsection}{\numberline {2.1.3}Wzmocnienie SR przez sprz\IeC {\k e}\IeC {\.z}enie}{12}{subsubsection.2.1.3}
+\contentsline {subsubsection}{\numberline {2.1.4}Kontrola SR}{15}{subsubsection.2.1.4}
+\contentsline {subsection}{\numberline {2.2}Modele neuron\IeC {\'o}w biologicznych}{16}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Model Neuronu FitzHugh-Nagumo}{18}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}Przekszta\IeC {\l }cenia modelu FHN}{19}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Zachowanie progowe i wzmacnianie szumu w modelu FHN}{19}{subsubsection.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.4}Rezonans Stochastyczny w macierzach rezonator\IeC {\'o}w ci\IeC {\k a}g\IeC {\l }ych}{20}{subsubsection.2.2.4}
+\contentsline {subsection}{\numberline {2.3}Pami\IeC {\k e}\IeC {\'c} i op\IeC {\'o}\IeC {\'z}nienie}{22}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}Przesuni\IeC {\k e}cie fazy}{24}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}Przestrzennie rozci\IeC {\k a}g\IeC {\l }y uk\IeC {\l }ad neuron\IeC {\'o}w FHN}{25}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}Zagadnienia badane w pracy}{27}{subsubsection.2.3.3}
+\contentsline {section}{\numberline {3}Symulacje numeryczne}{28}{section.3}
+\contentsline {subsection}{\numberline {3.1}Oprogramowanie}{28}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Obliczanie widma mocy}{28}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Obliczanie Signal-to-Noise Ratio}{29}{subsubsection.3.1.2}
+\contentsline {subsection}{\numberline {3.2}Parametry symulacji}{29}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Pojedynczy Neuron}{29}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Metodologia}{29}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Symulacja pojedynczego neuronu}{30}{subsubsection.3.3.2}
+\contentsline {subsection}{\numberline {3.4}Uk\IeC {\l }ady neuron\IeC {\'o}w bez op\IeC {\'o}\IeC {\'z}nienia}{33}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Metodologia}{33}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}\IeC {\L }a\IeC {\'n}cuch 9 neuron\IeC {\'o}w bez r\IeC {\'o}\IeC {\.z}nicy faz}{34}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}\IeC {\L }a\IeC {\'n}cuch 9 neuron\IeC {\'o}w z r\IeC {\'o}\IeC {\.z}nic\IeC {\k a} faz}{34}{subsubsection.3.4.3}
+\contentsline {subsection}{\numberline {3.5}Uk\IeC {\l }ady neuron\IeC {\'o}w z op\IeC {\'o}\IeC {\'z}nieniem}{37}{subsection.3.5}
+\contentsline {subsubsection}{\numberline {3.5.1}Metodologia}{37}{subsubsection.3.5.1}
+\contentsline {subsubsection}{\numberline {3.5.2}\IeC {\L }a\IeC {\'n}cuch 2 neuron\IeC {\'o}w}{39}{subsubsection.3.5.2}
+\contentsline {subsubsection}{\numberline {3.5.3}\IeC {\L }a\IeC {\'n}cuch 9 neuron\IeC {\'o}w z op\IeC {\'o}\IeC {\'z}nieniem}{39}{subsubsection.3.5.3}
+\contentsline {subsubsection}{\numberline {3.5.4}\IeC {\L }a\IeC {\'n}cuch 9 neuron\IeC {\'o}w z op\IeC {\'o}\IeC {\'z}nieniem i niesp\IeC {\'o}jn\IeC {\k a} r\IeC {\'o}\IeC {\.z}nic\IeC {\k a} faz}{43}{subsubsection.3.5.4}
+\contentsline {section}{\numberline {4}Wnioski}{45}{section.4}
+\contentsline {section}{Literatura}{47}{Item.3}
